@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
@@ -35,6 +36,19 @@
 
         body.no-scroll {
             overflow: hidden;
+        }
+
+        button, a, input, .modal-option, .modal-btn, .modal-back-btn, .final-btn, .modal-close, .price-card {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        button:focus, a:focus, input:focus, .modal-option:focus, .modal-btn:focus, .modal-back-btn:focus, .final-btn:focus, .modal-close:focus, .price-card:focus {
+            outline: none;
         }
 
         .room-base {
@@ -291,6 +305,8 @@
             z-index: 11;
             stroke-width: 3.5;
             transition: opacity 0.3s ease;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .arrow-left:hover {
@@ -311,6 +327,8 @@
             z-index: 11;
             stroke-width: 3.5;
             transition: opacity 0.3s ease;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .arrow-right:hover {
@@ -411,6 +429,8 @@
             justify-content: center;
             gap: 8px;
             font-family: 'Rubik', Arial, sans-serif;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-red:active {
@@ -454,6 +474,8 @@
             justify-content: center;
             gap: 8px;
             font-family: 'Rubik', Arial, sans-serif;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-white:active {
@@ -525,6 +547,8 @@
             justify-content: center;
             z-index: 103;
             transition: all 0.3s ease;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .modal-close:hover {
@@ -581,6 +605,7 @@
             -moz-appearance: textfield;
             -webkit-appearance: none;
             appearance: textfield;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .modal-input::-webkit-inner-spin-button,
@@ -1040,6 +1065,8 @@
             box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03);
             position: relative;
             overflow: hidden;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .price-card.tall {
