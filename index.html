@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>Фон — Красная комната</title>
+    <title>Викладач англійської</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap');
 
@@ -523,7 +523,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 101;
+            z-index: 103;
             transition: all 0.3s ease;
         }
 
@@ -796,11 +796,23 @@
             text-decoration: none;
             outline: none;
             -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .final-btn:active {
             transform: scale(0.95);
             background: rgba(180, 15, 25, 0.38);
+        }
+
+        .tg-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
         }
 
         /* Лоадер */
@@ -1010,7 +1022,6 @@
             gap: 8px;
             z-index: 11;
             align-items: flex-end;
-            perspective: 1000px;
         }
 
         .price-card {
@@ -1018,6 +1029,7 @@
             background: rgba(255,255,255,0.02);
             border: 1.5px solid rgba(255,255,255,0.15);
             border-radius: 25px;
+            padding: 8px 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1027,29 +1039,19 @@
             min-width: 0;
             box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03);
             position: relative;
-            cursor: pointer;
-            transform-style: preserve-3d;
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .price-card.spinning {
-            animation: cardSpin 0.9s ease;
-        }
-
-        @keyframes cardSpin {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
+            overflow: hidden;
         }
 
         .price-card.tall {
             height: 115%;
+            justify-content: center;
             margin-bottom: 16px;
             min-height: 115%;
         }
 
         .price-card.short {
             height: 85%;
+            justify-content: center;
             margin-bottom: 8px;
         }
 
@@ -1524,17 +1526,17 @@
                 <span class="third-red">Вар</span><span class="third-white">тість</span>
             </div>
             <div class="price-cards">
-                <div class="price-card short" onclick="spinCard(this)">
+                <div class="price-card short">
                     <div class="price-title">Разове</div>
                     <div class="price-amount">200 <span class="price-amount-white">₴</span></div>
                     <div class="price-sub">1 заняття</div>
                 </div>
-                <div class="price-card tall" onclick="spinCard(this)">
+                <div class="price-card tall">
                     <div class="price-title">Стандарт</div>
                     <div class="price-amount">1400 <span class="price-amount-white">₴</span></div>
                     <div class="price-sub">7 занять</div>
                 </div>
-                <div class="price-card tall" onclick="spinCard(this)">
+                <div class="price-card tall">
                     <div class="price-title">Максимум</div>
                     <div class="price-amount">6000 <span class="price-amount-white">₴</span></div>
                     <div class="price-sub">30 занять</div>
@@ -1785,7 +1787,12 @@
                 <div class="final-title">Опитування завершено!</div>
                 <div class="final-subtitle">Напишіть викладачу для запису</div>
                 <div class="final-line"></div>
-                <a class="final-btn" id="finalBtn" href="#" target="_blank">Написати викладачу</a>
+                <a class="final-btn" id="finalBtn" href="#" target="_blank">
+                    <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    Написати викладачу
+                </a>
             </div>
         </div>
     </div>
@@ -1841,15 +1848,6 @@
             }
         ];
 
-        function spinCard(card) {
-            card.classList.remove('spinning');
-            void card.offsetWidth;
-            card.classList.add('spinning');
-            setTimeout(function() {
-                card.classList.remove('spinning');
-            }, 900);
-        }
-
         function openModal(mode) {
             currentMode = mode;
             document.getElementById('modalOverlay').classList.add('active');
@@ -1874,6 +1872,7 @@
             document.getElementById('modalProgress').style.display = 'block';
             document.getElementById('modalBackBtn').style.display = 'none';
             document.getElementById('modalNextBtn').style.display = 'block';
+            document.querySelector('.modal-close').style.display = 'flex';
             updateModal();
         }
 
@@ -1948,6 +1947,7 @@
             document.getElementById('modalProgress').style.display = 'none';
             document.getElementById('modalBackBtn').style.display = 'none';
             document.getElementById('modalNextBtn').style.display = 'none';
+            document.querySelector('.modal-close').style.display = 'flex';
             
             const name = userData.name || '';
             const age = userData.age || '';
