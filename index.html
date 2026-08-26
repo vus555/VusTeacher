@@ -38,7 +38,7 @@
             overflow: hidden;
         }
 
-        button, a, input, .modal-option, .modal-btn, .modal-back-btn, .final-btn, .modal-close, .price-card {
+        button, a, input, .modal-option, .modal-btn, .modal-back-btn, .final-btn, .modal-close, .price-card, .arrow-left, .arrow-right {
             outline: none;
             -webkit-tap-highlight-color: transparent;
             user-select: none;
@@ -47,7 +47,7 @@
             -ms-user-select: none;
         }
 
-        button:focus, a:focus, input:focus, .modal-option:focus, .modal-btn:focus, .modal-back-btn:focus, .final-btn:focus, .modal-close:focus, .price-card:focus {
+        button:focus, a:focus, input:focus, .modal-option:focus, .modal-btn:focus, .modal-back-btn:focus, .final-btn:focus, .modal-close:focus, .price-card:focus, .arrow-left:focus, .arrow-right:focus {
             outline: none;
         }
 
@@ -64,6 +64,13 @@
                 radial-gradient(ellipse at 85% 15%, rgba(28, 4, 7, 0.7) 0%, rgba(28, 4, 7, 0) 45%);
             z-index: 0;
             pointer-events: none;
+            opacity: 0;
+            animation: fadeInRoom 1s ease 2.5s forwards;
+        }
+
+        @keyframes fadeInRoom {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .room-gradient {
@@ -75,6 +82,8 @@
             background: linear-gradient(180deg, #0d0405 0%, #1a0709 20%, #22090c 40%, #160607 60%, #0b0304 80%, #090203 100%);
             z-index: 0;
             pointer-events: none;
+            opacity: 0;
+            animation: fadeInRoom 1s ease 2.5s forwards;
         }
 
         .shadow {
@@ -82,7 +91,8 @@
             border-radius: 50%;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.7;
+            opacity: 0;
+            animation: fadeInElements 1.2s ease 2.7s forwards;
         }
 
         .shadow-1 {
@@ -120,6 +130,8 @@
             border-radius: 50%;
             z-index: 2;
             pointer-events: none;
+            opacity: 0;
+            animation: fadeInElements 1.2s ease 2.8s forwards;
         }
 
         .glow-1 {
@@ -162,6 +174,11 @@
             filter: blur(60px);
         }
 
+        @keyframes fadeInElements {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         /* Сетка на весь экран */
         .grid-full {
             position: fixed;
@@ -175,7 +192,13 @@
                 linear-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px),
                 linear-gradient(90deg, rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
             background-size: clamp(30px, 5vw, 50px) clamp(30px, 5vw, 50px);
-            opacity: 0.4;
+            opacity: 0;
+            animation: fadeInGrid 1s ease 2.9s forwards;
+        }
+
+        @keyframes fadeInGrid {
+            from { opacity: 0; }
+            to { opacity: 0.4; }
         }
 
         .content {
@@ -188,6 +211,19 @@
             gap: 20px;
             min-height: 100vh;
             justify-content: flex-start;
+            opacity: 0;
+            animation: contentAppear 1.2s ease 3s forwards;
+        }
+
+        @keyframes contentAppear {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Рамки с лёгким блюром */
@@ -203,6 +239,24 @@
             width: 100%;
             max-width: 420px;
             flex-shrink: 0;
+            opacity: 0;
+            animation: frameAppear 0.8s ease forwards;
+        }
+
+        .frame:nth-child(1) { animation-delay: 3.1s; }
+        .frame:nth-child(2) { animation-delay: 3.3s; }
+        .frame:nth-child(3) { animation-delay: 3.5s; }
+        .frame:nth-child(4) { animation-delay: 3.7s; }
+
+        @keyframes frameAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .frame-main {
@@ -346,10 +400,22 @@
             height: 88%;
             border-radius: 20px;
             object-fit: contain;
-            opacity: 0.85;
+            opacity: 0;
+            animation: photoAppear 1s ease 3.3s forwards;
             -webkit-filter: grayscale(20%) contrast(1.05) brightness(0.95);
             filter: grayscale(20%) contrast(1.05) brightness(0.95);
             z-index: 10;
+        }
+
+        @keyframes photoAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+            to {
+                opacity: 0.85;
+                transform: translateY(-50%) scale(1);
+            }
         }
 
         /* Неон за фото */
@@ -366,12 +432,19 @@
             -webkit-filter: blur(35px);
             filter: blur(35px);
             z-index: 9;
-            animation: neonPulse 2s infinite alternate;
+            opacity: 0;
+            animation: photoGlowAppear 1.2s ease 3.1s forwards;
         }
 
-        @keyframes neonPulse {
-            0% { opacity: 0.7; }
-            100% { opacity: 0.9; }
+        @keyframes photoGlowAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
         }
 
         /* Заголовок */
@@ -387,6 +460,19 @@
             max-width: 45%;
             line-height: 1.1;
             font-family: 'Rubik', Arial, sans-serif;
+            opacity: 0;
+            animation: titleAppear 0.8s ease 3.4s forwards;
+        }
+
+        @keyframes titleAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .title-red {
@@ -431,6 +517,19 @@
             font-family: 'Rubik', Arial, sans-serif;
             outline: none;
             -webkit-tap-highlight-color: transparent;
+            opacity: 0;
+            animation: btnRedAppear 0.8s ease 3.6s forwards;
+        }
+
+        @keyframes btnRedAppear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .btn-red:active {
@@ -476,6 +575,19 @@
             font-family: 'Rubik', Arial, sans-serif;
             outline: none;
             -webkit-tap-highlight-color: transparent;
+            opacity: 0;
+            animation: btnWhiteAppear 0.8s ease 3.8s forwards;
+        }
+
+        @keyframes btnWhiteAppear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .btn-white:active {
@@ -854,7 +966,7 @@
             justify-content: center;
             opacity: 1;
             pointer-events: auto;
-            transition: opacity 0.5s ease;
+            transition: opacity 1s ease;
         }
 
         .loader-overlay.hidden {
@@ -1032,7 +1144,8 @@
             max-width: 380px;
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 20%, rgba(255,255,255,0.35) 80%, transparent 100%);
-            opacity: 0.6;
+            opacity: 0;
+            animation: fadeInGrid 1s ease 3.2s forwards;
             margin: 5px 0;
         }
 
@@ -1265,6 +1378,8 @@
             background: radial-gradient(ellipse at center, transparent 25%, rgba(10,5,6,0.8) 70%, rgba(10,5,6,0.95) 100%);
             z-index: 5;
             pointer-events: none;
+            opacity: 0;
+            animation: fadeInElements 1s ease 3s forwards;
         }
 
         @media (max-width: 480px) {
@@ -1555,17 +1670,17 @@
             <div class="price-cards">
                 <div class="price-card short">
                     <div class="price-title">Разове</div>
-                    <div class="price-amount">200 <span class="price-amount-white">₴</span></div>
+                    <div class="price-amount">300 <span class="price-amount-white">₴</span></div>
                     <div class="price-sub">1 заняття</div>
                 </div>
                 <div class="price-card tall">
                     <div class="price-title">Стандарт</div>
-                    <div class="price-amount">1400 <span class="price-amount-white">₴</span></div>
+                    <div class="price-amount">2100 <span class="price-amount-white">₴</span></div>
                     <div class="price-sub">7 занять</div>
                 </div>
                 <div class="price-card tall">
                     <div class="price-title">Максимум</div>
-                    <div class="price-amount">6000 <span class="price-amount-white">₴</span></div>
+                    <div class="price-amount">9000 <span class="price-amount-white">₴</span></div>
                     <div class="price-sub">30 занять</div>
                 </div>
             </div>
@@ -1610,7 +1725,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Дуже гарно вийшло, класно</span>
+                        <span class="review-text">Найкращий викладач! За 2 місяці підняла рівень з A2 до B1</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1628,7 +1743,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Найкращий викладач</span>
+                        <span class="review-text">Дуже зручний графік занять, все чітко і зрозуміло пояснює</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1646,7 +1761,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Цікаві уроки, практика</span>
+                        <span class="review-text">Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1664,7 +1779,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Англійська стала кращою</span>
+                        <span class="review-text">За 3 місяці навчання я вже вільно спілкуюсь з іноземцями, рекомендую!</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1682,7 +1797,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Терплячий, все пояснює</span>
+                        <span class="review-text">Дуже терплячий та уважний викладач, завжди підкаже і допоможе</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1700,7 +1815,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Заняття цікаві, ефективні</span>
+                        <span class="review-text">Заняття завжди цікаві та продуктивні, матеріал подається доступно</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1718,7 +1833,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Дуже задоволена результатом</span>
+                        <span class="review-text">Навчання проходить легко та невимушено, результат вже після перших уроків</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1736,7 +1851,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Професійний підхід</span>
+                        <span class="review-text">Професійний підхід до кожного учня, видно що людина знає свою справу</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1754,7 +1869,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Легко і невимушено</span>
+                        <span class="review-text">Уроки проходять легко і невимушено, завжди чекаю наступного заняття</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1772,7 +1887,7 @@
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Великий прогрес</span>
+                        <span class="review-text">За короткий час великий прогрес, дуже задоволений результатом навчання</span>
                     </div>
                 </div>
                 <svg class="arrow-left" onclick="prevReview()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2091,11 +2206,12 @@
         // Инициализация
         showReview(0);
 
-        // Показать лоадер при загрузке страницы на 2.5 секунды
+        // Плавное скрытие лоадера при загрузке страницы
         setTimeout(function() {
-            document.getElementById('loaderOverlay').style.opacity = '0';
-            document.getElementById('loaderOverlay').style.pointerEvents = 'none';
             document.getElementById('loaderOverlay').classList.add('hidden');
+            setTimeout(function() {
+                document.getElementById('loaderOverlay').style.display = 'none';
+            }, 1000);
         }, 2500);
     </script>
 </body>
