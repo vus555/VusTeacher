@@ -1382,6 +1382,145 @@
             animation: fadeInElements 1s ease 3s forwards;
         }
 
+        /* Стили для языкового модального окна */
+        .language-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(10, 5, 6, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 200;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .language-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .language-frame {
+            width: 100%;
+            max-width: 350px;
+            min-height: 200px;
+            border: 1.5px solid rgba(255,255,255,0.15);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.02);
+            box-shadow: 0 0 20px rgba(255,255,255,0.05), inset 0 0 20px rgba(255,255,255,0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            transform: scale(0.7);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 25px 20px 20px;
+            gap: 15px;
+        }
+
+        .language-overlay.active .language-frame {
+            transform: scale(1);
+        }
+
+        .language-title {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Rubik', Arial, sans-serif;
+            text-transform: uppercase;
+        }
+
+        .language-subtitle {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Rubik', Arial, sans-serif;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .lang-btn {
+            flex: 1;
+            max-width: 100px;
+            padding: 12px 15px;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.03);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Rubik', Arial, sans-serif;
+            text-align: center;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .lang-btn:hover {
+            border-color: rgba(200, 15, 25, 0.65);
+            background: rgba(180, 15, 25, 0.25);
+            color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 15px rgba(200, 15, 25, 0.3);
+        }
+
+        .lang-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Черный экран загрузки */
+        .black-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 1);
+            z-index: 250;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .black-loading.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .black-loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: rgba(255,255,255,0.8);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+
         @media (max-width: 480px) {
             .content {
                 padding: 15px 15px 30px;
@@ -1600,6 +1739,21 @@
             .review-rating-small {
                 margin-right: 4px;
                 margin-top: -1px;
+            }
+            .language-frame {
+                max-width: 300px;
+                min-height: 180px;
+                border-radius: 25px;
+            }
+            .language-title {
+                font-size: 16px;
+            }
+            .language-subtitle {
+                font-size: 11px;
+            }
+            .lang-btn {
+                font-size: 12px;
+                padding: 10px 12px;
             }
         }
     </style>
@@ -1944,12 +2098,31 @@
         <div class="loader-spinner"></div>
     </div>
 
+    <!-- Языковое модальное окно -->
+    <div class="language-overlay" id="languageOverlay">
+        <div class="language-frame">
+            <div class="language-title">Language</div>
+            <div class="language-subtitle">Виберіть мову / Select language</div>
+            <div class="language-buttons">
+                <button class="lang-btn" onclick="selectLanguage('uk')">Українська</button>
+                <button class="lang-btn" onclick="selectLanguage('en')">English</button>
+                <button class="lang-btn" onclick="selectLanguage('ru')">Русский</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Черный экран загрузки -->
+    <div class="black-loading" id="blackLoading">
+        <div class="black-loading-spinner"></div>
+    </div>
+
     <script>
         let currentStep = 1;
         const totalSteps = 5;
         let selectedOption = null;
         let userData = {};
         let currentMode = 'signup';
+        let currentLanguage = 'uk';
 
         const steps = [
             {
@@ -2213,6 +2386,29 @@
                 document.getElementById('loaderOverlay').style.display = 'none';
             }, 1000);
         }, 2500);
+
+        // Показать языковое окно после появления всего сайта
+        setTimeout(function() {
+            document.getElementById('languageOverlay').classList.add('active');
+            document.body.classList.add('no-scroll');
+        }, 5000); // Через 5 секунд после загрузки (после всех анимаций)
+
+        function selectLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Закрываем языковое окно
+            document.getElementById('languageOverlay').classList.remove('active');
+            
+            // Показываем черный экран загрузки
+            const blackLoading = document.getElementById('blackLoading');
+            blackLoading.classList.add('active');
+            
+            // Через 1.5 секунды плавно скрываем
+            setTimeout(function() {
+                blackLoading.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }, 1500);
+        }
     </script>
 </body>
 </html>
