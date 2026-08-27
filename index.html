@@ -1389,7 +1389,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(10, 5, 6, 0.6);
+            background: rgba(10, 5, 6, 0.4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 200;
@@ -1410,20 +1410,20 @@
         .language-frame {
             width: 100%;
             max-width: 350px;
-            min-height: 200px;
-            border: 1.5px solid rgba(255,255,255,0.15);
-            border-radius: 30px;
-            background: rgba(255,255,255,0.02);
-            box-shadow: 0 0 20px rgba(255,255,255,0.05), inset 0 0 20px rgba(255,255,255,0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            min-height: 180px;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 30px rgba(255,255,255,0.08), inset 0 0 30px rgba(255,255,255,0.05);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             position: relative;
             transform: scale(0.7);
             transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: flex;
             flex-direction: column;
-            padding: 25px 20px 20px;
-            gap: 15px;
+            padding: 30px 20px 25px;
+            gap: 20px;
         }
 
         .language-overlay.active .language-frame {
@@ -1431,39 +1431,41 @@
         }
 
         .language-title {
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.85);
             font-family: 'Rubik', Arial, sans-serif;
             text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .language-subtitle {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-family: 'Rubik', Arial, sans-serif;
+        .language-title-red {
+            color: rgba(200, 15, 25, 0.8);
+            text-shadow: 0 0 10px rgba(200, 15, 25, 0.4);
+        }
+
+        .language-line {
+            width: 100%;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.3) 80%, transparent 100%);
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
         }
 
         .language-buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             justify-content: center;
-            margin-top: 5px;
         }
 
         .lang-btn {
             flex: 1;
             max-width: 100px;
-            padding: 12px 15px;
-            border: 1.5px solid rgba(255,255,255,0.2);
-            border-radius: 20px;
-            background: rgba(255,255,255,0.03);
-            color: rgba(255,255,255,0.7);
+            padding: 14px 15px;
+            border: 1.5px solid rgba(255,255,255,0.25);
+            border-radius: 25px;
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.8);
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 0.5px;
@@ -1477,13 +1479,15 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .lang-btn:hover {
             border-color: rgba(200, 15, 25, 0.65);
             background: rgba(180, 15, 25, 0.25);
-            color: rgba(255, 255, 255, 0.85);
-            box-shadow: 0 0 15px rgba(200, 15, 25, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(200, 15, 25, 0.4);
         }
 
         .lang-btn:active {
@@ -1742,18 +1746,18 @@
             }
             .language-frame {
                 max-width: 300px;
-                min-height: 180px;
-                border-radius: 25px;
+                min-height: 160px;
+                border-radius: 40px;
+                padding: 25px 15px 20px;
+                gap: 15px;
             }
             .language-title {
-                font-size: 16px;
-            }
-            .language-subtitle {
-                font-size: 11px;
+                font-size: 18px;
             }
             .lang-btn {
                 font-size: 12px;
-                padding: 10px 12px;
+                padding: 12px 10px;
+                border-radius: 20px;
             }
         }
     </style>
@@ -1775,7 +1779,7 @@
             <div class="photo-glow"></div>
             <img class="photo" src="https://i.postimg.cc/SsmHrJGk/file-00000000e5d081f49bc9e7c6512b4e6e.png" alt="Фото">
             <div class="title-left">
-                <span class="title-red">Викладач</span> <span class="title-white">Англійської</span>
+                <span class="title-red" data-i18n="teacher">Викладач</span> <span class="title-white" data-i18n="english">Англійської</span>
             </div>
             <button class="btn-red" onclick="openModal('signup')">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1784,14 +1788,14 @@
                     <line x1="19" y1="8" x2="19" y2="14"/>
                     <line x1="22" y1="11" x2="16" y2="11"/>
                 </svg>
-                Записатись
+                <span data-i18n="signup">Записатись</span>
             </button>
             <button class="btn-white" onclick="openModal('trial')">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
                     <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                 </svg>
-                Пробний урок
+                <span data-i18n="trial">Пробний урок</span>
             </button>
         </div>
 
@@ -1800,42 +1804,42 @@
         <div class="frame frame-small">
             <div class="vertical-line"></div>
             <div class="second-title" style="max-width: 50%; line-height: 1.4; font-size: 18px;">
-                <span class="second-red" style="font-size: 18px;">Про</span> <span class="second-white" style="font-size: 18px;">мене</span>
+                <span class="second-red" data-i18n="about_red" style="font-size: 18px;">Про</span> <span class="second-white" data-i18n="about_white" style="font-size: 18px;">мене</span>
             </div>
             <div class="inner-frame">
-                <span class="inner-frame-text">Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.</span>
+                <span class="inner-frame-text" data-i18n="about_text">Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.</span>
             </div>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-main">3+ роки</div>
-                    <div class="stat-sub">викладання</div>
+                    <div class="stat-main">3+ <span data-i18n="years">роки</span></div>
+                    <div class="stat-sub" data-i18n="teaching">викладання</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-main">25+ учнів</div>
-                    <div class="stat-sub">навчаю</div>
+                    <div class="stat-main">25+ <span data-i18n="students">учнів</span></div>
+                    <div class="stat-sub" data-i18n="learning">навчаю</div>
                 </div>
             </div>
         </div>
 
         <div class="frame frame-small">
             <div class="third-title">
-                <span class="third-red">Вар</span><span class="third-white">тість</span>
+                <span class="third-red" data-i18n="price_red">Вар</span><span class="third-white" data-i18n="price_white">тість</span>
             </div>
             <div class="price-cards">
                 <div class="price-card short">
-                    <div class="price-title">Разове</div>
+                    <div class="price-title" data-i18n="single">Разове</div>
                     <div class="price-amount">300 <span class="price-amount-white">₴</span></div>
-                    <div class="price-sub">1 заняття</div>
+                    <div class="price-sub" data-i18n="lesson_1">1 заняття</div>
                 </div>
                 <div class="price-card tall">
-                    <div class="price-title">Стандарт</div>
+                    <div class="price-title" data-i18n="standard">Стандарт</div>
                     <div class="price-amount">2100 <span class="price-amount-white">₴</span></div>
-                    <div class="price-sub">7 занять</div>
+                    <div class="price-sub" data-i18n="lessons_7">7 занять</div>
                 </div>
                 <div class="price-card tall">
-                    <div class="price-title">Максимум</div>
+                    <div class="price-title" data-i18n="maximum">Максимум</div>
                     <div class="price-amount">9000 <span class="price-amount-white">₴</span></div>
-                    <div class="price-sub">30 занять</div>
+                    <div class="price-sub" data-i18n="lessons_30">30 занять</div>
                 </div>
             </div>
         </div>
@@ -1844,10 +1848,10 @@
             <div class="vertical-line-right"></div>
             <div class="horizontal-line-reviews"></div>
             <div class="fourth-title">
-                <span class="fourth-red">Від</span><span class="fourth-white">гуки</span>
+                <span class="fourth-red" data-i18n="reviews_red">Від</span><span class="fourth-white" data-i18n="reviews_white">гуки</span>
             </div>
             <div class="reviews-info">
-                <div class="reviews-count">10+ відгуків</div>
+                <div class="reviews-count">10+ <span data-i18n="reviews_count">відгуків</span></div>
                 <div class="reviews-rating">
                     <span class="reviews-rating-number">4.9</span>
                     <div class="reviews-stars">
@@ -1872,14 +1876,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Олена.М.</span>
+                                <span class="review-name" data-i18n="review_name_1">Олена.М.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">5.0</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Найкращий викладач! За 2 місяці підняла рівень з A2 до B1</span>
+                        <span class="review-text" data-i18n="review_text_1">Найкращий викладач! За 2 місяці підняла рівень з A2 до B1</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1890,14 +1894,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Максим.К.</span>
+                                <span class="review-name" data-i18n="review_name_2">Максим.К.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">4.8</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Дуже зручний графік занять, все чітко і зрозуміло пояснює</span>
+                        <span class="review-text" data-i18n="review_text_2">Дуже зручний графік занять, все чітко і зрозуміло пояснює</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1908,14 +1912,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Софія.Б.</span>
+                                <span class="review-name" data-i18n="review_name_3">Софія.Б.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">5.0</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна</span>
+                        <span class="review-text" data-i18n="review_text_3">Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1926,14 +1930,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Артем.Л.</span>
+                                <span class="review-name" data-i18n="review_name_4">Артем.Л.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">4.9</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">За 3 місяці навчання я вже вільно спілкуюсь з іноземцями, рекомендую!</span>
+                        <span class="review-text" data-i18n="review_text_4">За 3 місяці навчання я вже вільно спілкуюсь з іноземцями, рекомендую!</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1944,14 +1948,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Ірина.П.</span>
+                                <span class="review-name" data-i18n="review_name_5">Ірина.П.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">5.0</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Дуже терплячий та уважний викладач, завжди підкаже і допоможе</span>
+                        <span class="review-text" data-i18n="review_text_5">Дуже терплячий та уважний викладач, завжди підкаже і допоможе</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1962,14 +1966,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Дмитро.С.</span>
+                                <span class="review-name" data-i18n="review_name_6">Дмитро.С.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">4.7</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Заняття завжди цікаві та продуктивні, матеріал подається доступно</span>
+                        <span class="review-text" data-i18n="review_text_6">Заняття завжди цікаві та продуктивні, матеріал подається доступно</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1980,14 +1984,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Анна.В.</span>
+                                <span class="review-name" data-i18n="review_name_7">Анна.В.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">5.0</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Навчання проходить легко та невимушено, результат вже після перших уроків</span>
+                        <span class="review-text" data-i18n="review_text_7">Навчання проходить легко та невимушено, результат вже після перших уроків</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -1998,14 +2002,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Віктор.Г.</span>
+                                <span class="review-name" data-i18n="review_name_8">Віктор.Г.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">4.9</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Професійний підхід до кожного учня, видно що людина знає свою справу</span>
+                        <span class="review-text" data-i18n="review_text_8">Професійний підхід до кожного учня, видно що людина знає свою справу</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -2016,14 +2020,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Катя.О.</span>
+                                <span class="review-name" data-i18n="review_name_9">Катя.О.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">4.8</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">Уроки проходять легко і невимушено, завжди чекаю наступного заняття</span>
+                        <span class="review-text" data-i18n="review_text_9">Уроки проходять легко і невимушено, завжди чекаю наступного заняття</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
@@ -2034,14 +2038,14 @@
                                         <circle cx="12" cy="7" r="4"/>
                                     </svg>
                                 </div>
-                                <span class="review-name">Богдан.Т.</span>
+                                <span class="review-name" data-i18n="review_name_10">Богдан.Т.</span>
                             </div>
                             <div class="review-rating-small">
                                 <span class="review-rating-number-small">5.0</span>
                                 <svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             </div>
                         </div>
-                        <span class="review-text">За короткий час великий прогрес, дуже задоволений результатом навчання</span>
+                        <span class="review-text" data-i18n="review_text_10">За короткий час великий прогрес, дуже задоволений результатом навчання</span>
                     </div>
                 </div>
                 <svg class="arrow-left" onclick="prevReview()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2067,27 +2071,27 @@
             </button>
             <span class="modal-progress" id="modalProgress">1/5</span>
             <div class="modal-question" id="modalQuestion">
-                <span class="modal-question-white">Як вас</span> <span class="modal-question-red">звати?</span>
+                <span class="modal-question-white" data-i18n="modal_name_white">Як вас</span> <span class="modal-question-red" data-i18n="modal_name_red">звати?</span>
             </div>
             <div class="modal-line"></div>
             <div id="modalContent"></div>
             <span class="modal-error" id="modalError"></span>
-            <button class="modal-back-btn" id="modalBackBtn" onclick="prevStep()" style="display:none;">← Назад</button>
-            <button class="modal-btn" id="modalNextBtn" onclick="nextStep()">Далі</button>
+            <button class="modal-back-btn" id="modalBackBtn" onclick="prevStep()" style="display:none;" data-i18n="back">← Назад</button>
+            <button class="modal-btn" id="modalNextBtn" onclick="nextStep()" data-i18n="next">Далі</button>
             <div class="final-screen" id="finalScreen" style="display:none;">
                 <div class="final-check">
                     <svg class="final-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"/>
                     </svg>
                 </div>
-                <div class="final-title">Опитування завершено!</div>
-                <div class="final-subtitle">Напишіть викладачу для запису</div>
+                <div class="final-title" data-i18n="final_title">Опитування завершено!</div>
+                <div class="final-subtitle" data-i18n="final_subtitle">Напишіть викладачу для запису</div>
                 <div class="final-line"></div>
                 <a class="final-btn" id="finalBtn" href="#" target="_blank">
                     <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                     </svg>
-                    Написати викладачу
+                    <span data-i18n="write_teacher">Написати викладачу</span>
                 </a>
             </div>
         </div>
@@ -2101,8 +2105,8 @@
     <!-- Языковое модальное окно -->
     <div class="language-overlay" id="languageOverlay">
         <div class="language-frame">
-            <div class="language-title">Language</div>
-            <div class="language-subtitle">Виберіть мову / Select language</div>
+            <div class="language-title">Langu<span class="language-title-red">age</span></div>
+            <div class="language-line"></div>
             <div class="language-buttons">
                 <button class="lang-btn" onclick="selectLanguage('uk')">Українська</button>
                 <button class="lang-btn" onclick="selectLanguage('en')">English</button>
@@ -2124,42 +2128,290 @@
         let currentMode = 'signup';
         let currentLanguage = 'uk';
 
+        const translations = {
+            uk: {
+                teacher: 'Викладач',
+                english: 'Англійської',
+                signup: 'Записатись',
+                trial: 'Пробний урок',
+                about_red: 'Про',
+                about_white: 'мене',
+                about_text: 'Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.',
+                years: 'роки',
+                teaching: 'викладання',
+                students: 'учнів',
+                learning: 'навчаю',
+                price_red: 'Вар',
+                price_white: 'тість',
+                single: 'Разове',
+                lesson_1: '1 заняття',
+                standard: 'Стандарт',
+                lessons_7: '7 занять',
+                maximum: 'Максимум',
+                lessons_30: '30 занять',
+                reviews_red: 'Від',
+                reviews_white: 'гуки',
+                reviews_count: 'відгуків',
+                review_name_1: 'Олена.М.',
+                review_text_1: 'Найкращий викладач! За 2 місяці підняла рівень з A2 до B1',
+                review_name_2: 'Максим.К.',
+                review_text_2: 'Дуже зручний графік занять, все чітко і зрозуміло пояснює',
+                review_name_3: 'Софія.Б.',
+                review_text_3: 'Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна',
+                review_name_4: 'Артем.Л.',
+                review_text_4: 'За 3 місяці навчання я вже вільно спілкуюсь з іноземцями, рекомендую!',
+                review_name_5: 'Ірина.П.',
+                review_text_5: 'Дуже терплячий та уважний викладач, завжди підкаже і допоможе',
+                review_name_6: 'Дмитро.С.',
+                review_text_6: 'Заняття завжди цікаві та продуктивні, матеріал подається доступно',
+                review_name_7: 'Анна.В.',
+                review_text_7: 'Навчання проходить легко та невимушено, результат вже після перших уроків',
+                review_name_8: 'Віктор.Г.',
+                review_text_8: 'Професійний підхід до кожного учня, видно що людина знає свою справу',
+                review_name_9: 'Катя.О.',
+                review_text_9: 'Уроки проходять легко і невимушено, завжди чекаю наступного заняття',
+                review_name_10: 'Богдан.Т.',
+                review_text_10: 'За короткий час великий прогрес, дуже задоволений результатом навчання',
+                modal_name_white: 'Як вас',
+                modal_name_red: 'звати?',
+                modal_age_white: 'Скільки вам',
+                modal_age_red: 'років?',
+                modal_level_white: 'Ваш рівень',
+                modal_level_red: 'англійської?',
+                modal_goal_white: 'Яка ваша',
+                modal_goal_red: 'мета?',
+                modal_time_white: 'Коли зручно',
+                modal_time_red: 'займатись?',
+                placeholder_name: 'Ваше ім\'я...',
+                placeholder_age: 'Ваш вік...',
+                error_name: 'Введіть ім\'я від 2 до 20 символів (тільки літери)',
+                error_age: 'Введіть вік цифрами (від 11 до 100)',
+                error_option: 'Будь ласка, оберіть варіант',
+                level_options: ['A1', 'A2', 'B1', 'B2'],
+                goal_options: ['Розмовна', 'Для роботи', 'Для школи', 'Інше'],
+                time_options: ['Ранок', 'День', 'Вечір', 'Вихідні'],
+                back: '← Назад',
+                next: 'Далі',
+                done: 'Готово',
+                final_title: 'Опитування завершено!',
+                final_subtitle: 'Напишіть викладачу для запису',
+                write_teacher: 'Написати викладачу',
+                message_signup: 'Добрий день! Хотів би записатись на навчання.\n\nМене звати: ',
+                message_trial: 'Добрий день! Хотів би записатись на пробний урок.\n\nМене звати: ',
+                message_age: '\nВік: ',
+                message_level: '\nРівень англійської: ',
+                message_goal: '\nМета: ',
+                message_time: '\nЗручний час: '
+            },
+            en: {
+                teacher: 'Teacher',
+                english: 'of English',
+                signup: 'Sign Up',
+                trial: 'Trial Lesson',
+                about_red: 'About',
+                about_white: 'Me',
+                about_text: 'My name is Oleksii, 19 years old. Teaching English online. Looking for students.',
+                years: 'years',
+                teaching: 'teaching',
+                students: 'students',
+                learning: 'learning',
+                price_red: 'Pr',
+                price_white: 'icing',
+                single: 'Single',
+                lesson_1: '1 lesson',
+                standard: 'Standard',
+                lessons_7: '7 lessons',
+                maximum: 'Maximum',
+                lessons_30: '30 lessons',
+                reviews_red: 'Rev',
+                reviews_white: 'iews',
+                reviews_count: 'reviews',
+                review_name_1: 'Olena.M.',
+                review_text_1: 'The best teacher! In 2 months I raised my level from A2 to B1',
+                review_name_2: 'Maksym.K.',
+                review_text_2: 'Very convenient schedule, everything is clear and understandable',
+                review_name_3: 'Sofia.B.',
+                review_text_3: 'Prepared for English exam, passed perfectly! Very grateful',
+                review_name_4: 'Artem.L.',
+                review_text_4: 'After 3 months of studying I can freely communicate with foreigners, recommend!',
+                review_name_5: 'Iryna.P.',
+                review_text_5: 'Very patient and attentive teacher, always helps',
+                review_name_6: 'Dmytro.S.',
+                review_text_6: 'Lessons are always interesting and productive, material is presented clearly',
+                review_name_7: 'Anna.V.',
+                review_text_7: 'Learning is easy and relaxed, results after first lessons',
+                review_name_8: 'Viktor.H.',
+                review_text_8: 'Professional approach to every student, knows his stuff',
+                review_name_9: 'Katya.O.',
+                review_text_9: 'Lessons are easy and relaxed, always looking forward to next class',
+                review_name_10: 'Bohdan.T.',
+                review_text_10: 'Great progress in short time, very satisfied with results',
+                modal_name_white: 'What is',
+                modal_name_red: 'your name?',
+                modal_age_white: 'How old',
+                modal_age_red: 'are you?',
+                modal_level_white: 'Your English',
+                modal_level_red: 'level?',
+                modal_goal_white: 'What is your',
+                modal_goal_red: 'goal?',
+                modal_time_white: 'When is convenient',
+                modal_time_red: 'to study?',
+                placeholder_name: 'Your name...',
+                placeholder_age: 'Your age...',
+                error_name: 'Enter name from 2 to 20 characters (letters only)',
+                error_age: 'Enter age in numbers (from 11 to 100)',
+                error_option: 'Please select an option',
+                level_options: ['A1', 'A2', 'B1', 'B2'],
+                goal_options: ['Speaking', 'For work', 'For school', 'Other'],
+                time_options: ['Morning', 'Afternoon', 'Evening', 'Weekends'],
+                back: '← Back',
+                next: 'Next',
+                done: 'Done',
+                final_title: 'Survey completed!',
+                final_subtitle: 'Write to the teacher to sign up',
+                write_teacher: 'Write to teacher',
+                message_signup: 'Hello! I would like to sign up for lessons.\n\nMy name: ',
+                message_trial: 'Hello! I would like to sign up for a trial lesson.\n\nMy name: ',
+                message_age: '\nAge: ',
+                message_level: '\nEnglish level: ',
+                message_goal: '\nGoal: ',
+                message_time: '\nConvenient time: '
+            },
+            ru: {
+                teacher: 'Преподаватель',
+                english: 'Английского',
+                signup: 'Записаться',
+                trial: 'Пробный урок',
+                about_red: 'Обо',
+                about_white: 'мне',
+                about_text: 'Зовут Алексей, 19 лет. Преподаю английский онлайн. Ищу учеников.',
+                years: 'года',
+                teaching: 'преподавания',
+                students: 'учеников',
+                learning: 'учу',
+                price_red: 'Сто',
+                price_white: 'имость',
+                single: 'Разовое',
+                lesson_1: '1 занятие',
+                standard: 'Стандарт',
+                lessons_7: '7 занятий',
+                maximum: 'Максимум',
+                lessons_30: '30 занятий',
+                reviews_red: 'От',
+                reviews_white: 'зывы',
+                reviews_count: 'отзывов',
+                review_name_1: 'Елена.М.',
+                review_text_1: 'Лучший преподаватель! За 2 месяца подняла уровень с A2 до B1',
+                review_name_2: 'Максим.К.',
+                review_text_2: 'Очень удобный график занятий, всё чётко и понятно объясняет',
+                review_name_3: 'София.Б.',
+                review_text_3: 'Готовилась к ЕГЭ по английскому, сдала на отлично! Очень благодарна',
+                review_name_4: 'Артем.Л.',
+                review_text_4: 'За 3 месяца обучения я уже свободно общаюсь с иностранцами, рекомендую!',
+                review_name_5: 'Ирина.П.',
+                review_text_5: 'Очень терпеливый и внимательный преподаватель, всегда подскажет и поможет',
+                review_name_6: 'Дмитрий.С.',
+                review_text_6: 'Занятия всегда интересные и продуктивные, материал подаётся доступно',
+                review_name_7: 'Анна.В.',
+                review_text_7: 'Обучение проходит легко и непринуждённо, результат уже после первых уроков',
+                review_name_8: 'Виктор.Г.',
+                review_text_8: 'Профессиональный подход к каждому ученику, видно что человек знает своё дело',
+                review_name_9: 'Катя.О.',
+                review_text_9: 'Уроки проходят легко и непринуждённо, всегда жду следующего занятия',
+                review_name_10: 'Богдан.Т.',
+                review_text_10: 'За короткое время большой прогресс, очень доволен результатом обучения',
+                modal_name_white: 'Как вас',
+                modal_name_red: 'зовут?',
+                modal_age_white: 'Сколько вам',
+                modal_age_red: 'лет?',
+                modal_level_white: 'Ваш уровень',
+                modal_level_red: 'английского?',
+                modal_goal_white: 'Какая ваша',
+                modal_goal_red: 'цель?',
+                modal_time_white: 'Когда удобно',
+                modal_time_red: 'заниматься?',
+                placeholder_name: 'Ваше имя...',
+                placeholder_age: 'Ваш возраст...',
+                error_name: 'Введите имя от 2 до 20 символов (только буквы)',
+                error_age: 'Введите возраст цифрами (от 11 до 100)',
+                error_option: 'Пожалуйста, выберите вариант',
+                level_options: ['A1', 'A2', 'B1', 'B2'],
+                goal_options: ['Разговорный', 'Для работы', 'Для школы', 'Другое'],
+                time_options: ['Утро', 'День', 'Вечер', 'Выходные'],
+                back: '← Назад',
+                next: 'Далее',
+                done: 'Готово',
+                final_title: 'Опрос завершён!',
+                final_subtitle: 'Напишите преподавателю для записи',
+                write_teacher: 'Написать преподавателю',
+                message_signup: 'Здравствуйте! Хотел бы записаться на обучение.\n\nМеня зовут: ',
+                message_trial: 'Здравствуйте! Хотел бы записаться на пробный урок.\n\nМеня зовут: ',
+                message_age: '\nВозраст: ',
+                message_level: '\nУровень английского: ',
+                message_goal: '\nЦель: ',
+                message_time: '\nУдобное время: '
+            }
+        };
+
+        function applyLanguage(lang) {
+            currentLanguage = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            updateModalContent();
+        }
+
+        function selectLanguage(lang) {
+            const blackLoading = document.getElementById('blackLoading');
+            blackLoading.classList.add('active');
+            
+            setTimeout(function() {
+                applyLanguage(lang);
+                document.getElementById('languageOverlay').classList.remove('active');
+                blackLoading.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }, 1500);
+        }
+
         const steps = [
             {
                 type: 'input',
-                question: 'Як вас <span class="modal-question-red">звати?</span>',
-                placeholder: 'Ваше ім\'я...',
-                inputType: 'text',
                 key: 'name',
-                validation: (val) => val.length >= 2 && val.length <= 20 && /^[А-Яа-яЄєІіЇїҐґ\s]+$/.test(val),
-                errorMsg: 'Введіть ім\'я від 2 до 20 символів (тільки літери)'
+                validation: (val) => val.length >= 2 && val.length <= 20 && /^[А-Яа-яЄєІіЇїҐґA-Za-z\s]+$/.test(val),
+                getQuestion: () => translations[currentLanguage].modal_name_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_name_red + '</span>',
+                getPlaceholder: () => translations[currentLanguage].placeholder_name,
+                getError: () => translations[currentLanguage].error_name,
+                inputType: 'text'
             },
             {
                 type: 'input',
-                question: 'Скільки вам <span class="modal-question-red">років?</span>',
-                placeholder: 'Ваш вік...',
-                inputType: 'number',
                 key: 'age',
                 validation: (val) => val.length > 0 && /^[0-9]+$/.test(val) && parseInt(val) >= 11 && parseInt(val) <= 100,
-                errorMsg: 'Введіть вік цифрами (від 11 до 100)'
+                getQuestion: () => translations[currentLanguage].modal_age_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_age_red + '</span>',
+                getPlaceholder: () => translations[currentLanguage].placeholder_age,
+                getError: () => translations[currentLanguage].error_age,
+                inputType: 'number'
             },
             {
                 type: 'options',
-                question: 'Ваш рівень <span class="modal-question-red">англійської?</span>',
                 key: 'level',
-                options: ['A1', 'A2', 'B1', 'B2']
+                getQuestion: () => translations[currentLanguage].modal_level_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_level_red + '</span>',
+                getOptions: () => translations[currentLanguage].level_options
             },
             {
                 type: 'options',
-                question: 'Яка ваша <span class="modal-question-red">мета?</span>',
                 key: 'goal',
-                options: ['Розмовна', 'Для роботи', 'Для школи', 'Інше']
+                getQuestion: () => translations[currentLanguage].modal_goal_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_goal_red + '</span>',
+                getOptions: () => translations[currentLanguage].goal_options
             },
             {
                 type: 'options',
-                question: 'Коли зручно <span class="modal-question-red">займатись?</span>',
                 key: 'time',
-                options: ['Ранок', 'День', 'Вечір', 'Вихідні']
+                getQuestion: () => translations[currentLanguage].modal_time_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_time_red + '</span>',
+                getOptions: () => translations[currentLanguage].time_options
             }
         ];
 
@@ -2213,7 +2465,7 @@
                         errorEl.style.display = 'none';
                         goNext();
                     } else {
-                        errorEl.textContent = step.errorMsg;
+                        errorEl.textContent = step.getError();
                         errorEl.classList.add('show');
                         errorEl.style.display = 'block';
                     }
@@ -2225,7 +2477,7 @@
                     errorEl.style.display = 'none';
                     goNext();
                 } else {
-                    errorEl.textContent = 'Будь ласка, оберіть варіант';
+                    errorEl.textContent = translations[currentLanguage].error_option;
                     errorEl.classList.add('show');
                     errorEl.style.display = 'block';
                 }
@@ -2272,10 +2524,14 @@
             
             let message = '';
             if (currentMode === 'signup') {
-                message = 'Добрий день! Хотів би записатись на навчання.\n\nМене звати: ' + name + '\nВік: ' + age + '\nРівень англійської: ' + level + '\nМета: ' + goal + '\nЗручний час: ' + time;
+                message = translations[currentLanguage].message_signup + name;
             } else {
-                message = 'Добрий день! Хотів би записатись на пробний урок.\n\nМене звати: ' + name + '\nВік: ' + age + '\nРівень англійської: ' + level + '\nМета: ' + goal + '\nЗручний час: ' + time;
+                message = translations[currentLanguage].message_trial + name;
             }
+            message += translations[currentLanguage].message_age + age;
+            message += translations[currentLanguage].message_level + level;
+            message += translations[currentLanguage].message_goal + goal;
+            message += translations[currentLanguage].message_time + time;
             
             document.getElementById('finalBtn').href = 'https://t.me/Rac12qwr?text=' + encodeURIComponent(message);
             document.getElementById('finalScreen').style.display = 'flex';
@@ -2291,14 +2547,16 @@
             
             errorEl.classList.remove('show');
             errorEl.style.display = 'none';
-            document.getElementById('modalQuestion').innerHTML = step.question;
+            document.getElementById('modalQuestion').innerHTML = step.getQuestion();
             progress.textContent = currentStep + '/' + totalSteps;
             
             if (currentStep === totalSteps) {
-                nextBtn.textContent = 'Готово';
+                nextBtn.textContent = translations[currentLanguage].done;
             } else {
-                nextBtn.textContent = 'Далі';
+                nextBtn.textContent = translations[currentLanguage].next;
             }
+
+            backBtn.textContent = translations[currentLanguage].back;
 
             if (currentStep > 1) {
                 backBtn.style.display = 'block';
@@ -2307,14 +2565,14 @@
             }
 
             if (step.type === 'input') {
-                content.innerHTML = '<input type="' + step.inputType + '" class="modal-input" id="modalInput" placeholder="' + step.placeholder + '">';
+                content.innerHTML = '<input type="' + step.inputType + '" class="modal-input" id="modalInput" placeholder="' + step.getPlaceholder() + '">';
                 
                 const input = content.querySelector('.modal-input');
                 if (input) {
                     input.value = userData[step.key] || '';
                     input.addEventListener('input', function() {
                         if (step.inputType === 'text') {
-                            this.value = this.value.replace(/[^А-Яа-яЄєІіЇїҐґ\s]/g, '');
+                            this.value = this.value.replace(/[^А-Яа-яЄєІіЇїҐґA-Za-z\s]/g, '');
                         } else if (step.inputType === 'number') {
                             this.value = this.value.replace(/[^0-9]/g, '');
                         }
@@ -2322,7 +2580,7 @@
                 }
             } else if (step.type === 'options') {
                 let optionsHtml = '<div class="modal-options">';
-                step.options.forEach(opt => {
+                step.getOptions().forEach(opt => {
                     optionsHtml += '<button class="modal-option" onclick="selectOption(this, \'' + opt + '\')">' + opt + '</button>';
                 });
                 optionsHtml += '</div>';
@@ -2339,6 +2597,12 @@
             }
 
             nextBtn.classList.remove('disabled');
+        }
+
+        function updateModalContent() {
+            if (document.getElementById('modalOverlay').classList.contains('active')) {
+                updateModal();
+            }
         }
 
         function selectOption(el, value) {
@@ -2378,6 +2642,7 @@
 
         // Инициализация
         showReview(0);
+        applyLanguage('uk');
 
         // Плавное скрытие лоадера при загрузке страницы
         setTimeout(function() {
@@ -2391,24 +2656,7 @@
         setTimeout(function() {
             document.getElementById('languageOverlay').classList.add('active');
             document.body.classList.add('no-scroll');
-        }, 5000); // Через 5 секунд после загрузки (после всех анимаций)
-
-        function selectLanguage(lang) {
-            currentLanguage = lang;
-            
-            // Закрываем языковое окно
-            document.getElementById('languageOverlay').classList.remove('active');
-            
-            // Показываем черный экран загрузки
-            const blackLoading = document.getElementById('blackLoading');
-            blackLoading.classList.add('active');
-            
-            // Через 1.5 секунды плавно скрываем
-            setTimeout(function() {
-                blackLoading.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            }, 1500);
-        }
+        }, 5000);
     </script>
 </body>
 </html>
