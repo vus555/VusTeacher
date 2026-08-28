@@ -1108,8 +1108,13 @@
             font-family: 'Rubik', Arial, sans-serif;
         }
 
+        .students-small {
+            font-size: 14px !important;
+            font-weight: 700;
+        }
+
         .stat-sub {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.3px;
             color: rgba(235, 235, 240, 0.5);
@@ -1676,8 +1681,11 @@
             .stat-main {
                 font-size: 18px;
             }
+            .students-small {
+                font-size: 11px !important;
+            }
             .stat-sub {
-                font-size: 9px;
+                font-size: 10px;
             }
             .divider-line {
                 width: 80%;
@@ -1836,7 +1844,7 @@
                     <div class="stat-sub" data-i18n="teaching">викладання</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-main">25+ <span data-i18n="students">учнів</span></div>
+                    <div class="stat-main">25+ <span data-i18n="students" id="studentsEl">учнів</span></div>
                     <div class="stat-sub" data-i18n="learning">навчаю</div>
                 </div>
             </div>
@@ -2316,6 +2324,16 @@
                     el.textContent = translations[lang][key];
                 }
             });
+            
+            const studentsEl = document.getElementById('studentsEl');
+            if (studentsEl) {
+                if (lang === 'en') {
+                    studentsEl.classList.add('students-small');
+                } else {
+                    studentsEl.classList.remove('students-small');
+                }
+            }
+            
             updateModalContent();
         }
 
