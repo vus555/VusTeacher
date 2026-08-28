@@ -179,7 +179,6 @@
             to { opacity: 1; }
         }
 
-        /* Сетка на весь экран */
         .grid-full {
             position: fixed;
             top: 0;
@@ -226,7 +225,6 @@
             }
         }
 
-        /* Рамки с лёгким блюром */
         .frame {
             position: relative;
             border: 1.5px solid rgba(255,255,255,0.15);
@@ -272,7 +270,6 @@
             border-radius: 35px;
         }
 
-        /* Внутренняя рамка */
         .inner-frame {
             position: absolute;
             left: 15px;
@@ -301,7 +298,6 @@
             font-family: 'Rubik', Arial, sans-serif;
         }
 
-        /* Большая рамка справа от линии в Відгуки */
         .reviews-big-frame {
             position: absolute;
             left: 32%;
@@ -321,7 +317,6 @@
             overflow: hidden;
         }
 
-        /* Линия слева */
         .line-left {
             position: absolute;
             left: 40px;
@@ -333,7 +328,6 @@
             z-index: 10;
         }
 
-        /* Линия справа (отзеркаленная) */
         .line-right-mirror {
             position: absolute;
             right: 40px;
@@ -345,7 +339,6 @@
             z-index: 10;
         }
 
-        /* Стрелка влево */
         .arrow-left {
             position: absolute;
             left: 5px;
@@ -367,7 +360,6 @@
             opacity: 0.6;
         }
 
-        /* Стрелка вправо */
         .arrow-right {
             position: absolute;
             right: 5px;
@@ -389,7 +381,6 @@
             opacity: 0.6;
         }
 
-        /* Фото */
         .photo {
             position: absolute;
             right: -20px;
@@ -418,7 +409,6 @@
             }
         }
 
-        /* Неон за фото */
         .photo-glow {
             position: absolute;
             right: -25px;
@@ -447,17 +437,16 @@
             }
         }
 
-        /* Заголовок */
         .title-left {
             position: absolute;
             top: 20px;
             left: 20px;
             z-index: 11;
-            font-size: 38px;
+            font-size: 30px;
             font-weight: 800;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            max-width: 45%;
+            max-width: 42%;
             line-height: 1.1;
             font-family: 'Rubik', Arial, sans-serif;
             opacity: 0;
@@ -478,6 +467,7 @@
         .title-red {
             color: rgba(180, 25, 35, 0.8);
             text-shadow: 0 0 8px rgba(180, 25, 35, 0.3);
+            display: block;
         }
 
         .title-white {
@@ -485,9 +475,9 @@
             text-shadow: 0 0 6px rgba(235, 235, 240, 0.15);
             display: block;
             margin-top: 5px;
+            font-size: 24px;
         }
 
-        /* Кнопка красная */
         .btn-red {
             position: absolute;
             top: 140px;
@@ -545,7 +535,6 @@
             opacity: 0.8;
         }
 
-        /* Кнопка белая */
         .btn-white {
             position: absolute;
             top: 220px;
@@ -595,7 +584,6 @@
             background: rgba(255, 255, 255, 0.18);
         }
 
-        /* Модальное окно */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -855,7 +843,6 @@
             transform: scale(0.95);
         }
 
-        /* Финальный экран */
         .final-screen {
             position: absolute;
             top: 0;
@@ -952,7 +939,6 @@
             opacity: 0.8;
         }
 
-        /* Лоадер */
         .loader-overlay {
             position: fixed;
             top: 0;
@@ -987,7 +973,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Заголовки в малых рамках */
         .second-title,
         .third-title,
         .fourth-title {
@@ -1018,7 +1003,6 @@
             text-shadow: 0 0 6px rgba(235, 235, 240, 0.15);
         }
 
-        /* Вертикальная линия */
         .vertical-line {
             position: absolute;
             left: 62%;
@@ -1030,7 +1014,6 @@
             z-index: 8;
         }
 
-        /* Вертикальная линия справа для відгуків */
         .vertical-line-right {
             position: absolute;
             left: 28%;
@@ -1042,7 +1025,6 @@
             z-index: 8;
         }
 
-        /* Горизонтальная линия после Відгуки */
         .horizontal-line-reviews {
             position: absolute;
             left: 0;
@@ -1054,7 +1036,6 @@
             z-index: 8;
         }
 
-        /* Информация об отзывах */
         .reviews-info {
             position: absolute;
             left: 5%;
@@ -1101,7 +1082,6 @@
             filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
         }
 
-        /* Статистика справа */
         .stats {
             position: absolute;
             left: 70%;
@@ -1130,7 +1110,7 @@
         }
 
         .stat-sub {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             letter-spacing: 0.3px;
             color: rgba(235, 235, 240, 0.5);
@@ -1138,7 +1118,6 @@
             font-family: 'Rubik', Arial, sans-serif;
         }
 
-        /* Разделительная линия */
         .divider-line {
             width: 85%;
             max-width: 380px;
@@ -1149,7 +1128,6 @@
             margin: 5px 0;
         }
 
-        /* Ценовые карточки */
         .price-cards {
             position: absolute;
             left: 15px;
@@ -1246,7 +1224,6 @@
             font-weight: 700;
         }
 
-        /* Карусель отзывов */
         .reviews-carousel {
             position: absolute;
             left: 35px;
@@ -1382,7 +1359,6 @@
             animation: fadeInElements 1s ease 3s forwards;
         }
 
-        /* Стили для языкового модального окна */
         .language-overlay {
             position: fixed;
             top: 0;
@@ -1494,7 +1470,6 @@
             transform: scale(0.95);
         }
 
-        /* Черный экран загрузки */
         .black-loading {
             position: fixed;
             top: 0;
@@ -1554,9 +1529,12 @@
             .title-left {
                 top: 12px;
                 left: 12px;
-                font-size: 26px;
+                font-size: 24px;
                 letter-spacing: 0.3px;
                 max-width: 42%;
+            }
+            .title-white {
+                font-size: 18px;
             }
             .btn-red {
                 top: 88px;
@@ -1667,7 +1645,7 @@
                 font-size: 18px;
             }
             .stat-sub {
-                font-size: 9px;
+                font-size: 8px;
             }
             .divider-line {
                 width: 80%;
@@ -2061,7 +2039,6 @@
 
     <div class="vignette"></div>
 
-    <!-- Модальное окно -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-frame">
             <button class="modal-close" onclick="closeModal()">
@@ -2098,12 +2075,10 @@
         </div>
     </div>
 
-    <!-- Лоадер -->
     <div class="loader-overlay" id="loaderOverlay">
         <div class="loader-spinner"></div>
     </div>
 
-    <!-- Языковое модальное окно -->
     <div class="language-overlay" id="languageOverlay">
         <div class="language-frame">
             <div class="language-title">Langu<span class="language-title-red">age</span></div>
@@ -2116,7 +2091,6 @@
         </div>
     </div>
 
-    <!-- Черный экран загрузки -->
     <div class="black-loading" id="blackLoading">
         <div class="black-loading-spinner"></div>
     </div>
@@ -2205,8 +2179,8 @@
                 message_time: '\nЗручний час: '
             },
             en: {
-                teacher_line1: 'Teacher',
-                teacher_line2: 'of English',
+                teacher_line1: 'Teacher of',
+                teacher_line2: 'English',
                 signup: 'Sign Up',
                 trial: 'Trial',
                 about_red: 'About',
@@ -2641,11 +2615,9 @@
             showReview(currentReview - 1);
         }
 
-        // Инициализация
         showReview(0);
         applyLanguage('uk');
 
-        // Плавное скрытие лоадера при загрузке страницы
         setTimeout(function() {
             document.getElementById('loaderOverlay').classList.add('hidden');
             setTimeout(function() {
@@ -2653,7 +2625,6 @@
             }, 1000);
         }, 2500);
 
-        // Показать языковое окно после появления всего сайта
         setTimeout(function() {
             document.getElementById('languageOverlay').classList.add('active');
             document.body.classList.add('no-scroll');
