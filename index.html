@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -442,11 +442,11 @@
             top: 20px;
             left: 20px;
             z-index: 11;
-            font-size: 30px;
+            font-size: 38px;
             font-weight: 800;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            max-width: 42%;
+            max-width: 45%;
             line-height: 1.1;
             font-family: 'Rubik', Arial, sans-serif;
             opacity: 0;
@@ -467,15 +467,13 @@
         .title-red {
             color: rgba(180, 25, 35, 0.8);
             text-shadow: 0 0 8px rgba(180, 25, 35, 0.3);
-            display: block;
         }
 
         .title-white {
             color: rgba(235, 235, 240, 0.55);
             text-shadow: 0 0 6px rgba(235, 235, 240, 0.15);
-            display: block;
+            display: inline-block;
             margin-top: 5px;
-            font-size: 24px;
         }
 
         .btn-red {
@@ -1110,7 +1108,7 @@
         }
 
         .stat-sub {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.3px;
             color: rgba(235, 235, 240, 0.5);
@@ -1386,7 +1384,7 @@
         .language-frame {
             width: 100%;
             max-width: 350px;
-            min-height: 180px;
+            min-height: 200px;
             border: 1.5px solid rgba(255,255,255,0.2);
             border-radius: 50px;
             background: rgba(255,255,255,0.05);
@@ -1407,6 +1405,10 @@
         }
 
         .language-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             font-size: 22px;
             font-weight: 900;
             letter-spacing: 1px;
@@ -1414,6 +1416,13 @@
             font-family: 'Rubik', Arial, sans-serif;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.85);
+        }
+
+        .language-icon {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
         }
 
         .language-title-red {
@@ -1436,15 +1445,9 @@
 
         .lang-btn {
             flex: 1;
-            max-width: 100px;
-            padding: 14px 15px;
-            border: 1.5px solid rgba(255,255,255,0.25);
+            max-width: 150px;
+            padding: 18px 25px;
             border-radius: 25px;
-            background: rgba(255,255,255,0.08);
-            color: rgba(255,255,255,0.8);
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Rubik', Arial, sans-serif;
@@ -1455,19 +1458,50 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
         }
 
-        .lang-btn:hover {
-            border-color: rgba(200, 15, 25, 0.65);
-            background: rgba(180, 15, 25, 0.25);
-            color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 20px rgba(200, 15, 25, 0.4);
+        .lang-btn:first-child {
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08);
+        }
+
+        .lang-btn:last-child {
+            border: 1.5px solid rgba(200, 15, 25, 0.65);
+            background: rgba(180, 15, 25, 0.3);
+            color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15);
+        }
+
+        .lang-btn:first-child:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .lang-btn:last-child:hover {
+            background: rgba(180, 15, 25, 0.38);
         }
 
         .lang-btn:active {
             transform: scale(0.95);
+        }
+
+        .flag-icon {
+            width: 22px;
+            height: 16px;
+            border-radius: 3px;
+            object-fit: cover;
+            flex-shrink: 0;
         }
 
         .black-loading {
@@ -1529,12 +1563,9 @@
             .title-left {
                 top: 12px;
                 left: 12px;
-                font-size: 24px;
+                font-size: 26px;
                 letter-spacing: 0.3px;
                 max-width: 42%;
-            }
-            .title-white {
-                font-size: 18px;
             }
             .btn-red {
                 top: 88px;
@@ -1645,7 +1676,7 @@
                 font-size: 18px;
             }
             .stat-sub {
-                font-size: 8px;
+                font-size: 10px;
             }
             .divider-line {
                 width: 80%;
@@ -1724,18 +1755,28 @@
             }
             .language-frame {
                 max-width: 300px;
-                min-height: 160px;
+                min-height: 170px;
                 border-radius: 40px;
                 padding: 25px 15px 20px;
                 gap: 15px;
             }
             .language-title {
                 font-size: 18px;
+                gap: 8px;
+            }
+            .language-icon {
+                width: 22px;
+                height: 22px;
             }
             .lang-btn {
                 font-size: 12px;
-                padding: 12px 10px;
+                padding: 14px 12px;
                 border-radius: 20px;
+                gap: 6px;
+            }
+            .flag-icon {
+                width: 18px;
+                height: 13px;
             }
         }
     </style>
@@ -2081,12 +2122,24 @@
 
     <div class="language-overlay" id="languageOverlay">
         <div class="language-frame">
-            <div class="language-title">Langu<span class="language-title-red">age</span></div>
+            <div class="language-title">
+                <svg class="language-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span>Langu<span class="language-title-red">age</span></span>
+            </div>
             <div class="language-line"></div>
             <div class="language-buttons">
-                <button class="lang-btn" onclick="selectLanguage('uk')">Українська</button>
-                <button class="lang-btn" onclick="selectLanguage('en')">English</button>
-                <button class="lang-btn" onclick="selectLanguage('ru')">Русский</button>
+                <button class="lang-btn" onclick="selectLanguage('uk')">
+                    <img class="flag-icon" src="https://flagcdn.com/w40/ua.png" alt="Українська">
+                    Українська
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('en')">
+                    <img class="flag-icon" src="https://flagcdn.com/w40/gb.png" alt="English">
+                    English
+                </button>
             </div>
         </div>
     </div>
@@ -2251,80 +2304,6 @@
                 message_level: '\nEnglish level: ',
                 message_goal: '\nGoal: ',
                 message_time: '\nConvenient time: '
-            },
-            ru: {
-                teacher_line1: 'Преподаватель',
-                teacher_line2: 'английского',
-                signup: 'Записаться',
-                trial: 'Пробный урок',
-                about_red: 'Обо',
-                about_white: 'мне',
-                about_text: 'Зовут Алексей, 19 лет. Преподаю английский онлайн. Ищу учеников.',
-                years: 'года',
-                teaching: 'преподавания',
-                students: 'учеников',
-                learning: 'учу',
-                price_red: 'Сто',
-                price_white: 'имость',
-                single: 'Разовое',
-                lesson_1: '1 занятие',
-                standard: 'Стандарт',
-                lessons_7: '7 занятий',
-                maximum: 'Максимум',
-                lessons_30: '30 занятий',
-                reviews_red: 'От',
-                reviews_white: 'зывы',
-                reviews_count: 'отзывов',
-                review_name_1: 'Елена.М.',
-                review_text_1: 'Лучший преподаватель! За 2 месяца подняла уровень с A2 до B1',
-                review_name_2: 'Максим.К.',
-                review_text_2: 'Очень удобный график занятий, всё чётко и понятно объясняет',
-                review_name_3: 'София.Б.',
-                review_text_3: 'Готовилась к ЕГЭ по английскому, сдала на отлично! Очень благодарна',
-                review_name_4: 'Артем.Л.',
-                review_text_4: 'За 3 месяца обучения я уже свободно общаюсь с иностранцами, рекомендую!',
-                review_name_5: 'Ирина.П.',
-                review_text_5: 'Очень терпеливый и внимательный преподаватель, всегда подскажет и поможет',
-                review_name_6: 'Дмитрий.С.',
-                review_text_6: 'Занятия всегда интересные и продуктивные, материал подаётся доступно',
-                review_name_7: 'Анна.В.',
-                review_text_7: 'Обучение проходит легко и непринуждённо, результат уже после первых уроков',
-                review_name_8: 'Виктор.Г.',
-                review_text_8: 'Профессиональный подход к каждому ученику, видно что человек знает своё дело',
-                review_name_9: 'Катя.О.',
-                review_text_9: 'Уроки проходят легко и непринуждённо, всегда жду следующего занятия',
-                review_name_10: 'Богдан.Т.',
-                review_text_10: 'За короткое время большой прогресс, очень доволен результатом обучения',
-                modal_name_white: 'Как вас',
-                modal_name_red: 'зовут?',
-                modal_age_white: 'Сколько вам',
-                modal_age_red: 'лет?',
-                modal_level_white: 'Ваш уровень',
-                modal_level_red: 'английского?',
-                modal_goal_white: 'Какая ваша',
-                modal_goal_red: 'цель?',
-                modal_time_white: 'Когда удобно',
-                modal_time_red: 'заниматься?',
-                placeholder_name: 'Ваше имя...',
-                placeholder_age: 'Ваш возраст...',
-                error_name: 'Введите имя от 2 до 20 символов (только буквы)',
-                error_age: 'Введите возраст цифрами (от 11 до 100)',
-                error_option: 'Пожалуйста, выберите вариант',
-                level_options: ['A1', 'A2', 'B1', 'B2'],
-                goal_options: ['Разговорный', 'Для работы', 'Для школы', 'Другое'],
-                time_options: ['Утро', 'День', 'Вечер', 'Выходные'],
-                back: '← Назад',
-                next: 'Далее',
-                done: 'Готово',
-                final_title: 'Опрос завершён!',
-                final_subtitle: 'Напишите преподавателю для записи',
-                write_teacher: 'Написать преподавателю',
-                message_signup: 'Здравствуйте! Хотел бы записаться на обучение.\n\nМеня зовут: ',
-                message_trial: 'Здравствуйте! Хотел бы записаться на пробный урок.\n\nМеня зовут: ',
-                message_age: '\nВозраст: ',
-                message_level: '\nУровень английского: ',
-                message_goal: '\nЦель: ',
-                message_time: '\nУдобное время: '
             }
         };
 
