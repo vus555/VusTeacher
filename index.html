@@ -13,168 +13,200 @@
         html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         body { background-color: #0a0506; width: 100%; min-height: 100vh; overflow-x: hidden; overflow-y: auto; position: relative; font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; -webkit-overflow-scrolling: touch; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body.no-scroll { overflow: hidden; }
-        button, a, input, .modal-option, .modal-btn, .modal-back-btn, .final-btn, .modal-close, .price-card, .info-btn, .all-reviews-btn, .about-page-back, .reviews-page-back { outline: none; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+        button, a, input, .modal-option, .modal-btn, .modal-back-btn, .final-btn, .modal-close, .price-card, .info-btn, .all-reviews-btn, .about-page-back, .reviews-page-back, .lang-option, .country-option { outline: none; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; }
         button:focus, a:focus, input:focus { outline: none; }
 
-        .room-base { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #0a0506; background-image: radial-gradient(ellipse at 50% 40%, rgba(45, 8, 12, 0.8) 0%, rgba(45, 8, 12, 0) 60%), radial-gradient(ellipse at 15% 85%, rgba(35, 5, 8, 0.9) 0%, rgba(35, 5, 8, 0) 50%), radial-gradient(ellipse at 85% 15%, rgba(28, 4, 7, 0.7) 0%, rgba(28, 4, 7, 0) 45%); z-index: 0; pointer-events: none; opacity: 0; animation: fadeInRoom 1s ease 2.5s forwards; }
-        @keyframes fadeInRoom { from { opacity: 0; } to { opacity: 1; } }
-        .room-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(180deg, #0d0405 0%, #1a0709 20%, #22090c 40%, #160607 60%, #0b0304 80%, #090203 100%); z-index: 0; pointer-events: none; opacity: 0; animation: fadeInRoom 1s ease 2.5s forwards; }
-        .shadow { position: fixed; border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0; animation: fadeInElements 1.2s ease 2.7s forwards; }
-        .shadow-1 { width: 80vw; height: 60vh; background: radial-gradient(ellipse, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 70%); top: 30%; left: 10%; -webkit-filter: blur(50px); filter: blur(50px); }
-        .shadow-2 { width: 45vw; height: 85vh; background: radial-gradient(ellipse, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 65%); top: 8%; left: -18%; -webkit-filter: blur(50px); filter: blur(50px); }
-        .shadow-3 { width: 40vw; height: 75vh; background: radial-gradient(ellipse, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%); top: 18%; right: -12%; -webkit-filter: blur(50px); filter: blur(50px); }
-        .glow { position: fixed; border-radius: 50%; z-index: 2; pointer-events: none; opacity: 0; animation: fadeInElements 1.2s ease 2.8s forwards; }
-        .glow-1 { width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(255, 50, 65, 0.5) 0%, rgba(230, 57, 70, 0) 70%); top: 28%; left: 22%; -webkit-filter: blur(60px); filter: blur(60px); }
-        .glow-2 { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(180, 25, 35, 0.55) 0%, rgba(155, 28, 40, 0) 65%); bottom: 8%; right: 12%; -webkit-filter: blur(60px); filter: blur(60px); }
-        .glow-3 { width: 38vw; height: 38vw; background: radial-gradient(circle, rgba(255, 60, 75, 0.42) 0%, rgba(255, 77, 90, 0) 70%); top: 8%; left: 48%; -webkit-filter: blur(60px); filter: blur(60px); }
-        .glow-4 { width: 65vw; height: 25vh; background: radial-gradient(ellipse, rgba(255, 45, 60, 0.48) 0%, rgba(230, 57, 70, 0) 70%); bottom: -5%; left: 18%; -webkit-filter: blur(60px); filter: blur(60px); }
-        @keyframes fadeInElements { from { opacity: 0; } to { opacity: 1; } }
-        .grid-full { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 3; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(255,255,255,0.05) 1.5px, transparent 1.5px); background-size: clamp(30px, 5vw, 50px) clamp(30px, 5vw, 50px); opacity: 0; animation: fadeInGrid 1s ease 2.9s forwards; }
-        @keyframes fadeInGrid { from { opacity: 0; } to { opacity: 0.4; } }
-        .content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; padding: 20px 20px 40px; gap: 20px; min-height: 100vh; justify-content: flex-start; opacity: 0; animation: contentAppear 1.2s ease 3s forwards; }
-        @keyframes contentAppear { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .frame { position: relative; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 30px; box-shadow: 0 0 20px rgba(255,255,255,0.04), inset 0 0 20px rgba(255,255,255,0.03); background: rgba(255,255,255,0.01); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); -moz-backdrop-filter: blur(4px); width: 100%; max-width: 420px; flex-shrink: 0; opacity: 0; animation: frameAppear 0.8s ease forwards; }
-        .frame:nth-child(1) { animation-delay: 3.1s; } .frame:nth-child(2) { animation-delay: 3.3s; } .frame:nth-child(3) { animation-delay: 3.5s; } .frame:nth-child(4) { animation-delay: 3.7s; }
-        @keyframes frameAppear { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .room-base { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #0a0506; background-image: radial-gradient(ellipse at 50% 40%, rgba(45, 8, 12, 0.8) 0%, rgba(45, 8, 12, 0) 60%), radial-gradient(ellipse at 15% 85%, rgba(35, 5, 8, 0.9) 0%, rgba(35, 5, 8, 0) 50%), radial-gradient(ellipse at 85% 15%, rgba(28, 4, 7, 0.7) 0%, rgba(28, 4, 7, 0) 45%); z-index: 0; pointer-events: none; }
+        .room-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(180deg, #0d0405 0%, #1a0709 20%, #22090c 40%, #160607 60%, #0b0304 80%, #090203 100%); z-index: 0; pointer-events: none; }
+        .shadow { position: fixed; border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0.7; }
+        .shadow-1 { width: 80vw; height: 60vh; background: radial-gradient(ellipse, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 70%); top: 30%; left: 10%; filter: blur(50px); }
+        .shadow-2 { width: 45vw; height: 85vh; background: radial-gradient(ellipse, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 65%); top: 8%; left: -18%; filter: blur(50px); }
+        .shadow-3 { width: 40vw; height: 75vh; background: radial-gradient(ellipse, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%); top: 18%; right: -12%; filter: blur(50px); }
+        .glow { position: fixed; border-radius: 50%; z-index: 2; pointer-events: none; }
+        .glow-1 { width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(255, 50, 65, 0.5) 0%, rgba(230, 57, 70, 0) 70%); top: 28%; left: 22%; filter: blur(60px); }
+        .glow-2 { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(180, 25, 35, 0.55) 0%, rgba(155, 28, 40, 0) 65%); bottom: 8%; right: 12%; filter: blur(60px); }
+        .glow-3 { width: 38vw; height: 38vw; background: radial-gradient(circle, rgba(255, 60, 75, 0.42) 0%, rgba(255, 77, 90, 0) 70%); top: 8%; left: 48%; filter: blur(60px); }
+        .glow-4 { width: 65vw; height: 25vh; background: radial-gradient(ellipse, rgba(255, 45, 60, 0.48) 0%, rgba(230, 57, 70, 0) 70%); bottom: -5%; left: 18%; filter: blur(60px); }
+        .grid-full { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 3; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(255,255,255,0.05) 1.5px, transparent 1.5px); background-size: clamp(30px, 5vw, 50px) clamp(30px, 5vw, 50px); opacity: 0.4; }
+
+        .content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; padding: 20px 20px 40px; gap: 20px; min-height: 100vh; justify-content: flex-start; opacity: 0; transition: opacity 0.8s ease; }
+        .content.visible { opacity: 1; }
+        .content .frame { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .content.visible .frame { opacity: 1; transform: translateY(0); }
+        .content.visible .frame:nth-child(1) { transition-delay: 0.1s; }
+        .content.visible .frame:nth-child(3) { transition-delay: 0.25s; }
+        .content.visible .frame:nth-child(4) { transition-delay: 0.4s; }
+        .content.visible .frame:nth-child(5) { transition-delay: 0.55s; }
+
+        .frame { position: relative; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 30px; box-shadow: 0 0 20px rgba(255,255,255,0.04), inset 0 0 20px rgba(255,255,255,0.03); background: rgba(255,255,255,0.01); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); width: 100%; max-width: 420px; flex-shrink: 0; }
         .frame-main { height: 280px; overflow: hidden; border-radius: 45px; }
         .frame-small { height: 130px; position: relative; overflow: hidden; border-radius: 35px; }
-        .inner-frame { position: absolute; left: 15px; top: 45px; width: 52%; height: 75px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 15px; background: rgba(255,255,255,0.02); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 9; display: flex; align-items: center; padding: 10px; }
-        .inner-frame-text { font-size: 12px; font-weight: 500; letter-spacing: 0.3px; color: rgba(235, 235, 240, 0.7); line-height: 1.4; font-family: 'Rubik', Arial, sans-serif; }
-        .reviews-big-frame { position: absolute; left: 30%; top: 50%; transform: translateY(-50%); width: 60%; height: 80px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 25px; background: rgba(255,255,255,0.02); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 9; display: flex; align-items: center; overflow: hidden; }
-        .photo { position: absolute; right: -20px; top: 48%; transform: translateY(-50%); width: 58%; height: 88%; border-radius: 20px; object-fit: contain; opacity: 0; animation: photoAppear 1s ease 3.3s forwards; -webkit-filter: grayscale(20%) contrast(1.05) brightness(0.95); filter: grayscale(20%) contrast(1.05) brightness(0.95); z-index: 10; }
-        @keyframes photoAppear { from { opacity: 0; transform: translateY(-50%) scale(0.8); } to { opacity: 0.85; transform: translateY(-50%) scale(1); } }
-        .photo-glow { position: absolute; right: -25px; top: 48%; transform: translateY(-50%); width: 62%; height: 92%; border-radius: 25px; background: radial-gradient(ellipse, rgba(255, 50, 65, 0.6) 0%, rgba(230, 40, 55, 0.3) 40%, rgba(200, 20, 30, 0.1) 70%, rgba(200, 20, 30, 0) 100%); -webkit-filter: blur(35px); filter: blur(35px); z-index: 9; opacity: 0; animation: photoGlowAppear 1.2s ease 3.1s forwards; }
-        @keyframes photoGlowAppear { from { opacity: 0; transform: translateY(-50%) scale(0.5); } to { opacity: 1; transform: translateY(-50%) scale(1); } }
-        .title-left { position: absolute; top: 20px; left: 20px; z-index: 11; font-size: 36px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; max-width: 45%; line-height: 1.1; font-family: 'Rubik', Arial, sans-serif; opacity: 0; animation: titleAppear 0.8s ease 3.4s forwards; }
-        @keyframes titleAppear { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        .inner-frame { position: absolute; left: 15px; top: 45px; width: 55%; height: 75px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 15px; background: rgba(255,255,255,0.02); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 9; display: flex; align-items: center; padding: 10px; }
+        .inner-frame-text { font-size: 13px; font-weight: 500; letter-spacing: 0.3px; color: rgba(235, 235, 240, 0.7); line-height: 1.4; font-family: 'Rubik', Arial, sans-serif; }
+        .photo { position: absolute; right: -20px; top: 48%; transform: translateY(-50%); width: 58%; height: 88%; border-radius: 20px; object-fit: contain; opacity: 0.85; filter: grayscale(20%) contrast(1.05) brightness(0.95); z-index: 10; }
+        .photo-glow { position: absolute; right: -25px; top: 48%; transform: translateY(-50%); width: 62%; height: 92%; border-radius: 25px; background: radial-gradient(ellipse, rgba(255, 50, 65, 0.6) 0%, rgba(230, 40, 55, 0.3) 40%, rgba(200, 20, 30, 0.1) 70%, rgba(200, 20, 30, 0) 100%); filter: blur(35px); z-index: 9; animation: neonPulse 2s infinite alternate; }
+        @keyframes neonPulse { 0% { opacity: 0.7; } 100% { opacity: 0.9; } }
+        .title-left { position: absolute; top: 20px; left: 20px; z-index: 11; font-size: 38px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; max-width: 45%; line-height: 1.1; font-family: 'Rubik', Arial, sans-serif; }
         .title-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); display: block; }
-        .title-white { color: rgba(235, 235, 240, 0.55); text-shadow: 0 0 6px rgba(235, 235, 240, 0.15); display: block; margin-top: 5px; font-size: 28px; }
-        .btn-red, .btn-white { position: absolute; left: 25px; z-index: 11; padding: 20px 50px; border-radius: 30px; cursor: pointer; transition: all 0.3s ease; max-width: 45%; white-space: nowrap; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; opacity: 0; }
-        .btn-red { top: 140px; border: 1.5px solid rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 16px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15); animation: btnAppear 0.8s ease 3.6s forwards; }
-        .btn-white { top: 220px; border: 1.5px solid rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.65); font-size: 14px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08); animation: btnAppear 0.8s ease 3.8s forwards; }
-        @keyframes btnAppear { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        .btn-red:active, .btn-white:active { transform: scale(0.95); }
+        .title-white { color: rgba(235, 235, 240, 0.55); text-shadow: 0 0 6px rgba(235, 235, 240, 0.15); display: block; margin-top: 5px; }
+        .btn-red { position: absolute; top: 140px; left: 25px; z-index: 11; padding: 20px 50px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 30px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 16px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15); cursor: pointer; transition: all 0.3s ease; max-width: 45%; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; }
+        .btn-red:active { transform: scale(0.95); background: rgba(180, 15, 25, 0.38); }
         .btn-icon { width: 18px; height: 18px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.8; }
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 5, 6, 0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; opacity: 0; pointer-events: none; transition: all 0.5s ease; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .btn-white { position: absolute; top: 220px; left: 25px; z-index: 11; padding: 20px 50px; border: 1.5px solid rgba(255, 255, 255, 0.5); border-radius: 30px; background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.65); font-size: 14px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08); cursor: pointer; transition: all 0.3s ease; max-width: 45%; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; }
+        .btn-white:active { transform: scale(0.95); background: rgba(255, 255, 255, 0.18); }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 5, 6, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; opacity: 0; pointer-events: none; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; -webkit-overflow-scrolling: touch; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-frame { width: 100%; max-width: 350px; min-height: 260px; border: 1.5px solid rgba(255,255,255,0.1); border-radius: 30px; background: rgba(255,255,255,0.01); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: relative; transform: scale(0.8); transition: all 0.5s ease; display: flex; flex-direction: column; padding: 20px; }
+        .modal-frame { width: 100%; max-width: 350px; border: 1.5px solid rgba(255,255,255,0.1); border-radius: 30px; background: rgba(20, 10, 12, 0.95); box-shadow: 0 0 30px rgba(0,0,0,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: relative; transform: scale(0.8); transition: all 0.4s ease; display: flex; flex-direction: column; padding: 20px; margin: auto; }
         .modal-overlay.active .modal-frame { transform: scale(1); }
         .modal-close { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50%; background: rgba(255,255,255,0.03); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 103; }
         .modal-close-icon { width: 14px; height: 14px; filter: brightness(0) invert(1); opacity: 0.5; }
         .modal-question { font-size: 16px; font-weight: 700; letter-spacing: 0.3px; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 8px; text-align: left; color: rgba(255, 255, 255, 0.85); }
-        .modal-question-white { color: rgba(255, 255, 255, 0.85); } .modal-question-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); }
+        .modal-question-white { color: rgba(255, 255, 255, 0.85); }
+        .modal-question-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); }
         .modal-line { width: 100%; height: 1.5px; background: rgba(255, 255, 255, 0.1); margin-top: 5px; }
-        .modal-input { width: 100%; height: 40px; background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 12px; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; font-size: 14px; padding: 0 12px; outline: none; margin-top: 15px; -moz-appearance: textfield; -webkit-appearance: none; appearance: textfield; }
-        .modal-input:focus { border-color: rgba(200, 15, 25, 0.5); } .modal-input::placeholder { color: rgba(255,255,255,0.3); } .modal-input::-webkit-inner-spin-button, .modal-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        .modal-error { font-size: 11px; font-weight: 500; color: rgba(255, 80, 80, 0.7); margin-top: 5px; display: none; } .modal-error.show { display: block; }
+        .modal-input { width: 100%; height: 40px; background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 12px; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; font-size: 16px; padding: 0 12px; outline: none; margin-top: 15px; transition: border 0.3s ease; -moz-appearance: textfield; -webkit-appearance: none; appearance: textfield; }
+        .modal-input:focus { border-color: rgba(200, 15, 25, 0.5); }
+        .modal-input::placeholder { color: rgba(255,255,255,0.3); }
+        .modal-error { font-size: 11px; font-weight: 500; color: rgba(255, 80, 80, 0.7); margin-top: 5px; display: none; font-family: 'Rubik', Arial, sans-serif; }
+        .modal-error.show { display: block; }
         .modal-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-        .modal-option { padding: 8px 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 12px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; flex: 1; min-width: 45%; text-align: center; }
+        .modal-option { padding: 8px 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 12px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.3px; white-space: nowrap; flex: 1; min-width: 45%; text-align: center; }
         .modal-option.selected { border-color: rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.25); color: rgba(255, 255, 255, 0.85); box-shadow: 0 0 15px rgba(200, 15, 25, 0.3); }
         .modal-progress { position: absolute; top: 20px; right: 55px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); font-family: 'Rubik', Arial, sans-serif; }
-        .modal-btn { position: absolute; bottom: 15px; right: 20px; padding: 10px 25px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 20px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; }
-        .modal-back-btn { position: absolute; bottom: 15px; left: 20px; padding: 10px 20px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: transparent; color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; }
-        .final-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 15px; padding: 20px; z-index: 102; background: rgba(255,255,255,0.01); border-radius: 30px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .modal-buttons { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 15px; }
+        .modal-btn { padding: 10px 25px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 20px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 14px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; }
+        .modal-btn:active { transform: scale(0.95); }
+        .modal-back-btn { padding: 10px 20px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: transparent; color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; }
+        .final-screen { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 15px; padding: 20px; width: 100%; }
         .final-check { width: 50px; height: 50px; border-radius: 50%; border: 2px solid rgba(200, 15, 25, 0.6); display: flex; align-items: center; justify-content: center; background: rgba(180, 15, 25, 0.15); box-shadow: 0 0 30px rgba(200, 15, 25, 0.3); }
         .final-check-icon { width: 25px; height: 25px; filter: brightness(0) invert(1); opacity: 0.8; }
         .final-title { font-size: 18px; font-weight: 800; color: rgba(255, 255, 255, 0.85); font-family: 'Rubik', Arial, sans-serif; text-align: center; }
         .final-subtitle { font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.5); font-family: 'Rubik', Arial, sans-serif; text-align: center; }
         .final-line { width: 80%; height: 1.5px; background: rgba(255, 255, 255, 0.1); }
-        .final-btn { padding: 15px 35px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 25px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.85); font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .tg-icon { width: 20px; height: 20px; filter: brightness(0) invert(1); opacity: 0.8; }
-        .loader-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 1); z-index: 300; display: flex; align-items: center; justify-content: center; opacity: 1; pointer-events: auto; transition: opacity 1s ease; }
-        .loader-overlay.hidden { opacity: 0; pointer-events: none; }
+        .final-btn { padding: 15px 35px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 25px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.85); font-size: 15px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .tg-icon { width: 20px; height: 20px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.8; }
+        .loader-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 1); z-index: 300; display: flex; align-items: center; justify-content: center; opacity: 1; pointer-events: auto; transition: opacity 0.5s ease; }
         .loader-spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: rgba(255,255,255,0.8); border-radius: 50%; animation: spin 1.2s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .second-title, .third-title, .fourth-title { position: absolute; top: 10px; left: 15px; z-index: 11; font-size: 18px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.3; max-width: 50%; font-family: 'Rubik', Arial, sans-serif; }
         .second-red, .third-red, .fourth-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); }
         .second-white, .third-white, .fourth-white { color: rgba(235, 235, 240, 0.55); text-shadow: 0 0 6px rgba(235, 235, 240, 0.15); }
-        .vertical-line { position: absolute; left: 58%; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 255, 255, 0.15); z-index: 8; }
+        .vertical-line { position: absolute; left: 62%; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 255, 255, 0.15); z-index: 8; }
         .vertical-line-right { position: absolute; left: 28%; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 255, 255, 0.15); z-index: 8; }
-        .horizontal-line-reviews { position: absolute; left: 0; top: 38px; width: 28%; height: 1.5px; background: rgba(255, 255, 255, 0.15); z-index: 8; }
-        .reviews-info { position: absolute; left: 4%; top: 60%; transform: translateY(-50%); z-index: 11; display: flex; flex-direction: column; gap: 4px; }
-        .reviews-count { font-size: 13px; font-weight: 700; color: rgba(235, 235, 240, 0.55); font-family: 'Rubik', Arial, sans-serif; white-space: nowrap; }
-        .reviews-rating { display: flex; align-items: center; gap: 3px; }
-        .reviews-rating-number { font-size: 15px; font-weight: 900; color: rgba(255, 255, 255, 0.9); font-family: 'Rubik', Arial, sans-serif; }
+        .horizontal-line-reviews { position: absolute; left: 0; top: 40px; width: 28%; height: 1.5px; background: rgba(255, 255, 255, 0.15); z-index: 8; }
+        .reviews-info { position: absolute; left: 5%; top: 65%; transform: translateY(-50%); z-index: 11; display: flex; flex-direction: column; gap: 5px; }
+        .reviews-count { font-size: 14px; font-weight: 700; color: rgba(235, 235, 240, 0.55); font-family: 'Rubik', Arial, sans-serif; }
+        .reviews-rating { display: flex; align-items: center; gap: 4px; }
+        .reviews-rating-number { font-size: 16px; font-weight: 900; color: rgba(255, 255, 255, 0.9); font-family: 'Rubik', Arial, sans-serif; }
         .reviews-stars { display: flex; gap: 1px; }
-        .review-star-white { width: 8px; height: 8px; fill: rgba(255, 255, 255, 0.75); filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)); }
-        .stats { position: absolute; left: 66%; top: 50%; transform: translateY(-50%); z-index: 11; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-        .stat-item { display: flex; flex-direction: column; gap: 2px; }
-        .stat-main { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: rgba(235, 235, 240, 0.8); white-space: nowrap; font-family: 'Rubik', Arial, sans-serif; }
-        .students-small { font-size: 13px !important; font-weight: 700; }
-        .stat-sub { font-size: 11px; font-weight: 600; letter-spacing: 0.3px; color: rgba(235, 235, 240, 0.5); white-space: nowrap; font-family: 'Rubik', Arial, sans-serif; }
-        .divider-line { width: 85%; max-width: 380px; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 20%, rgba(255,255,255,0.35) 80%, transparent 100%); opacity: 0; animation: fadeInGrid 1s ease 3.2s forwards; margin: 5px 0; }
-        .price-cards { position: absolute; left: 15px; right: 15px; top: 42px; bottom: 12px; display: flex; gap: 8px; z-index: 11; align-items: flex-end; }
-        .price-card { flex: 1; background: rgba(255,255,255,0.02); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 25px; padding: 8px 5px; display: flex; flex-direction: column; align-items: center; text-align: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); min-width: 0; position: relative; overflow: hidden; }
-        .price-card.tall { height: 115%; justify-content: center; margin-bottom: 16px; min-height: 115%; }
-        .price-card.short { height: 85%; justify-content: center; margin-bottom: 8px; }
-        .price-title { font-size: 13px; font-weight: 900; letter-spacing: 0.3px; text-transform: uppercase; color: rgba(235, 235, 240, 0.75); white-space: nowrap; font-family: 'Rubik', Arial, sans-serif; }
-        .price-card.short .price-title { font-size: 10px; }
-        .price-amount { font-size: 22px; font-weight: 900; color: rgba(180, 25, 35, 0.7); letter-spacing: 0.5px; white-space: nowrap; text-shadow: 0 0 6px rgba(180, 25, 35, 0.2); margin: 4px 0; font-family: 'Rubik', Arial, sans-serif; }
-        .price-card.short .price-amount { font-size: 17px; }
-        .price-amount-white { color: rgba(255, 255, 255, 0.85); text-shadow: none; }
-        .price-sub { font-size: 12px; font-weight: 700; color: rgba(235, 235, 240, 0.5); white-space: nowrap; font-family: 'Rubik', Arial, sans-serif; }
-        .price-card.short .price-sub { font-size: 9px; }
-        .reviews-carousel { position: absolute; left: 33px; right: 33px; top: 50%; transform: translateY(-50%); z-index: 9; overflow: hidden; height: 60px; display: flex; align-items: flex-start; padding-top: 3px; }
+        .review-star-white { width: 9px; height: 9px; fill: rgba(255, 255, 255, 0.75); }
+        .reviews-big-frame { position: absolute; left: 32%; top: 50%; transform: translateY(-50%); width: 63%; height: 85px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 25px; background: rgba(255,255,255,0.02); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 9; display: flex; align-items: center; overflow: hidden; }
+        .line-right-mirror { position: absolute; right: 40px; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 255, 255, 0.15); z-index: 10; }
+        .reviews-carousel { position: absolute; left: 35px; right: 35px; top: 50%; transform: translateY(-50%); z-index: 9; overflow: hidden; height: 65px; display: flex; align-items: flex-start; padding-top: 3px; }
         .review-slide { position: absolute; width: 100%; opacity: 0; transition: all 0.4s ease; display: flex; flex-direction: column; gap: 2px; align-items: flex-start; text-align: left; padding: 0 2px; }
         .review-slide.active { opacity: 1; position: relative; }
-        .review-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; width: 100%; margin-top: -2px; }
-        .review-header-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; margin-left: 5px; margin-top: -1px; }
-        .review-avatar { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.3); flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); }
-        .review-avatar-icon { width: 12px; height: 12px; filter: brightness(0) invert(1); opacity: 0.6; }
-        .review-name { font-size: 12px; font-weight: 800; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.3px; font-family: 'Rubik', Arial, sans-serif; white-space: nowrap; }
-        .review-rating-small { display: flex; align-items: center; gap: 2px; margin-left: auto; flex-shrink: 0; margin-right: 4px; margin-top: -1px; }
-        .review-rating-number-small { font-size: 11px; font-weight: 800; color: rgba(255, 255, 255, 0.8); font-family: 'Rubik', Arial, sans-serif; }
-        .review-star-small { width: 9px; height: 9px; fill: rgba(255, 255, 255, 0.8); filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)); }
-        .review-text { font-size: 10px; font-weight: 500; color: rgba(235, 235, 240, 0.65); letter-spacing: 0.2px; line-height: 1.3; font-family: 'Rubik', Arial, sans-serif; max-width: 85%; padding-left: 25px; margin-top: 1px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-        .vignette { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: radial-gradient(ellipse at center, transparent 25%, rgba(10,5,6,0.8) 70%, rgba(10,5,6,0.95) 100%); z-index: 5; pointer-events: none; opacity: 0; animation: fadeInElements 1s ease 3s forwards; }
-        .language-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 5, 6, 0.25); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 200; opacity: 0; pointer-events: none; transition: all 0.6s ease; display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .language-overlay.active { opacity: 1; pointer-events: auto; }
-        .language-frame { width: 100%; max-width: 350px; min-height: 220px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50px; background: rgba(255,255,255,0.02); box-shadow: 0 0 30px rgba(255,255,255,0.08), inset 0 0 30px rgba(255,255,255,0.05); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); position: relative; transform: scale(0.7); transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); display: flex; flex-direction: column; padding: 30px 20px 25px; gap: 20px; }
-        .language-overlay.active .language-frame { transform: scale(1); }
-        .language-title { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 22px; font-weight: 900; letter-spacing: 1px; text-align: center; font-family: 'Rubik', Arial, sans-serif; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); }
-        .language-icon { width: 28px; height: 28px; filter: brightness(0) invert(1); opacity: 0.7; }
-        .language-title-red { color: rgba(200, 15, 25, 0.8); text-shadow: 0 0 10px rgba(200, 15, 25, 0.4); }
-        .language-line { width: 100%; height: 1.5px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.3) 80%, transparent 100%); }
-        .language-buttons { display: flex; gap: 12px; justify-content: center; }
-        .lang-btn { flex: 1; max-width: 150px; padding: 25px 30px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 700; }
-        .lang-btn:first-child { border: 1.5px solid rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08); }
-        .lang-btn:last-child { border: 1.5px solid rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15); }
-        .lang-btn:active { transform: scale(0.95); }
-        .flag-icon { width: 26px; height: 19px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
-        .black-loading { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 1); z-index: 250; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
-        .black-loading.active { opacity: 1; pointer-events: auto; }
-        .black-loading-spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: rgba(255,255,255,0.8); border-radius: 50%; animation: spin 1.2s linear infinite; }
-
+        .review-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; width: 100%; }
+        .review-header-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; margin-left: 8px; }
+        .review-avatar { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.3); flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); }
+        .review-avatar-icon { width: 13px; height: 13px; filter: brightness(0) invert(1); opacity: 0.6; }
+        .review-name { font-size: 13px; font-weight: 800; color: rgba(255, 255, 255, 0.85); font-family: 'Rubik', Arial, sans-serif; }
+        .review-rating-small { display: flex; align-items: center; gap: 3px; margin-left: auto; margin-right: 6px; }
+        .review-rating-number-small { font-size: 12px; font-weight: 800; color: rgba(255, 255, 255, 0.8); font-family: 'Rubik', Arial, sans-serif; }
+        .review-star-small { width: 10px; height: 10px; fill: rgba(255, 255, 255, 0.8); }
+        .review-text { font-size: 11px; font-weight: 500; color: rgba(235, 235, 240, 0.65); letter-spacing: 0.2px; line-height: 1.3; font-family: 'Rubik', Arial, sans-serif; max-width: 90%; padding-left: 30px; margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+        .stats { position: absolute; left: 70%; top: 50%; transform: translateY(-50%); z-index: 11; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+        .stat-item { display: flex; flex-direction: column; gap: 2px; }
+        .stat-main { font-size: 24px; font-weight: 800; color: rgba(235, 235, 240, 0.8); font-family: 'Rubik', Arial, sans-serif; }
+        .stat-sub { font-size: 12px; font-weight: 600; color: rgba(235, 235, 240, 0.5); font-family: 'Rubik', Arial, sans-serif; }
+        .divider-line { width: 85%; max-width: 380px; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 20%, rgba(255,255,255,0.35) 80%, transparent 100%); opacity: 0.6; margin: 5px 0; }
+        .price-cards { position: absolute; left: 15px; right: 15px; top: 42px; bottom: 12px; display: flex; gap: 8px; z-index: 11; align-items: flex-end; }
+        .price-card { flex: 1; background: rgba(255,255,255,0.02); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 25px; padding: 8px 5px; display: flex; flex-direction: column; align-items: center; text-align: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); min-width: 0; }
+        .price-card.tall { height: 115%; justify-content: center; margin-bottom: 16px; }
+        .price-card.short { height: 85%; justify-content: center; margin-bottom: 8px; }
+        .price-title { font-size: 13px; font-weight: 900; text-transform: uppercase; color: rgba(235, 235, 240, 0.75); font-family: 'Rubik', Arial, sans-serif; }
+        .price-amount { font-size: 22px; font-weight: 900; color: rgba(180, 25, 35, 0.7); text-shadow: 0 0 6px rgba(180, 25, 35, 0.2); margin: 4px 0; font-family: 'Rubik', Arial, sans-serif; }
+        .price-amount-white { color: rgba(255, 255, 255, 0.85); text-shadow: none; }
+        .price-sub { font-size: 12px; font-weight: 700; color: rgba(235, 235, 240, 0.5); font-family: 'Rubik', Arial, sans-serif; }
+        .vignette { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: radial-gradient(ellipse at center, transparent 25%, rgba(10,5,6,0.8) 70%, rgba(10,5,6,0.95) 100%); z-index: 5; pointer-events: none; }
+        .lang-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(20, 10, 12, 0.7); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); z-index: 200; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 25px; opacity: 0; pointer-events: none; transition: opacity 0.6s ease; }
+        .lang-overlay.active { opacity: 1; pointer-events: auto; }
+        .lang-frame { width: 90%; max-width: 400px; padding: 35px 25px; border: 2px solid rgba(255,255,255,0.12); border-radius: 50px; background: rgba(255,255,255,0.02); box-shadow: 0 0 50px rgba(255,255,255,0.04), inset 0 0 50px rgba(255,255,255,0.02); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transform: scale(0.8); opacity: 0; transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .lang-overlay.active .lang-frame { transform: scale(1); opacity: 1; }
+        .lang-title { font-size: 28px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-family: 'Rubik', Arial, sans-serif; text-align: center; }
+        .lang-title-white { color: rgba(255, 255, 255, 0.9); text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+        .lang-title-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 10px rgba(180, 25, 35, 0.3); }
+        .lang-line { width: 100%; height: 1.5px; background: rgba(255, 255, 255, 0.12); }
+        .lang-options { display: flex; gap: 12px; flex-direction: column; width: 100%; align-items: center; }
+        .lang-option { width: 85%; padding: 15px 20px; border: 2px solid rgba(255,255,255,0.15); border-radius: 40px; background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.75); font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px; opacity: 0; transform: translateY(20px); pointer-events: auto; z-index: 201; }
+        .lang-overlay.active .lang-option { opacity: 1; transform: translateY(0); transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .lang-overlay.active .lang-option:nth-child(1) { transition-delay: 0.15s; }
+        .lang-overlay.active .lang-option:nth-child(2) { transition-delay: 0.3s; }
+        .lang-overlay.active .lang-option:nth-child(3) { transition-delay: 0.45s; }
+        .lang-option:hover { border-color: rgba(200, 15, 25, 0.5); background: rgba(180, 15, 25, 0.12); transform: translateY(0) scale(1.03); }
+        .lang-option:active { transform: translateY(0) scale(0.97); }
+        .lang-flag { font-size: 25px; }
+        .lang-code { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); font-weight: 800; }
+        .country-options { display: flex; gap: 10px; margin-top: 12px; }
+        .country-option { flex: 1; padding: 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .country-option.selected { border-color: rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.25); color: rgba(255, 255, 255, 0.85); box-shadow: 0 0 15px rgba(200, 15, 25, 0.3); }
+        .country-flag { font-size: 20px; }
+        .info-btn { position: absolute; left: 55%; top: 8px; width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.45); font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 12; transition: all 0.4s ease; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .info-btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(200, 15, 25, 0.3); color: rgba(255,255,255,0.7); transform: rotate(90deg) scale(1.1); }
+        .all-reviews-btn { position: absolute; right: 10px; bottom: 5px; padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(200, 15, 25, 0.25); background: rgba(180, 15, 25, 0.1); color: rgba(255,255,255,0.5); font-size: 10px; font-weight: 600; cursor: pointer; z-index: 12; transition: all 0.4s ease; font-family: 'Rubik', Arial, sans-serif; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .all-reviews-btn:hover { background: rgba(180, 15, 25, 0.2); color: rgba(255,255,255,0.75); }
         .about-page, .reviews-page { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #0a0506; background-image: radial-gradient(ellipse at 50% 40%, rgba(45, 8, 12, 0.8) 0%, rgba(45, 8, 12, 0) 60%), radial-gradient(ellipse at 15% 85%, rgba(35, 5, 8, 0.9) 0%, rgba(35, 5, 8, 0) 50%), radial-gradient(ellipse at 85% 15%, rgba(28, 4, 7, 0.7) 0%, rgba(28, 4, 7, 0) 45%); z-index: 500; transform: translateX(100%); transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease; overflow-y: auto; -webkit-overflow-scrolling: touch; opacity: 0; }
         .about-page.active, .reviews-page.active { transform: translateX(0); opacity: 1; }
         .about-page::before, .reviews-page::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(180deg, #0d0405 0%, #1a0709 20%, #22090c 40%, #160607 60%, #0b0304 80%, #090203 100%); z-index: -1; pointer-events: none; }
         .about-page::after, .reviews-page::after { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-image: linear-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(255,255,255,0.05) 1.5px, transparent 1.5px); background-size: clamp(30px, 5vw, 50px) clamp(30px, 5vw, 50px); opacity: 0.4; z-index: -1; pointer-events: none; }
         .page-glow { position: fixed; border-radius: 50%; pointer-events: none; z-index: -1; }
-        .page-glow-1 { width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(255, 50, 65, 0.4) 0%, rgba(230, 57, 70, 0) 70%); top: 20%; left: 15%; -webkit-filter: blur(60px); filter: blur(60px); }
-        .page-glow-2 { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(180, 25, 35, 0.45) 0%, rgba(155, 28, 40, 0) 65%); bottom: 5%; right: 10%; -webkit-filter: blur(60px); filter: blur(60px); }
-        .about-page-header, .reviews-page-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: rgba(10, 5, 6, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 10; animation: slideDown 0.5s ease 0.2s both; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        .about-page-back, .reviews-page-back { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.5); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 10px rgba(255,255,255,0.03); }
-        .about-page-title, .reviews-page-title { font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; position: relative; }
+        .page-glow-1 { width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(255, 50, 65, 0.4) 0%, rgba(230, 57, 70, 0) 70%); top: 20%; left: 15%; filter: blur(60px); }
+        .page-glow-2 { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(180, 25, 35, 0.45) 0%, rgba(155, 28, 40, 0) 65%); bottom: 5%; right: 10%; filter: blur(60px); }
+        .about-page-header, .reviews-page-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: rgba(10, 5, 6, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 10; }
+        .about-page-back, .reviews-page-back { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.5); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.4s ease; }
+        .about-page-title, .reviews-page-title { font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; }
         .about-page-content, .reviews-page-content { padding: 20px; max-width: 500px; margin: 0 auto; }
-        .about-page-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 15px auto; border: 2px solid rgba(200, 15, 25, 0.3); display: block; box-shadow: 0 0 30px rgba(200, 15, 25, 0.15); animation: fadeInUp 0.6s ease 0.3s both; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .about-page-text { font-size: 14px; font-weight: 500; color: rgba(235, 235, 240, 0.8); line-height: 1.7; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 20px; animation: fadeInUp 0.6s ease 0.4s both; }
-        .about-page-section { margin-bottom: 15px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeInUp 0.6s ease both; }
+        .about-page-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 15px auto; border: 2px solid rgba(200, 15, 25, 0.3); display: block; box-shadow: 0 0 30px rgba(200, 15, 25, 0.15); }
+        .about-page-text { font-size: 14px; font-weight: 500; color: rgba(235, 235, 240, 0.8); line-height: 1.7; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 20px; }
+        .about-page-section { margin-bottom: 15px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
         .about-page-section-title { font-size: 16px; font-weight: 700; color: rgba(200, 15, 25, 0.8); font-family: 'Rubik', Arial, sans-serif; margin-bottom: 10px; }
         .about-page-section-text { font-size: 13px; font-weight: 500; color: rgba(235, 235, 240, 0.7); line-height: 1.6; font-family: 'Rubik', Arial, sans-serif; }
-        .review-page-card { padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); margin-bottom: 10px; animation: fadeInUp 0.5s ease both; }
+        .review-page-card { padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); margin-bottom: 10px; }
         .review-page-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
         .review-page-card-avatar { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); }
         .review-page-card-avatar svg { width: 20px; height: 20px; filter: brightness(0) invert(1); opacity: 0.6; }
         .review-page-card-name { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; }
         .review-page-card-rating { font-size: 12px; font-weight: 700; color: #f5c518; font-family: 'Rubik', Arial, sans-serif; }
         .review-page-card-text { font-size: 13px; font-weight: 500; color: rgba(235, 235, 240, 0.75); line-height: 1.6; font-family: 'Rubik', Arial, sans-serif; }
-        .info-btn { position: absolute; left: 55%; top: 8px; width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.45); font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 12; transition: all 0.4s ease; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-        .info-btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(200, 15, 25, 0.3); color: rgba(255,255,255,0.7); transform: rotate(90deg) scale(1.1); }
-        .all-reviews-btn { position: absolute; right: 10px; bottom: 5px; padding: 6px 12px; border-radius: 15px; border: 1px solid rgba(200, 15, 25, 0.25); background: rgba(180, 15, 25, 0.1); color: rgba(255,255,255,0.5); font-size: 10px; font-weight: 600; cursor: pointer; z-index: 12; transition: all 0.4s ease; font-family: 'Rubik', Arial, sans-serif; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-        .all-reviews-btn:hover { background: rgba(180, 15, 25, 0.2); color: rgba(255,255,255,0.75); }
-        @media (max-width: 480px) { .content { padding: 15px 15px 30px; gap: 15px; } .frame-main { height: 220px; border-radius: 35px; } .frame-small { height: 110px; border-radius: 30px; } .photo { width: 60%; height: 90%; right: -15px; } .title-left { top: 12px; left: 12px; font-size: 26px; } .title-white { font-size: 20px; } .btn-red { top: 88px; left: 10px; padding: 14px 30px; font-size: 14px; } .btn-white { top: 148px; left: 10px; padding: 14px 30px; font-size: 12px; } .second-title, .third-title, .fourth-title { font-size: 16px; } .inner-frame { left: 10px; top: 38px; width: 50%; } .inner-frame-text { font-size: 10px; } .stats { left: 64%; } .stat-main { font-size: 18px; } .stat-sub { font-size: 9px; } .price-cards { gap: 5px; } .price-title { font-size: 9px; } .price-amount { font-size: 15px; } .price-sub { font-size: 8px; } .reviews-carousel { left: 26px; right: 26px; height: 50px; } .reviews-big-frame { left: 30%; width: 58%; height: 65px; } .reviews-info { left: 4%; top: 58%; } .reviews-count { font-size: 10px; } .reviews-rating-number { font-size: 12px; } .review-star-white { width: 6px; height: 6px; } .review-name { font-size: 11px; } .review-text { font-size: 9px; padding-left: 22px; } .horizontal-line-reviews { top: 32px; width: 28%; } .info-btn { left: 55%; top: 6px; width: 22px; height: 22px; font-size: 12px; } }
+        @media (max-width: 480px) {
+            .content { padding: 15px 15px 30px; gap: 15px; }
+            .frame-main { height: 220px; border-radius: 35px; }
+            .frame-small { height: 110px; border-radius: 30px; }
+            .photo { width: 60%; height: 90%; right: -15px; }
+            .title-left { top: 12px; left: 12px; font-size: 26px; }
+            .btn-red { top: 88px; left: 10px; padding: 14px 30px; font-size: 14px; max-width: 48%; border-radius: 28px; }
+            .btn-white { top: 148px; left: 10px; padding: 14px 30px; font-size: 12px; max-width: 48%; border-radius: 28px; }
+            .second-title, .third-title, .fourth-title { top: 8px; left: 12px; font-size: 16px; }
+            .reviews-big-frame { left: 32%; width: 63%; height: 70px; border-radius: 20px; }
+            .line-right-mirror { right: 35px; }
+            .reviews-info { left: 5%; top: 65%; }
+            .reviews-count { font-size: 11px; }
+            .reviews-rating-number { font-size: 13px; }
+            .inner-frame { left: 10px; top: 38px; width: 52%; height: 60px; }
+            .inner-frame-text { font-size: 11px; }
+            .stats { left: 64%; }
+            .stat-main { font-size: 18px; }
+            .stat-sub { font-size: 10px; }
+            .price-cards { left: 10px; right: 10px; top: 38px; bottom: 8px; gap: 5px; }
+            .price-title { font-size: 10px; }
+            .price-amount { font-size: 17px; }
+            .price-sub { font-size: 9px; }
+            .lang-frame { padding: 30px 20px; border-radius: 40px; }
+            .lang-title { font-size: 24px; }
+            .lang-option { width: 90%; padding: 12px 15px; font-size: 14px; }
+            .modal-frame { max-width: 300px; padding: 15px; }
+            .info-btn { left: 55%; top: 6px; width: 22px; height: 22px; font-size: 12px; }
+        }
     </style>
 </head>
 <body>
@@ -189,78 +221,50 @@
     <div class="glow glow-4"></div>
     <div class="grid-full"></div>
 
-    <div class="content">
+    <div class="lang-overlay" id="langOverlay">
+        <div class="lang-frame">
+            <div class="lang-title"><span class="lang-title-white">Langu</span><span class="lang-title-red">age</span></div>
+            <div class="lang-line"></div>
+            <div class="lang-options">
+                <button type="button" class="lang-option" onclick="selectLanguage('uk')"><span class="lang-flag">🇺🇦</span> Українська <span class="lang-code">UA</span></button>
+                <button type="button" class="lang-option" onclick="selectLanguage('en')"><span class="lang-flag">🇬🇧</span> English <span class="lang-code">GB</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="content">
         <div class="frame frame-main">
             <div class="photo-glow"></div>
             <img class="photo" src="https://i.postimg.cc/SsmHrJGk/file-00000000e5d081f49bc9e7c6512b4e6e.png" alt="Фото">
-            <div class="title-left">
-                <span class="title-red" data-i18n="teacher_line1">Викладач</span>
-                <span class="title-white" data-i18n="teacher_line2">Англійської</span>
-            </div>
-            <button class="btn-red" onclick="openModal('signup')">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-                <span data-i18n="signup">Записатись</span>
-            </button>
-            <button class="btn-white" onclick="openModal('trial')">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                <span data-i18n="trial">Пробний урок</span>
-            </button>
+            <div class="title-left"><span class="title-red" id="titleRed">Викладач</span> <span class="title-white" id="titleWhite">Англійської</span></div>
+            <button class="btn-red" onclick="openModal('signup')"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg> <span class="btn-text-signup">Записатись</span></button>
+            <button class="btn-white" onclick="openModal('trial')"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <span class="btn-text-trial">Пробний урок</span></button>
         </div>
-
         <div class="divider-line"></div>
-
         <div class="frame frame-small">
             <div class="vertical-line"></div>
-            <div class="second-title" style="max-width: 50%; line-height: 1.4; font-size: 18px;">
-                <span class="second-red" data-i18n="about_red" style="font-size: 18px;">Про</span> <span class="second-white" data-i18n="about_white" style="font-size: 18px;">мене</span>
-            </div>
-            <div class="inner-frame">
-                <span class="inner-frame-text" data-i18n="about_text">Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.</span>
-            </div>
+            <div class="second-title"><span class="second-red" id="aboutRed">Про</span> <span class="second-white" id="aboutWhite">мене</span></div>
+            <div class="inner-frame"><span class="inner-frame-text" id="aboutText">Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.</span></div>
             <button class="info-btn" onclick="openAboutPage()">+</button>
             <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-main">3+ <span data-i18n="years">роки</span></div>
-                    <div class="stat-sub" data-i18n="teaching">викладання</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-main">25+ <span data-i18n="students" id="studentsEl">учнів</span></div>
-                    <div class="stat-sub" data-i18n="learning">навчаю</div>
-                </div>
+                <div class="stat-item"><div class="stat-main" id="statYears">3+ роки</div><div class="stat-sub" id="statYearsSub">викладання</div></div>
+                <div class="stat-item"><div class="stat-main" id="statStudents">25+ учнів</div><div class="stat-sub" id="statStudentsSub">навчаю</div></div>
             </div>
         </div>
-
         <div class="frame frame-small">
-            <div class="third-title">
-                <span class="third-red" data-i18n="price_red">Вар</span><span class="third-white" data-i18n="price_white">тість</span>
-            </div>
+            <div class="third-title"><span class="third-red" id="priceRed">Вар</span><span class="third-white" id="priceWhite">тість</span></div>
             <div class="price-cards">
-                <div class="price-card short">
-                    <div class="price-title" data-i18n="single">Разове</div>
-                    <div class="price-amount">300 <span class="price-amount-white">₴</span></div>
-                    <div class="price-sub" data-i18n="lesson_1">1 заняття</div>
-                </div>
-                <div class="price-card tall">
-                    <div class="price-title" data-i18n="standard">Стандарт</div>
-                    <div class="price-amount">2100 <span class="price-amount-white">₴</span></div>
-                    <div class="price-sub" data-i18n="lessons_7">7 занять</div>
-                </div>
-                <div class="price-card tall">
-                    <div class="price-title" data-i18n="maximum">Максимум</div>
-                    <div class="price-amount">9000 <span class="price-amount-white">₴</span></div>
-                    <div class="price-sub" data-i18n="lessons_30">30 занять</div>
-                </div>
+                <div class="price-card short"><div class="price-title" id="priceSingle">Разове</div><div class="price-amount">300 <span class="price-amount-white">₴</span></div><div class="price-sub" id="priceSingleSub">1 заняття</div></div>
+                <div class="price-card tall"><div class="price-title" id="priceStandard">Стандарт</div><div class="price-amount">2100 <span class="price-amount-white">₴</span></div><div class="price-sub" id="priceStandardSub">7 занять</div></div>
+                <div class="price-card tall"><div class="price-title" id="priceMax">Максимум</div><div class="price-amount">9000 <span class="price-amount-white">₴</span></div><div class="price-sub" id="priceMaxSub">30 занять</div></div>
             </div>
         </div>
-
         <div class="frame frame-small">
             <div class="vertical-line-right"></div>
             <div class="horizontal-line-reviews"></div>
-            <div class="fourth-title">
-                <span class="fourth-red" data-i18n="reviews_red">Від</span><span class="fourth-white" data-i18n="reviews_white">гуки</span>
-            </div>
+            <div class="fourth-title"><span class="fourth-red" id="reviewsRed">Від</span><span class="fourth-white" id="reviewsWhite">гуки</span></div>
             <div class="reviews-info">
-                <div class="reviews-count">10+ <span data-i18n="reviews_count">відгуків</span></div>
+                <div class="reviews-count" id="reviewsCount">10+ відгуків</div>
                 <div class="reviews-rating">
                     <span class="reviews-rating-number">4.9</span>
                     <div class="reviews-stars">
@@ -272,58 +276,39 @@
                     </div>
                 </div>
             </div>
-            <button class="all-reviews-btn" onclick="openReviewsPage()" data-i18n="all_reviews">Всі відгуки</button>
+            <button class="all-reviews-btn" onclick="openReviewsPage()">Всі відгуки</button>
             <div class="reviews-big-frame">
+                <div class="line-right-mirror"></div>
                 <div class="reviews-carousel" id="reviewsCarousel">
                     <div class="review-slide active">
                         <div class="review-header">
                             <div class="review-header-left">
-                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                                <span class="review-name" data-i18n="review_name_1">Олена.М.</span>
+                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <span class="review-name">Олена.М.</span>
                             </div>
                             <div class="review-rating-small"><span class="review-rating-number-small">5.0</span><svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                         </div>
-                        <span class="review-text" data-i18n="review_text_1">Найкращий викладач! За 2 місяці підняла рівень з A2 до B1</span>
+                        <span class="review-text" data-review-uk="Найкращий викладач! За 2 місяці підняла рівень з A2 до B1" data-review-en="Best teacher! In 2 months I improved from A2 to B1">Найкращий викладач! За 2 місяці підняла рівень з A2 до B1</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
                             <div class="review-header-left">
-                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                                <span class="review-name" data-i18n="review_name_2">Максим.К.</span>
+                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <span class="review-name">Максим.К.</span>
                             </div>
                             <div class="review-rating-small"><span class="review-rating-number-small">4.8</span><svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                         </div>
-                        <span class="review-text" data-i18n="review_text_2">Дуже зручний графік занять, все чітко і зрозуміло пояснює</span>
+                        <span class="review-text" data-review-uk="Дуже зручний графік занять, все чітко і зрозуміло пояснює" data-review-en="Very convenient schedule, everything is clear and understandable">Дуже зручний графік занять, все чітко і зрозуміло пояснює</span>
                     </div>
                     <div class="review-slide">
                         <div class="review-header">
                             <div class="review-header-left">
-                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                                <span class="review-name" data-i18n="review_name_3">Софія.Б.</span>
+                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <span class="review-name">Софія.Б.</span>
                             </div>
                             <div class="review-rating-small"><span class="review-rating-number-small">5.0</span><svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                         </div>
-                        <span class="review-text" data-i18n="review_text_3">Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна</span>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-header">
-                            <div class="review-header-left">
-                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                                <span class="review-name" data-i18n="review_name_4">Артем.Л.</span>
-                            </div>
-                            <div class="review-rating-small"><span class="review-rating-number-small">4.9</span><svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                        </div>
-                        <span class="review-text" data-i18n="review_text_4">За 3 місяці навчання я вже вільно спілкуюсь з іноземцями, рекомендую!</span>
-                    </div>
-                    <div class="review-slide">
-                        <div class="review-header">
-                            <div class="review-header-left">
-                                <div class="review-avatar"><svg class="review-avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                                <span class="review-name" data-i18n="review_name_5">Ірина.П.</span>
-                            </div>
-                            <div class="review-rating-small"><span class="review-rating-number-small">5.0</span><svg class="review-star-small" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                        </div>
-                        <span class="review-text" data-i18n="review_text_5">Дуже терплячий та уважний викладач, завжди підкаже і допоможе</span>
+                        <span class="review-text" data-review-uk="Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна" data-review-en="Prepared for English exam, passed perfectly! Very grateful">Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна</span>
                     </div>
                 </div>
             </div>
@@ -331,60 +316,53 @@
     </div>
 
     <div class="vignette"></div>
+
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-frame">
             <button class="modal-close" onclick="closeModal()"><svg class="modal-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-            <span class="modal-progress" id="modalProgress">1/5</span>
-            <div class="modal-question" id="modalQuestion"><span class="modal-question-white" data-i18n="modal_name_white">Як вас</span> <span class="modal-question-red" data-i18n="modal_name_red">звати?</span></div>
+            <span class="modal-progress" id="modalProgress">1/6</span>
+            <div class="modal-question"><span class="modal-question-white" id="modalQuestionWhite">Як вас</span> <span class="modal-question-red" id="modalQuestionRed">звати?</span></div>
             <div class="modal-line"></div>
             <div id="modalContent"></div>
             <span class="modal-error" id="modalError"></span>
-            <button class="modal-back-btn" id="modalBackBtn" onclick="prevStep()" style="display:none;" data-i18n="back">← Назад</button>
-            <button class="modal-btn" id="modalNextBtn" onclick="nextStep()" data-i18n="next">Далі</button>
-            <div class="final-screen" id="finalScreen">
+            <div class="modal-buttons">
+                <button class="modal-back-btn" id="modalBackBtn" onclick="prevStep()" style="display:none;">← <span id="backBtnText">Назад</span></button>
+                <button class="modal-btn" id="modalNextBtn" onclick="nextStep()"><span id="nextBtnText">Далі</span></button>
+            </div>
+            <div class="final-screen" id="finalScreen" style="display:none;">
                 <div class="final-check"><svg class="final-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-                <div class="final-title" data-i18n="final_title">Опитування завершено!</div>
-                <div class="final-subtitle" data-i18n="final_subtitle">Напишіть викладачу для запису</div>
+                <div class="final-title" id="finalTitle">Опитування завершено!</div>
+                <div class="final-subtitle" id="finalSubtitle">Напишіть викладачу для запису</div>
                 <div class="final-line"></div>
-                <a class="final-btn" id="finalBtn" href="#" target="_blank"><svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span data-i18n="write_teacher">Написати викладачу</span></a>
+                <a class="final-btn" id="finalBtn" href="#" target="_blank"><svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span id="finalBtnText">Написати викладачу</span></a>
             </div>
         </div>
     </div>
+
     <div class="loader-overlay" id="loaderOverlay"><div class="loader-spinner"></div></div>
-    <div class="language-overlay" id="languageOverlay">
-        <div class="language-frame">
-            <div class="language-title"><svg class="language-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>Langu<span class="language-title-red">age</span></span></div>
-            <div class="language-line"></div>
-            <div class="language-buttons">
-                <button class="lang-btn" onclick="selectLanguage('uk')"><img class="flag-icon" src="https://flagcdn.com/w40/ua.png" alt="Українська"> Українська</button>
-                <button class="lang-btn" onclick="selectLanguage('en')"><img class="flag-icon" src="https://flagcdn.com/w40/gb.png" alt="English"> English</button>
-            </div>
-        </div>
-    </div>
-    <div class="black-loading" id="blackLoading"><div class="black-loading-spinner"></div></div>
 
     <div class="about-page" id="aboutPage">
         <div class="page-glow page-glow-1"></div>
         <div class="page-glow page-glow-2"></div>
         <div class="about-page-header">
             <button class="about-page-back" onclick="closeAboutPage()">←</button>
-            <div class="about-page-title" data-i18n="about_full_title">Про мене</div>
+            <div class="about-page-title" id="aboutFullTitle">Про мене</div>
             <div style="width: 36px;"></div>
         </div>
         <div class="about-page-content">
             <img class="about-page-photo" src="https://i.postimg.cc/SsmHrJGk/file-00000000e5d081f49bc9e7c6512b4e6e.png" alt="Фото">
-            <div class="about-page-text" data-i18n="about_full_text">Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.</div>
+            <div class="about-page-text" id="aboutFullText">Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.</div>
             <div class="about-page-section">
-                <div class="about-page-section-title" data-i18n="education_title">Освіта</div>
-                <div class="about-page-section-text" data-i18n="education_text">Навчаюсь на 3 курсі факультету іноземних мов. Спеціалізуюсь на викладанні англійської як другої іноземної мови. Постійно вдосконалюю свої знання та методику викладання.</div>
+                <div class="about-page-section-title" id="educationTitle">Освіта</div>
+                <div class="about-page-section-text" id="educationText">Навчаюсь на 3 курсі факультету іноземних мов. Спеціалізуюсь на викладанні англійської як другої іноземної мови. Постійно вдосконалюю свої знання та методику викладання.</div>
             </div>
             <div class="about-page-section">
-                <div class="about-page-section-title" data-i18n="lessons_title">Як проходять заняття</div>
-                <div class="about-page-section-text" data-i18n="lessons_text">Заняття проходять онлайн через Zoom або Google Meet. Використовую сучасні інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.</div>
+                <div class="about-page-section-title" id="lessonsTitle">Як проходять заняття</div>
+                <div class="about-page-section-text" id="lessonsText">Заняття проходять онлайн через Zoom або Google Meet. Використовую сучасні інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.</div>
             </div>
             <div class="about-page-section">
-                <div class="about-page-section-title" data-i18n="methods_title">Методика</div>
-                <div class="about-page-section-text" data-i18n="methods_text">Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.</div>
+                <div class="about-page-section-title" id="methodsTitle">Методика</div>
+                <div class="about-page-section-text" id="methodsText">Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.</div>
             </div>
         </div>
     </div>
@@ -394,7 +372,7 @@
         <div class="page-glow page-glow-2"></div>
         <div class="reviews-page-header">
             <button class="reviews-page-back" onclick="closeReviewsPage()">←</button>
-            <div class="reviews-page-title" data-i18n="all_reviews_title">Всі відгуки</div>
+            <div class="reviews-page-title" id="allReviewsTitle">Всі відгуки</div>
             <div style="width: 36px;"></div>
         </div>
         <div class="reviews-page-content" id="reviewsPageContent"></div>
@@ -402,87 +380,194 @@
 
     <script>
         let currentStep = 1;
-        const totalSteps = 5;
+        const totalSteps = 6;
         let selectedOption = null;
+        let selectedCountry = null;
         let userData = {};
         let currentMode = 'signup';
-        let currentLanguage = 'uk';
+        let currentLang = 'uk';
 
         const translations = {
             uk: {
-                teacher_line1: 'Викладач', teacher_line2: 'Англійської', signup: 'Записатись', trial: 'Пробний урок',
-                about_red: 'Про', about_white: 'мене', about_text: 'Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.',
-                years: 'роки', teaching: 'викладання', students: 'учнів', learning: 'навчаю',
-                price_red: 'Вар', price_white: 'тість', single: 'Разове', lesson_1: '1 заняття', standard: 'Стандарт', lessons_7: '7 занять', maximum: 'Максимум', lessons_30: '30 занять',
-                reviews_red: 'Від', reviews_white: 'гуки', reviews_count: 'відгуків',
-                review_name_1: 'Олена.М.', review_text_1: 'Найкращий викладач! За 2 місяці підняла рівень з A2 до B1',
-                review_name_2: 'Максим.К.', review_text_2: 'Дуже зручний графік занять, все чітко і зрозуміло пояснює',
-                review_name_3: 'Софія.Б.', review_text_3: 'Готувалась до ЗНО з англійської, склала на відмінно! Дуже вдячна',
-                review_name_4: 'Артем.Л.', review_text_4: 'За 3 місяці навчання я вже вільно спілкуюсь з іноземцями, рекомендую!',
-                review_name_5: 'Ірина.П.', review_text_5: 'Дуже терплячий та уважний викладач, завжди підкаже і допоможе',
-                modal_name_white: 'Як вас', modal_name_red: 'звати?', modal_age_white: 'Скільки вам', modal_age_red: 'років?',
-                modal_level_white: 'Ваш рівень', modal_level_red: 'англійської?', modal_goal_white: 'Яка ваша', modal_goal_red: 'мета?',
-                modal_time_white: 'Коли зручно', modal_time_red: 'займатись?',
-                placeholder_name: 'Ваше ім\'я...', placeholder_age: 'Ваш вік...',
-                error_name: 'Введіть ім\'я від 2 до 20 символів (тільки літери)', error_age: 'Введіть вік цифрами (від 11 до 100)', error_option: 'Будь ласка, оберіть варіант',
-                level_options: ['A1', 'A2', 'B1', 'B2'], goal_options: ['Розмовна', 'Для роботи', 'Для школи', 'Інше'], time_options: ['Ранок', 'День', 'Вечір', 'Вихідні'],
-                back: '← Назад', next: 'Далі', done: 'Готово',
-                final_title: 'Опитування завершено!', final_subtitle: 'Напишіть викладачу для запису', write_teacher: 'Написати викладачу',
-                all_reviews: 'Всі відгуки', all_reviews_title: 'Всі відгуки',
-                about_full_title: 'Про мене',
-                about_full_text: 'Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.',
-                education_title: 'Освіта', education_text: 'Навчаюсь на 3 курсі факультету іноземних мов. Спеціалізуюсь на викладанні англійської як другої іноземної мови. Постійно вдосконалюю свої знання та методику викладання.',
-                lessons_title: 'Як проходять заняття', lessons_text: 'Заняття проходять онлайн через Zoom або Google Meet. Використовую сучасні інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.',
-                methods_title: 'Методика', methods_text: 'Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.',
-                message_signup: 'Добрий день! Хотів би записатись на навчання.\n\nМене звати: ', message_trial: 'Добрий день! Хотів би записатись на пробний урок.\n\nМене звати: ',
-                message_age: '\nВік: ', message_level: '\nРівень англійської: ', message_goal: '\nМета: ', message_time: '\nЗручний час: '
+                mainTitleRed: 'Викладач', mainTitleWhite: 'Англійської', btnSignup: 'Записатись', btnTrial: 'Пробний урок',
+                aboutRed: 'Про', aboutWhite: 'мене', aboutText: 'Звати Олексій, 19 років. Викладаю англійську онлайн. Шукаю учнів.',
+                statYears: '3+ роки', statYearsSub: 'викладання', statStudents: '25+ учнів', statStudentsSub: 'навчаю',
+                priceRed: 'Вар', priceWhite: 'тість', priceSingle: 'Разове', priceSingleSub: '1 заняття',
+                priceStandard: 'Стандарт', priceStandardSub: '7 занять', priceMax: 'Максимум', priceMaxSub: '30 занять',
+                reviewsRed: 'Від', reviewsWhite: 'гуки', reviewsCount: '10+ відгуків',
+                modalSteps: [
+                    { questionWhite: 'Як вас', questionRed: 'звати?', placeholder: 'Ваше ім\'я...', error: 'Введіть ім\'я від 2 до 20 символів' },
+                    { questionWhite: 'Скільки вам', questionRed: 'років?', placeholder: 'Ваш вік...', error: 'Введіть вік від 11 до 100' },
+                    { questionWhite: 'Звідки', questionRed: 'ви?', error: 'Оберіть країну' },
+                    { questionWhite: 'Ваш рівень', questionRed: 'англійської?', error: 'Оберіть варіант' },
+                    { questionWhite: 'Яка ваша', questionRed: 'мета?', error: 'Оберіть варіант' },
+                    { questionWhite: 'Коли зручно', questionRed: 'займатись?', error: 'Оберіть варіант' }
+                ],
+                options: { level: ['A1', 'A2', 'B1', 'B2'], goal: ['Розмовна', 'Для роботи', 'Для школи', 'Інше'], time: ['Ранок', 'День', 'Вечір', 'Вихідні'] },
+                backBtn: 'Назад', nextBtn: 'Далі', doneBtn: 'Готово',
+                finalTitle: 'Опитування завершено!', finalSubtitle: 'Напишіть викладачу для запису', finalBtnText: 'Написати викладачу',
+                signupMessage: 'Добрий день! Хотів би записатись на навчання.', trialMessage: 'Добрий день! Хотів би записатись на пробний урок.',
+                nameLabel: 'Мене звати', ageLabel: 'Вік', countryLabel: 'Країна', levelLabel: 'Рівень англійської', goalLabel: 'Мета', timeLabel: 'Зручний час',
+                aboutFullTitle: 'Про мене', aboutFullText: 'Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.',
+                educationTitle: 'Освіта', educationText: 'Навчаюсь на 3 курсі факультету іноземних мов. Спеціалізуюсь на викладанні англійської як другої іноземної мови. Постійно вдосконалюю свої знання та методику викладання.',
+                lessonsTitle: 'Як проходять заняття', lessonsText: 'Заняття проходять онлайн через Zoom або Google Meet. Використовую сучасні інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.',
+                methodsTitle: 'Методика', methodsText: 'Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.',
+                allReviewsTitle: 'Всі відгуки'
             },
             en: {
-                teacher_line1: 'Teacher', teacher_line2: 'English', signup: 'Sign Up', trial: 'Trial Lesson',
-                about_red: 'About', about_white: 'Me', about_text: 'My name is Oleksii, 19 years old. Teaching English online. Looking for students.',
-                years: 'years', teaching: 'teaching', students: 'students', learning: 'learning',
-                price_red: 'Pr', price_white: 'icing', single: 'Single', lesson_1: '1 lesson', standard: 'Standard', lessons_7: '7 lessons', maximum: 'Maximum', lessons_30: '30 lessons',
-                reviews_red: 'Rev', reviews_white: 'iews', reviews_count: 'reviews',
-                review_name_1: 'Olena.M.', review_text_1: 'The best teacher! In 2 months I raised my level from A2 to B1',
-                review_name_2: 'Maksym.K.', review_text_2: 'Very convenient schedule, everything is clear and understandable',
-                review_name_3: 'Sofia.B.', review_text_3: 'Prepared for English exam, passed perfectly! Very grateful',
-                review_name_4: 'Artem.L.', review_text_4: 'After 3 months of studying I can freely communicate with foreigners, recommend!',
-                review_name_5: 'Iryna.P.', review_text_5: 'Very patient and attentive teacher, always helps',
-                modal_name_white: 'What is', modal_name_red: 'your name?', modal_age_white: 'How old', modal_age_red: 'are you?',
-                modal_level_white: 'Your level', modal_level_red: 'of English?', modal_goal_white: 'What is your', modal_goal_red: 'goal?',
-                modal_time_white: 'When to', modal_time_red: 'study?',
-                placeholder_name: 'Your name...', placeholder_age: 'Your age...',
-                error_name: 'Enter name from 2 to 20 characters (letters only)', error_age: 'Enter age in numbers (from 11 to 100)', error_option: 'Please select an option',
-                level_options: ['A1', 'A2', 'B1', 'B2'], goal_options: ['Speaking', 'For work', 'For school', 'Other'], time_options: ['Morning', 'Afternoon', 'Evening', 'Weekends'],
-                back: '← Back', next: 'Next', done: 'Done',
-                final_title: 'Survey completed!', final_subtitle: 'Write to the teacher to sign up', write_teacher: 'Write to teacher',
-                all_reviews: 'All reviews', all_reviews_title: 'All reviews',
-                about_full_title: 'About Me',
-                about_full_text: 'Hello! My name is Oleksii, I am 19 years old. I have been teaching English online for over 3 years. During this time I have helped more than 25 students achieve their goals in learning English.',
-                education_title: 'Education', education_text: 'I am a 3rd year student at the Faculty of Foreign Languages. I specialize in teaching English as a second foreign language. I constantly improve my knowledge and teaching methods.',
-                lessons_title: 'How lessons work', lessons_text: 'Lessons are held online via Zoom or Google Meet. I use modern interactive materials, video and audio. Each lesson is adapted to the level and goals of the student. Homework is checked personally with detailed explanation of mistakes.',
-                methods_title: 'Methodology', methods_text: 'I use a communicative approach - 70% of the lesson is speaking practice. Grammar is explained simply and clearly, with many examples. I regularly conduct testing to track progress.',
-                message_signup: 'Hello! I would like to sign up for lessons.\n\nMy name: ', message_trial: 'Hello! I would like to sign up for a trial lesson.\n\nMy name: ',
-                message_age: '\nAge: ', message_level: '\nEnglish level: ', message_goal: '\nGoal: ', message_time: '\nConvenient time: '
+                mainTitleRed: 'English', mainTitleWhite: 'Teacher', btnSignup: 'Sign Up', btnTrial: 'Trial Lesson',
+                aboutRed: 'About', aboutWhite: 'Me', aboutText: 'My name is Oleksii, 19 years old. I teach English online. Looking for students.',
+                statYears: '3+ years', statYearsSub: 'teaching', statStudents: '25+ students', statStudentsSub: 'teaching now',
+                priceRed: 'Pri', priceWhite: 'ces', priceSingle: 'Single', priceSingleSub: '1 lesson',
+                priceStandard: 'Standard', priceStandardSub: '7 lessons', priceMax: 'Maximum', priceMaxSub: '30 lessons',
+                reviewsRed: 'Rev', reviewsWhite: 'iews', reviewsCount: '10+ reviews',
+                modalSteps: [
+                    { questionWhite: 'What is', questionRed: 'your name?', placeholder: 'Your name...', error: 'Enter name from 2 to 20 characters' },
+                    { questionWhite: 'How old are', questionRed: 'you?', placeholder: 'Your age...', error: 'Enter age from 11 to 100' },
+                    { questionWhite: 'Where are', questionRed: 'you from?', error: 'Select country' },
+                    { questionWhite: 'Your English', questionRed: 'level?', error: 'Select an option' },
+                    { questionWhite: 'What is your', questionRed: 'goal?', error: 'Select an option' },
+                    { questionWhite: 'When is convenient', questionRed: 'to study?', error: 'Select an option' }
+                ],
+                options: { level: ['A1', 'A2', 'B1', 'B2'], goal: ['Speaking', 'For work', 'For school', 'Other'], time: ['Morning', 'Day', 'Evening', 'Weekend'] },
+                backBtn: 'Back', nextBtn: 'Next', doneBtn: 'Done',
+                finalTitle: 'Survey Complete!', finalSubtitle: 'Message the teacher to sign up', finalBtnText: 'Message Teacher',
+                signupMessage: 'Hello! I would like to sign up for lessons.', trialMessage: 'Hello! I would like to sign up for a trial lesson.',
+                nameLabel: 'My name', ageLabel: 'Age', countryLabel: 'Country', levelLabel: 'English level', goalLabel: 'Goal', timeLabel: 'Convenient time',
+                aboutFullTitle: 'About Me', aboutFullText: 'Hello! My name is Oleksii, I am 19 years old. I have been teaching English online for over 3 years. During this time I have helped more than 25 students achieve their goals in learning English.',
+                educationTitle: 'Education', educationText: 'I am a 3rd year student at the Faculty of Foreign Languages. I specialize in teaching English as a second foreign language. I constantly improve my knowledge and teaching methods.',
+                lessonsTitle: 'How lessons work', lessonsText: 'Lessons are held online via Zoom or Google Meet. I use modern interactive materials, video and audio. Each lesson is adapted to the level and goals of the student. Homework is checked personally with detailed explanation of mistakes.',
+                methodsTitle: 'Methodology', methodsText: 'I use a communicative approach - 70% of the lesson is speaking practice. Grammar is explained simply and clearly, with many examples. I regularly conduct testing to track progress.',
+                allReviewsTitle: 'All reviews'
             }
         };
 
-        function applyLanguage(lang) {
-            currentLanguage = lang;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) { el.textContent = translations[lang][key]; }
-            });
-            const studentsEl = document.getElementById('studentsEl');
-            if (studentsEl) { if (lang === 'en') { studentsEl.classList.add('students-small'); } else { studentsEl.classList.remove('students-small'); } }
-            updateModalContent();
+        function selectLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('langOverlay').classList.remove('active');
+            document.body.classList.add('no-scroll');
+            const loader = document.getElementById('loaderOverlay');
+            loader.style.display = 'flex'; loader.style.opacity = '1'; loader.style.pointerEvents = 'auto';
+            setTimeout(() => {
+                applyTranslations();
+                loader.style.opacity = '0'; loader.style.pointerEvents = 'none';
+                setTimeout(() => { loader.style.display = 'none'; document.body.classList.remove('no-scroll'); }, 500);
+            }, 2000);
         }
 
-        function selectLanguage(lang) {
-            const blackLoading = document.getElementById('blackLoading');
-            blackLoading.classList.add('active');
-            setTimeout(function() { applyLanguage(lang); document.getElementById('languageOverlay').classList.remove('active'); blackLoading.classList.remove('active'); document.body.classList.remove('no-scroll'); }, 1500);
+        function applyTranslations() {
+            const t = translations[currentLang];
+            document.getElementById('titleRed').textContent = t.mainTitleRed;
+            document.getElementById('titleWhite').textContent = t.mainTitleWhite;
+            document.querySelector('.btn-text-signup').textContent = t.btnSignup;
+            document.querySelector('.btn-text-trial').textContent = t.btnTrial;
+            document.getElementById('aboutRed').textContent = t.aboutRed;
+            document.getElementById('aboutWhite').textContent = t.aboutWhite;
+            document.getElementById('aboutText').textContent = t.aboutText;
+            document.getElementById('statYears').textContent = t.statYears;
+            document.getElementById('statYearsSub').textContent = t.statYearsSub;
+            document.getElementById('statStudents').textContent = t.statStudents;
+            document.getElementById('statStudentsSub').textContent = t.statStudentsSub;
+            document.getElementById('priceRed').textContent = t.priceRed;
+            document.getElementById('priceWhite').textContent = t.priceWhite;
+            document.getElementById('priceSingle').textContent = t.priceSingle;
+            document.getElementById('priceSingleSub').textContent = t.priceSingleSub;
+            document.getElementById('priceStandard').textContent = t.priceStandard;
+            document.getElementById('priceStandardSub').textContent = t.priceStandardSub;
+            document.getElementById('priceMax').textContent = t.priceMax;
+            document.getElementById('priceMaxSub').textContent = t.priceMaxSub;
+            document.getElementById('reviewsRed').textContent = t.reviewsRed;
+            document.getElementById('reviewsWhite').textContent = t.reviewsWhite;
+            document.getElementById('reviewsCount').textContent = t.reviewsCount;
+            document.getElementById('aboutFullTitle').textContent = t.aboutFullTitle;
+            document.getElementById('aboutFullText').textContent = t.aboutFullText;
+            document.getElementById('educationTitle').textContent = t.educationTitle;
+            document.getElementById('educationText').textContent = t.educationText;
+            document.getElementById('lessonsTitle').textContent = t.lessonsTitle;
+            document.getElementById('lessonsText').textContent = t.lessonsText;
+            document.getElementById('methodsTitle').textContent = t.methodsTitle;
+            document.getElementById('methodsText').textContent = t.methodsText;
+            document.getElementById('allReviewsTitle').textContent = t.allReviewsTitle;
+            document.querySelectorAll('.review-text').forEach(el => {
+                const attr = 'data-review-' + currentLang;
+                if (el.hasAttribute(attr)) el.textContent = el.getAttribute(attr);
+            });
+            if (document.getElementById('modalOverlay').classList.contains('active')) updateModal();
         }
+
+        function openModal(mode) { currentMode = mode; document.getElementById('modalOverlay').classList.add('active'); document.body.classList.add('no-scroll'); resetModal(); }
+        function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); document.body.classList.remove('no-scroll'); }
+        function prevStep() { if (currentStep > 1) { currentStep--; selectedOption = null; selectedCountry = null; updateModal(); } }
+        function nextStep() {
+            const step = steps[currentStep - 1];
+            const content = document.getElementById('modalContent');
+            const errorEl = document.getElementById('modalError');
+            const stepTrans = translations[currentLang].modalSteps[currentStep - 1];
+            if (step.type === 'input') {
+                const input = content.querySelector('.modal-input');
+                if (input && step.validation(input.value)) { userData[step.key] = input.value; errorEl.classList.remove('show'); errorEl.style.display = 'none'; goNext(); }
+                else { errorEl.textContent = stepTrans.error; errorEl.classList.add('show'); errorEl.style.display = 'block'; }
+            } else if (step.type === 'country') {
+                if (selectedCountry) { userData[step.key] = selectedCountry; errorEl.classList.remove('show'); errorEl.style.display = 'none'; goNext(); }
+                else { errorEl.textContent = stepTrans.error; errorEl.classList.add('show'); errorEl.style.display = 'block'; }
+            } else if (step.type === 'options') {
+                if (selectedOption) { userData[step.key] = selectedOption; errorEl.classList.remove('show'); errorEl.style.display = 'none'; goNext(); }
+                else { errorEl.textContent = stepTrans.error; errorEl.classList.add('show'); errorEl.style.display = 'block'; }
+            }
+        }
+        function selectOption(el, value) { selectedOption = value; document.querySelectorAll('.modal-option').forEach(o => o.classList.remove('selected')); el.classList.add('selected'); document.getElementById('modalError').classList.remove('show'); document.getElementById('modalError').style.display = 'none'; }
+        function selectCountry(el, value) { selectedCountry = value; document.querySelectorAll('.country-option').forEach(o => o.classList.remove('selected')); el.classList.add('selected'); document.getElementById('modalError').classList.remove('show'); document.getElementById('modalError').style.display = 'none'; }
+        function goNext() { if (currentStep < totalSteps) { currentStep++; selectedOption = null; selectedCountry = null; updateModal(); } else { showLoader(); } }
+        function showLoader() { const loader = document.getElementById('loaderOverlay'); loader.style.display = 'flex'; loader.style.opacity = '1'; loader.style.pointerEvents = 'auto'; setTimeout(() => { loader.style.opacity = '0'; loader.style.pointerEvents = 'none'; setTimeout(() => { loader.style.display = 'none'; showFinalScreen(); }, 500); }, 1500); }
+        function showFinalScreen() {
+            const t = translations[currentLang];
+            document.getElementById('modalQuestion').style.display = 'none'; document.querySelector('.modal-line').style.display = 'none';
+            document.getElementById('modalContent').style.display = 'none'; document.getElementById('modalError').style.display = 'none';
+            document.getElementById('modalProgress').style.display = 'none'; document.getElementById('modalBackBtn').style.display = 'none'; document.getElementById('modalNextBtn').style.display = 'none';
+            const name = userData.name || '', age = userData.age || '', country = userData.country || '';
+            const level = userData.level || '', goal = userData.goal || '', time = userData.time || '';
+            let message = (currentMode === 'signup' ? t.signupMessage : t.trialMessage) + '\n\n' + t.nameLabel + ': ' + name + '\n' + t.ageLabel + ': ' + age + '\n' + t.countryLabel + ': ' + country + '\n' + t.levelLabel + ': ' + level + '\n' + t.goalLabel + ': ' + goal + '\n' + t.timeLabel + ': ' + time;
+            document.getElementById('finalBtn').href = 'https://t.me/Rac12qwr?text=' + encodeURIComponent(message);
+            document.getElementById('finalScreen').style.display = 'flex';
+            document.getElementById('finalTitle').textContent = t.finalTitle; document.getElementById('finalSubtitle').textContent = t.finalSubtitle; document.getElementById('finalBtnText').textContent = t.finalBtnText;
+        }
+        function updateModal() {
+            const step = steps[currentStep - 1]; const t = translations[currentLang]; const stepTrans = t.modalSteps[currentStep - 1]; const content = document.getElementById('modalContent');
+            document.getElementById('modalError').classList.remove('show'); document.getElementById('modalError').style.display = 'none';
+            document.getElementById('modalQuestionWhite').textContent = stepTrans.questionWhite; document.getElementById('modalQuestionRed').textContent = stepTrans.questionRed;
+            document.getElementById('modalProgress').textContent = currentStep + '/' + totalSteps;
+            document.getElementById('nextBtnText').textContent = currentStep === totalSteps ? t.doneBtn : t.nextBtn;
+            document.getElementById('modalBackBtn').style.display = currentStep > 1 ? 'block' : 'none'; document.getElementById('backBtnText').textContent = t.backBtn;
+            if (step.type === 'input') {
+                content.innerHTML = '<input type="' + step.inputType + '" class="modal-input" placeholder="' + stepTrans.placeholder + '">';
+                const input = content.querySelector('.modal-input'); input.value = userData[step.key] || '';
+                input.addEventListener('input', function() { if (step.inputType === 'text') this.value = this.value.replace(/[^А-Яа-яЄєІіЇїҐґ\s]/g, ''); else if (step.inputType === 'number') this.value = this.value.replace(/[^0-9]/g, ''); });
+            } else if (step.type === 'country') {
+                content.innerHTML = '<div class="country-options"><button type="button" class="country-option" onclick="selectCountry(this, \'Україна\')"><span class="country-flag">🇺🇦</span> Україна</button><button type="button" class="country-option" onclick="selectCountry(this, \'English\')"><span class="country-flag">🇬🇧</span> English</button></div>';
+                if (userData[step.key]) { selectedCountry = userData[step.key]; document.querySelectorAll('.country-option').forEach(o => { if (o.textContent.includes(selectedCountry)) o.classList.add('selected'); }); }
+            } else if (step.type === 'options') {
+                const options = t.options[step.key] || [];
+                content.innerHTML = '<div class="modal-options">' + options.map(opt => '<button type="button" class="modal-option" onclick="selectOption(this, \'' + opt + '\')">' + opt + '</button>').join('') + '</div>';
+                if (userData[step.key]) { selectedOption = userData[step.key]; document.querySelectorAll('.modal-option').forEach(o => { if (o.textContent === selectedOption) o.classList.add('selected'); }); }
+            }
+        }
+        function resetModal() {
+            currentStep = 1; selectedOption = null; selectedCountry = null; userData = {};
+            document.getElementById('finalScreen').style.display = 'none'; document.getElementById('modalContent').style.display = 'block';
+            document.getElementById('modalError').style.display = 'block'; document.getElementById('modalProgress').style.display = 'block';
+            document.getElementById('modalQuestion').style.display = 'block'; document.querySelector('.modal-line').style.display = 'block';
+            document.getElementById('modalBackBtn').style.display = 'none'; document.getElementById('modalNextBtn').style.display = 'block';
+            document.querySelector('.modal-close').style.display = 'flex'; updateModal();
+        }
+
+        const steps = [
+            { type: 'input', key: 'name', inputType: 'text', validation: (val) => val.length >= 2 && val.length <= 20 },
+            { type: 'input', key: 'age', inputType: 'number', validation: (val) => val.length > 0 && parseInt(val) >= 11 && parseInt(val) <= 100 },
+            { type: 'country', key: 'country' },
+            { type: 'options', key: 'level' },
+            { type: 'options', key: 'goal' },
+            { type: 'options', key: 'time' }
+        ];
 
         function openAboutPage() { document.getElementById('aboutPage').classList.add('active'); document.body.classList.add('no-scroll'); }
         function closeAboutPage() { document.getElementById('aboutPage').classList.remove('active'); document.body.classList.remove('no-scroll'); }
@@ -503,50 +588,32 @@
                 { name: 'Катя.О.', rating: '4.8', text: 'Уроки проходять легко і невимушено, завжди чекаю наступного заняття з нетерпінням!' },
                 { name: 'Богдан.Т.', rating: '5.0', text: 'За короткий час великий прогрес, дуже задоволений результатом навчання. Найкращий викладач!' },
                 { name: 'Наталя.Д.', rating: '4.9', text: 'Дуже подобається індивідуальний підхід. Олексій завжди готує матеріали під мої потреби.' },
-                { name: 'Ігор.В.', rating: '5.0', text: 'Почав з нуля, за 4 місяці вже можу підтримати розмову. Це неймовірний результат!' },
-                { name: 'Марина.С.', rating: '4.8', text: 'Уроки цікаві, з використанням сучасних матеріалів. Завжди є зворотній зв\'язок.' },
-                { name: 'Павло.О.', rating: '5.0', text: 'Найкращі заняття з англійської в моєму житті! Все чітко, зрозуміло і ефективно.' },
-                { name: 'Юлія.К.', rating: '4.9', text: 'Гнучкий графік, доступні пояснення, постійна підтримка. Дуже задоволена навчанням!' }
+                { name: 'Ігор.В.', rating: '5.0', text: 'Почав з нуля, за 4 місяці вже можу підтримати розмову. Це неймовірний результат!' }
             ];
             reviewsPageContent.innerHTML = '';
             allReviews.forEach((review, index) => {
                 const card = document.createElement('div');
                 card.className = 'review-page-card';
-                card.style.animationDelay = (0.2 + index * 0.1) + 's';
+                card.style.animationDelay = (0.1 + index * 0.05) + 's';
                 card.innerHTML = '<div class="review-page-card-header"><div class="review-page-card-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="review-page-card-name">' + review.name + '</div><div class="review-page-card-rating">★ ' + review.rating + '</div></div></div><div class="review-page-card-text">' + review.text + '</div>';
                 reviewsPageContent.appendChild(card);
             });
         }
 
-        const steps = [
-            { type: 'input', key: 'name', validation: (val) => val.length >= 2 && val.length <= 20 && /^[А-Яа-яЄєІіЇїҐґA-Za-z\s]+$/.test(val), getQuestion: () => translations[currentLanguage].modal_name_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_name_red + '</span>', getPlaceholder: () => translations[currentLanguage].placeholder_name, getError: () => translations[currentLanguage].error_name, inputType: 'text' },
-            { type: 'input', key: 'age', validation: (val) => val.length > 0 && /^[0-9]+$/.test(val) && parseInt(val) >= 11 && parseInt(val) <= 100, getQuestion: () => translations[currentLanguage].modal_age_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_age_red + '</span>', getPlaceholder: () => translations[currentLanguage].placeholder_age, getError: () => translations[currentLanguage].error_age, inputType: 'number' },
-            { type: 'options', key: 'level', getQuestion: () => translations[currentLanguage].modal_level_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_level_red + '</span>', getOptions: () => translations[currentLanguage].level_options },
-            { type: 'options', key: 'goal', getQuestion: () => translations[currentLanguage].modal_goal_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_goal_red + '</span>', getOptions: () => translations[currentLanguage].goal_options },
-            { type: 'options', key: 'time', getQuestion: () => translations[currentLanguage].modal_time_white + ' <span class="modal-question-red">' + translations[currentLanguage].modal_time_red + '</span>', getOptions: () => translations[currentLanguage].time_options }
-        ];
-
-        function openModal(mode) { currentMode = mode; document.getElementById('modalOverlay').classList.add('active'); document.body.classList.add('no-scroll'); resetModal(); }
-        function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); document.body.classList.remove('no-scroll'); }
-        function resetModal() { currentStep = 1; selectedOption = null; userData = {}; document.getElementById('finalScreen').style.display = 'none'; document.getElementById('modalQuestion').style.display = 'block'; document.querySelector('.modal-line').style.display = 'block'; document.getElementById('modalContent').style.display = 'block'; document.getElementById('modalError').style.display = 'block'; document.getElementById('modalProgress').style.display = 'block'; document.getElementById('modalBackBtn').style.display = 'none'; document.getElementById('modalNextBtn').style.display = 'block'; document.querySelector('.modal-close').style.display = 'flex'; updateModal(); }
-        function prevStep() { if (currentStep > 1) { currentStep--; selectedOption = null; updateModal(); } }
-        function nextStep() { const step = steps[currentStep - 1]; const content = document.getElementById('modalContent'); const errorEl = document.getElementById('modalError'); if (step.type === 'input') { const input = content.querySelector('.modal-input'); if (input) { if (step.validation(input.value)) { userData[step.key] = input.value; errorEl.classList.remove('show'); errorEl.style.display = 'none'; goNext(); } else { errorEl.textContent = step.getError(); errorEl.classList.add('show'); errorEl.style.display = 'block'; } } } else if (step.type === 'options') { if (selectedOption) { userData[step.key] = selectedOption; errorEl.classList.remove('show'); errorEl.style.display = 'none'; goNext(); } else { errorEl.textContent = translations[currentLanguage].error_option; errorEl.classList.add('show'); errorEl.style.display = 'block'; } } }
-        function goNext() { if (currentStep < totalSteps) { currentStep++; selectedOption = null; updateModal(); } else { showLoader(); } }
-        function showLoader() { document.getElementById('loaderOverlay').classList.remove('hidden'); document.getElementById('loaderOverlay').style.opacity = '1'; document.getElementById('loaderOverlay').style.pointerEvents = 'auto'; setTimeout(function() { document.getElementById('loaderOverlay').style.opacity = '0'; document.getElementById('loaderOverlay').style.pointerEvents = 'none'; document.getElementById('loaderOverlay').classList.add('hidden'); showFinalScreen(); }, 2500); }
-        function showFinalScreen() { document.getElementById('modalQuestion').style.display = 'none'; document.querySelector('.modal-line').style.display = 'none'; document.getElementById('modalContent').style.display = 'none'; document.getElementById('modalError').style.display = 'none'; document.getElementById('modalProgress').style.display = 'none'; document.getElementById('modalBackBtn').style.display = 'none'; document.getElementById('modalNextBtn').style.display = 'none'; document.querySelector('.modal-close').style.display = 'flex'; const name = userData.name || ''; const age = userData.age || ''; const level = userData.level || ''; const goal = userData.goal || ''; const time = userData.time || ''; let message = ''; if (currentMode === 'signup') { message = translations[currentLanguage].message_signup + name; } else { message = translations[currentLanguage].message_trial + name; } message += translations[currentLanguage].message_age + age; message += translations[currentLanguage].message_level + level; message += translations[currentLanguage].message_goal + goal; message += translations[currentLanguage].message_time + time; document.getElementById('finalBtn').href = 'https://t.me/Rac12qwr?text=' + encodeURIComponent(message); document.getElementById('finalScreen').style.display = 'flex'; }
-        function updateModal() { const step = steps[currentStep - 1]; const content = document.getElementById('modalContent'); const progress = document.getElementById('modalProgress'); const nextBtn = document.getElementById('modalNextBtn'); const backBtn = document.getElementById('modalBackBtn'); const errorEl = document.getElementById('modalError'); errorEl.classList.remove('show'); errorEl.style.display = 'none'; document.getElementById('modalQuestion').innerHTML = step.getQuestion(); progress.textContent = currentStep + '/' + totalSteps; if (currentStep === totalSteps) { nextBtn.textContent = translations[currentLanguage].done; } else { nextBtn.textContent = translations[currentLanguage].next; } backBtn.textContent = translations[currentLanguage].back; if (currentStep > 1) { backBtn.style.display = 'block'; } else { backBtn.style.display = 'none'; } if (step.type === 'input') { content.innerHTML = '<input type="' + step.inputType + '" class="modal-input" id="modalInput" placeholder="' + step.getPlaceholder() + '">'; const input = content.querySelector('.modal-input'); if (input) { input.value = userData[step.key] || ''; input.addEventListener('input', function() { if (step.inputType === 'text') { this.value = this.value.replace(/[^А-Яа-яЄєІіЇїҐґA-Za-z\s]/g, ''); } else if (step.inputType === 'number') { this.value = this.value.replace(/[^0-9]/g, ''); } }); } } else if (step.type === 'options') { let optionsHtml = '<div class="modal-options">'; step.getOptions().forEach(opt => { optionsHtml += '<button class="modal-option" onclick="selectOption(this, \'' + opt + '\')">' + opt + '</button>'; }); optionsHtml += '</div>'; content.innerHTML = optionsHtml; if (userData[step.key]) { selectedOption = userData[step.key]; document.querySelectorAll('.modal-option').forEach(o => { if (o.textContent === selectedOption) { o.classList.add('selected'); } }); } } nextBtn.classList.remove('disabled'); }
-        function updateModalContent() { if (document.getElementById('modalOverlay').classList.contains('active')) { updateModal(); } }
-        function selectOption(el, value) { selectedOption = value; document.querySelectorAll('.modal-option').forEach(o => o.classList.remove('selected')); el.classList.add('selected'); document.getElementById('modalError').classList.remove('show'); document.getElementById('modalError').style.display = 'none'; }
-        let currentReview = 0;
-        const reviews = document.querySelectorAll('.review-slide');
-        function showReview(index) { reviews.forEach((slide) => { slide.classList.remove('active'); slide.style.opacity = '0'; slide.style.position = 'absolute'; }); if (index < 0) index = reviews.length - 1; if (index >= reviews.length) index = 0; currentReview = index; reviews[currentReview].classList.add('active'); reviews[currentReview].style.opacity = '1'; reviews[currentReview].style.position = 'relative'; }
-        function nextReview() { showReview(currentReview + 1); }
-        function prevReview() { showReview(currentReview - 1); }
-        showReview(0);
-        setInterval(() => { nextReview(); }, 3000);
-        applyLanguage('uk');
-        setTimeout(function() { document.getElementById('loaderOverlay').classList.add('hidden'); setTimeout(function() { document.getElementById('loaderOverlay').style.display = 'none'; }, 1000); }, 2500);
-        setTimeout(function() { document.getElementById('languageOverlay').classList.add('active'); document.body.classList.add('no-scroll'); }, 5000);
+        // Инициализация
+        setTimeout(() => {
+            const loader = document.getElementById('loaderOverlay');
+            loader.style.opacity = '0';
+            loader.style.pointerEvents = 'none';
+            setTimeout(() => {
+                loader.style.display = 'none';
+                document.getElementById('content').classList.add('visible');
+                setTimeout(() => {
+                    document.getElementById('langOverlay').classList.add('active');
+                    document.body.classList.add('no-scroll');
+                }, 1500);
+            }, 500);
+        }, 2000);
     </script>
 </body>
 </html>
