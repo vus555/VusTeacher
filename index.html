@@ -46,21 +46,21 @@
         .title-left { position: absolute; top: 20px; left: 20px; z-index: 11; font-size: 38px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; max-width: 45%; line-height: 1.1; font-family: 'Rubik', Arial, sans-serif; }
         .title-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); display: block; }
         .title-white { color: rgba(235, 235, 240, 0.55); text-shadow: 0 0 6px rgba(235, 235, 240, 0.15); display: block; margin-top: 5px; }
-        .btn-red { position: absolute; top: 140px; left: 25px; z-index: 11; padding: 20px 50px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 30px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 16px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15); cursor: pointer; transition: all 0.3s ease; max-width: 45%; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; }
-        .btn-red:active { transform: scale(0.95); background: rgba(180, 15, 25, 0.38); }
+        .btn-red { position: absolute; top: 140px; left: 25px; z-index: 11; padding: 20px 50px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 30px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 16px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15); cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); max-width: 45%; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; }
+        .btn-red:active { transform: scale(0.9); background: rgba(180, 15, 25, 0.38); }
         .btn-icon { width: 18px; height: 18px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.8; }
-        .btn-white { position: absolute; top: 220px; left: 25px; z-index: 11; padding: 20px 50px; border: 1.5px solid rgba(255, 255, 255, 0.5); border-radius: 30px; background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.65); font-size: 14px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08); cursor: pointer; transition: all 0.3s ease; max-width: 45%; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; }
-        .btn-white:active { transform: scale(0.95); background: rgba(255, 255, 255, 0.18); }
+        .btn-white { position: absolute; top: 220px; left: 25px; z-index: 11; padding: 20px 50px; border: 1.5px solid rgba(255, 255, 255, 0.5); border-radius: 30px; background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.65); font-size: 14px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08); cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); max-width: 45%; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; }
+        .btn-white:active { transform: scale(0.9); background: rgba(255, 255, 255, 0.18); }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 5, 6, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; opacity: 0; pointer-events: none; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; -webkit-overflow-scrolling: touch; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-frame { width: 100%; max-width: 350px; border: 1.5px solid rgba(255,255,255,0.1); border-radius: 30px; background: rgba(20, 10, 12, 0.95); box-shadow: 0 0 30px rgba(0,0,0,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: relative; transform: scale(0.8); transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); display: flex; flex-direction: column; padding: 20px; margin: auto; }
+        .modal-frame { width: 100%; max-width: 350px; border: 1.5px solid rgba(255,255,255,0.1); border-radius: 30px; background: rgba(20, 10, 12, 0.85); box-shadow: 0 0 30px rgba(0,0,0,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: relative; transform: scale(0.8); transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); display: flex; flex-direction: column; padding: 20px; margin: auto; }
         .modal-overlay.active .modal-frame { transform: scale(1); }
-        .modal-frame.keyboard-open { margin-top: -100px; }
         .modal-close { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50%; background: rgba(255,255,255,0.03); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 103; }
         .modal-close-icon { width: 14px; height: 14px; filter: brightness(0) invert(1); opacity: 0.5; }
         .modal-question { font-size: 16px; font-weight: 700; letter-spacing: 0.3px; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 8px; text-align: left; color: rgba(255, 255, 255, 0.85); }
         .modal-question-white { color: rgba(255, 255, 255, 0.85); }
         .modal-question-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); }
+        .modal-question-small { font-size: 14px; }
         .modal-line { width: 100%; height: 1.5px; background: rgba(255, 255, 255, 0.1); margin-top: 5px; }
         .modal-input { width: 100%; height: 40px; background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 12px; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; font-size: 16px; padding: 0 12px; outline: none; margin-top: 15px; transition: border 0.3s ease; -moz-appearance: textfield; -webkit-appearance: none; appearance: textfield; }
         .modal-input:focus { border-color: rgba(200, 15, 25, 0.5); }
@@ -68,21 +68,27 @@
         .modal-error { font-size: 11px; font-weight: 500; color: rgba(255, 80, 80, 0.7); margin-top: 5px; display: none; font-family: 'Rubik', Arial, sans-serif; }
         .modal-error.show { display: block; }
         .modal-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-        .modal-option { padding: 8px 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 12px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.3px; white-space: nowrap; flex: 1; min-width: 45%; text-align: center; }
+        .modal-option { padding: 8px 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 12px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.3px; white-space: nowrap; flex: 1; min-width: 45%; text-align: center; }
+        .modal-option:active { transform: scale(0.9); }
         .modal-option.selected { border-color: rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.25); color: rgba(255, 255, 255, 0.85); box-shadow: 0 0 15px rgba(200, 15, 25, 0.3); }
         .modal-progress { position: absolute; top: 20px; right: 55px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); font-family: 'Rubik', Arial, sans-serif; }
         .modal-buttons { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 15px; }
-        .modal-btn { padding: 10px 25px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 20px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 14px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; }
-        .modal-btn:active { transform: scale(0.95); }
-        .modal-back-btn { padding: 10px 20px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: transparent; color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; }
-        .final-screen { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 15px; padding: 20px; width: 100%; }
-        .final-check { width: 50px; height: 50px; border-radius: 50%; border: 2px solid rgba(200, 15, 25, 0.6); display: flex; align-items: center; justify-content: center; background: rgba(180, 15, 25, 0.15); box-shadow: 0 0 30px rgba(200, 15, 25, 0.3); }
-        .final-check-icon { width: 25px; height: 25px; filter: brightness(0) invert(1); opacity: 0.8; }
-        .final-title { font-size: 18px; font-weight: 800; color: rgba(255, 255, 255, 0.85); font-family: 'Rubik', Arial, sans-serif; text-align: center; }
-        .final-subtitle { font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.5); font-family: 'Rubik', Arial, sans-serif; text-align: center; }
-        .final-line { width: 80%; height: 1.5px; background: rgba(255, 255, 255, 0.1); }
-        .final-btn { padding: 15px 35px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 25px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.85); font-size: 15px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .tg-icon { width: 20px; height: 20px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.8; }
+        .modal-btn { padding: 10px 25px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 20px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); font-size: 14px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; }
+        .modal-btn:active { transform: scale(0.9); }
+        .modal-back-btn { padding: 10px 20px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: transparent; color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .modal-back-btn:active { transform: scale(0.9); }
+        .final-screen { display: none; align-items: center; justify-content: center; flex-direction: column; gap: 15px; padding: 15px 20px; width: 100%; }
+        .final-check { width: 55px; height: 55px; border-radius: 50%; border: 2px solid rgba(200, 15, 25, 0.6); display: flex; align-items: center; justify-content: center; background: rgba(180, 15, 25, 0.15); box-shadow: 0 0 30px rgba(200, 15, 25, 0.3); animation: checkPulse 1s ease forwards; }
+        @keyframes checkPulse { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+        .final-check-icon { width: 25px; height: 25px; filter: brightness(0) invert(1); opacity: 0; stroke-dasharray: 30; stroke-dashoffset: 30; animation: drawCheck 0.8s ease 0.5s forwards; }
+        @keyframes drawCheck { to { stroke-dashoffset: 0; opacity: 0.8; } }
+        .final-title { font-size: 17px; font-weight: 800; color: rgba(255, 255, 255, 0.85); font-family: 'Rubik', Arial, sans-serif; text-align: center; animation: fadeInUp 0.5s ease 0.8s both; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .final-subtitle { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.5); font-family: 'Rubik', Arial, sans-serif; text-align: center; animation: fadeInUp 0.5s ease 1s both; }
+        .final-line { width: 80%; height: 1.5px; background: rgba(255, 255, 255, 0.1); animation: fadeInUp 0.5s ease 1.2s both; }
+        .final-btn { padding: 10px 25px; border: 1.5px solid rgba(200, 15, 25, 0.65); border-radius: 25px; background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.85); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; font-family: 'Rubik', Arial, sans-serif; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); animation: fadeInUp 0.5s ease 1.4s both; }
+        .final-btn:active { transform: scale(0.9); }
+        .tg-icon { width: 16px; height: 16px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.8; }
         .loader-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 1); z-index: 300; display: flex; align-items: center; justify-content: center; opacity: 1; pointer-events: auto; transition: opacity 0.5s ease; }
         .loader-spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: rgba(255,255,255,0.8); border-radius: 50%; animation: spin 1.2s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
@@ -145,23 +151,24 @@
         .language-title-red { color: rgba(200, 15, 25, 0.8); text-shadow: 0 0 10px rgba(200, 15, 25, 0.4); }
         .language-line { width: 100%; height: 1.5px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.3) 80%, transparent 100%); }
         .language-buttons { display: flex; gap: 12px; justify-content: center; }
-        .lang-btn { flex: 1; max-width: 150px; padding: 25px 30px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 700; }
+        .lang-btn { flex: 1; max-width: 150px; padding: 25px 30px; border-radius: 25px; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 700; }
+        .lang-btn:active { transform: scale(0.9); }
         .lang-btn:first-child { border: 1.5px solid rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.08); }
         .lang-btn:last-child { border: 1.5px solid rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.3); color: rgba(255, 255, 255, 0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 30px rgba(200, 15, 25, 0.45), inset 0 0 20px rgba(200, 15, 25, 0.15); }
-        .lang-btn:active { transform: scale(0.95); }
         .flag-icon { width: 26px; height: 19px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
         .black-loading { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 1); z-index: 250; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
         .black-loading.active { opacity: 1; pointer-events: auto; }
         .black-loading-spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: rgba(255,255,255,0.8); border-radius: 50%; animation: spin 1.2s linear infinite; }
         
         .country-options { display: flex; gap: 10px; margin-top: 12px; }
-        .country-option { flex: 1; padding: 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .country-option { flex: 1; padding: 12px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 20px; background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .country-option:active { transform: scale(0.9); }
         .country-option.selected { border-color: rgba(200, 15, 25, 0.65); background: rgba(180, 15, 25, 0.25); color: rgba(255, 255, 255, 0.85); box-shadow: 0 0 15px rgba(200, 15, 25, 0.3); }
         .country-flag { font-size: 20px; }
-        .info-btn { position: absolute; left: 54%; top: 8px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.45); font-size: 20px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 12; transition: all 0.4s ease; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .info-btn { position: absolute; left: 54%; top: 8px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.45); font-size: 20px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 12; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         .info-btn:active { transform: scale(0.8); }
         .info-btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(200, 15, 25, 0.3); color: rgba(255,255,255,0.7); transform: rotate(90deg) scale(1.1); }
-        .all-reviews-btn { padding: 12px 16px; border-radius: 16px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 700; cursor: pointer; z-index: 11; transition: all 0.3s ease; font-family: 'Rubik', Arial, sans-serif; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; gap: 5px; white-space: nowrap; position: relative; }
+        .all-reviews-btn { padding: 12px 16px; border-radius: 16px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 700; cursor: pointer; z-index: 11; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; gap: 5px; white-space: nowrap; position: relative; }
         .all-reviews-btn:active { transform: scale(0.9); }
         .all-reviews-btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); }
         .all-reviews-white { color: rgba(255, 255, 255, 0.7); }
@@ -173,7 +180,8 @@
         .page-glow-1 { width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(255, 50, 65, 0.4) 0%, rgba(230, 57, 70, 0) 70%); top: 20%; left: 15%; filter: blur(60px); }
         .page-glow-2 { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(180, 25, 35, 0.45) 0%, rgba(155, 28, 40, 0) 65%); bottom: 5%; right: 10%; filter: blur(60px); }
         .about-page-header, .reviews-page-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: rgba(10, 5, 6, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 10; }
-        .about-page-back, .reviews-page-back { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.5); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.4s ease; }
+        .about-page-back, .reviews-page-back { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.5); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .about-page-back:active, .reviews-page-back:active { transform: scale(0.9); }
         .about-page-title, .reviews-page-title { font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; }
         .reviews-page-title-white { color: rgba(255, 255, 255, 0.85); }
         .reviews-page-title-red { color: rgba(200, 15, 25, 0.8); text-shadow: 0 0 8px rgba(200, 15, 25, 0.3); }
@@ -315,12 +323,12 @@
                 <button class="modal-back-btn" id="modalBackBtn" onclick="prevStep()" style="display:none;">← <span id="backBtnText">Назад</span></button>
                 <button class="modal-btn" id="modalNextBtn" onclick="nextStep()"><span id="nextBtnText">Далі</span></button>
             </div>
-            <div class="final-screen" id="finalScreen" style="display:none;">
+            <div class="final-screen" id="finalScreen">
                 <div class="final-check"><svg class="final-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                 <div class="final-title" id="finalTitle">Опитування завершено!</div>
                 <div class="final-subtitle" id="finalSubtitle">Напишіть викладачу для запису</div>
                 <div class="final-line"></div>
-                <a class="final-btn" id="finalBtn" href="#" target="_blank"><svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span id="finalBtnText">Написати викладачу</span></a>
+                <a class="final-btn" id="finalBtn" href="#" target="_blank"><svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span id="finalBtnText">Telegram</span></a>
             </div>
         </div>
     </div>
@@ -398,11 +406,11 @@
                     { questionWhite: 'Скільки вам', questionRed: 'років?', placeholder: 'Ваш вік...', error: 'Введіть вік від 11 до 100' },
                     { questionWhite: 'Ваш рівень', questionRed: 'англійської?', error: 'Оберіть варіант' },
                     { questionWhite: 'Яка ваша', questionRed: 'мета?', error: 'Оберіть варіант' },
-                    { questionWhite: 'Коли зручно', questionRed: 'займатись?', error: 'Оберіть варіант' }
+                    { questionWhite: 'Коли зручно', questionRed: 'займатись?', error: 'Оберіть варіант', small: true }
                 ],
                 options: { level: ['A1', 'A2', 'B1', 'B2'], goal: ['Розмовна', 'Для роботи', 'Для школи', 'Інше'], time: ['Ранок', 'День', 'Вечір', 'Вихідні'] },
                 backBtn: 'Назад', nextBtn: 'Далі', doneBtn: 'Готово',
-                finalTitle: 'Опитування завершено!', finalSubtitle: 'Напишіть викладачу для запису', finalBtnText: 'Написати викладачу',
+                finalTitle: 'Опитування завершено!', finalSubtitle: 'Напишіть викладачу для запису', finalBtnText: 'Telegram',
                 signupMessage: 'Добрий день! Хотів би записатись на навчання.', trialMessage: 'Добрий день! Хотів би записатись на пробний урок.',
                 nameLabel: 'Мене звати', ageLabel: 'Вік', levelLabel: 'Рівень англійської', goalLabel: 'Мета', timeLabel: 'Зручний час',
                 aboutFullTitle: 'Про мене', aboutFullText: 'Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.',
@@ -423,11 +431,11 @@
                     { questionWhite: 'How old are', questionRed: 'you?', placeholder: 'Your age...', error: 'Enter age from 11 to 100' },
                     { questionWhite: 'Your English', questionRed: 'level?', error: 'Select an option' },
                     { questionWhite: 'What is your', questionRed: 'goal?', error: 'Select an option' },
-                    { questionWhite: 'When is convenient', questionRed: 'to study?', error: 'Select an option' }
+                    { questionWhite: 'When is convenient', questionRed: 'to study?', error: 'Select an option', small: true }
                 ],
                 options: { level: ['A1', 'A2', 'B1', 'B2'], goal: ['Speaking', 'For work', 'For school', 'Other'], time: ['Morning', 'Day', 'Evening', 'Weekend'] },
                 backBtn: 'Back', nextBtn: 'Next', doneBtn: 'Done',
-                finalTitle: 'Survey Complete!', finalSubtitle: 'Message the teacher to sign up', finalBtnText: 'Message Teacher',
+                finalTitle: 'Survey Complete!', finalSubtitle: 'Message the teacher to sign up', finalBtnText: 'Telegram',
                 signupMessage: 'Hello! I would like to sign up for lessons.', trialMessage: 'Hello! I would like to sign up for a trial lesson.',
                 nameLabel: 'My name', ageLabel: 'Age', levelLabel: 'English level', goalLabel: 'Goal', timeLabel: 'Convenient time',
                 aboutFullTitle: 'About Me', aboutFullText: 'Hello! My name is Oleksii, I am 19 years old. I have been teaching English online for over 3 years. During this time I have helped more than 25 students achieve their goals in learning English.',
@@ -504,7 +512,7 @@
         }
         function selectOption(el, value) { selectedOption = value; document.querySelectorAll('.modal-option').forEach(o => o.classList.remove('selected')); el.classList.add('selected'); document.getElementById('modalError').classList.remove('show'); document.getElementById('modalError').style.display = 'none'; }
         function goNext() { if (currentStep < totalSteps) { currentStep++; selectedOption = null; updateModal(); } else { showLoader(); } }
-        function showLoader() { const loader = document.getElementById('loaderOverlay'); loader.style.display = 'flex'; loader.style.opacity = '1'; loader.style.pointerEvents = 'auto'; setTimeout(() => { loader.style.opacity = '0'; loader.style.pointerEvents = 'none'; setTimeout(() => { loader.style.display = 'none'; showFinalScreen(); }, 500); }, 1500); }
+        function showLoader() { const loader = document.getElementById('loaderOverlay'); loader.style.display = 'flex'; loader.style.opacity = '1'; loader.style.pointerEvents = 'auto'; setTimeout(() => { loader.style.opacity = '0'; loader.style.pointerEvents = 'none'; setTimeout(() => { loader.style.display = 'none'; showFinalScreen(); }, 500); }, 2000); }
         function showFinalScreen() {
             const t = translations[currentLang];
             document.getElementById('modalQuestion').style.display = 'none'; document.querySelector('.modal-line').style.display = 'none';
@@ -520,20 +528,16 @@
         function updateModal() {
             const step = steps[currentStep - 1]; const t = translations[currentLang]; const stepTrans = t.modalSteps[currentStep - 1]; const content = document.getElementById('modalContent');
             document.getElementById('modalError').classList.remove('show'); document.getElementById('modalError').style.display = 'none';
-            document.getElementById('modalQuestionWhite').textContent = stepTrans.questionWhite; document.getElementById('modalQuestionRed').textContent = stepTrans.questionRed;
+            const questionEl = document.getElementById('modalQuestion');
+            questionEl.innerHTML = stepTrans.questionWhite + ' <span class="modal-question-red">' + stepTrans.questionRed + '</span>';
+            if (stepTrans.small) { questionEl.classList.add('modal-question-small'); } else { questionEl.classList.remove('modal-question-small'); }
             document.getElementById('modalProgress').textContent = currentStep + '/' + totalSteps;
             document.getElementById('nextBtnText').textContent = currentStep === totalSteps ? t.doneBtn : t.nextBtn;
             document.getElementById('modalBackBtn').style.display = currentStep > 1 ? 'block' : 'none'; document.getElementById('backBtnText').textContent = t.backBtn;
-            
-            const modalFrame = document.querySelector('.modal-frame');
-            modalFrame.classList.remove('keyboard-open');
-            
             if (step.type === 'input') {
                 content.innerHTML = '<input type="' + step.inputType + '" class="modal-input" placeholder="' + stepTrans.placeholder + '">';
                 const input = content.querySelector('.modal-input'); input.value = userData[step.key] || '';
                 input.addEventListener('input', function() { if (step.inputType === 'text') this.value = this.value.replace(/[^А-Яа-яЄєІіЇїҐґ\s]/g, ''); else if (step.inputType === 'number') this.value = this.value.replace(/[^0-9]/g, ''); });
-                input.addEventListener('focus', function() { modalFrame.classList.add('keyboard-open'); });
-                input.addEventListener('blur', function() { modalFrame.classList.remove('keyboard-open'); });
             } else if (step.type === 'options') {
                 const options = t.options[step.key] || [];
                 content.innerHTML = '<div class="modal-options">' + options.map(opt => '<button type="button" class="modal-option" onclick="selectOption(this, \'' + opt + '\')">' + opt + '</button>').join('') + '</div>';
