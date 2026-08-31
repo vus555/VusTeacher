@@ -179,19 +179,23 @@
         .page-glow { position: fixed; border-radius: 50%; pointer-events: none; z-index: -1; }
         .page-glow-1 { width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(255, 50, 65, 0.4) 0%, rgba(230, 57, 70, 0) 70%); top: 20%; left: 15%; filter: blur(60px); }
         .page-glow-2 { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(180, 25, 35, 0.45) 0%, rgba(155, 28, 40, 0) 65%); bottom: 5%; right: 10%; filter: blur(60px); }
-        .about-page-header, .reviews-page-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: rgba(10, 5, 6, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 10; }
+        .about-page-header, .reviews-page-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: rgba(10, 5, 6, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); z-index: 10; animation: slideDown 0.5s ease both; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         .about-page-back, .reviews-page-back { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.5); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .about-page-back:active, .reviews-page-back:active { transform: scale(0.9); }
-        .about-page-title, .reviews-page-title { font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; }
+        .about-page-title, .reviews-page-title { font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; }
         .reviews-page-title-white { color: rgba(255, 255, 255, 0.85); }
         .reviews-page-title-red { color: rgba(200, 15, 25, 0.8); text-shadow: 0 0 8px rgba(200, 15, 25, 0.3); }
-        .about-page-photo { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(200, 15, 25, 0.5); display: block; box-shadow: 0 0 20px rgba(200, 15, 25, 0.3); }
         .about-page-content, .reviews-page-content { padding: 20px; max-width: 500px; margin: 0 auto; }
-        .about-page-text { font-size: 14px; font-weight: 500; color: rgba(235, 235, 240, 0.8); line-height: 1.7; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 20px; }
-        .about-page-section { margin-bottom: 15px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+        .about-page-text { font-size: 14px; font-weight: 500; color: rgba(235, 235, 240, 0.8); line-height: 1.7; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 20px; animation: fadeInUp 0.6s ease 0.2s both; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .about-page-section { margin-bottom: 15px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 30px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeInUp 0.6s ease both; }
+        .about-page-section:nth-child(2) { animation-delay: 0.3s; }
+        .about-page-section:nth-child(3) { animation-delay: 0.4s; }
+        .about-page-section:nth-child(4) { animation-delay: 0.5s; }
         .about-page-section-title { font-size: 16px; font-weight: 700; color: rgba(200, 15, 25, 0.8); font-family: 'Rubik', Arial, sans-serif; margin-bottom: 10px; }
         .about-page-section-text { font-size: 13px; font-weight: 500; color: rgba(235, 235, 240, 0.7); line-height: 1.6; font-family: 'Rubik', Arial, sans-serif; }
-        .review-page-card { padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); margin-bottom: 10px; }
+        .review-page-card { padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); margin-bottom: 10px; animation: fadeInUp 0.5s ease both; }
         .review-page-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
         .review-page-card-avatar { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); }
         .review-page-card-avatar svg { width: 20px; height: 20px; filter: brightness(0) invert(1); opacity: 0.6; }
@@ -231,8 +235,7 @@
             .reviews-vertical-line { left: 46%; }
             .review-single { left: 50%; }
             .review-page-card { border-radius: 20px; }
-            .about-page-section { border-radius: 20px; }
-            .about-page-photo { width: 35px; height: 35px; }
+            .about-page-section { border-radius: 25px; }
         }
     </style>
 </head>
@@ -354,24 +357,26 @@
         <div class="page-glow page-glow-2"></div>
         <div class="about-page-header">
             <button class="about-page-back" onclick="closeAboutPage()">←</button>
-            <div class="about-page-title">
-                <span><span class="reviews-page-title-red" id="aboutTitleRed">Про</span> <span class="reviews-page-title-white" id="aboutTitleWhite">мене</span></span>
-            </div>
-            <img class="about-page-photo" src="https://i.postimg.cc/SsmHrJGk/file-00000000e5d081f49bc9e7c6512b4e6e.png" alt="Фото">
+            <div class="about-page-title"><span class="reviews-page-title-red" id="aboutTitleRed">Про</span> <span class="reviews-page-title-white" id="aboutTitleWhite">мене</span></div>
+            <div style="width: 36px;"></div>
         </div>
         <div class="about-page-content">
             <div class="about-page-text" id="aboutFullText">Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.</div>
             <div class="about-page-section">
-                <div class="about-page-section-title" id="educationTitle">Освіта</div>
-                <div class="about-page-section-text" id="educationText">Навчаюсь на 3 курсі факультету іноземних мов. Спеціалізуюсь на викладанні англійської як другої іноземної мови. Постійно вдосконалюю свої знання та методику викладання.</div>
+                <div class="about-page-section-title">📍 Україна</div>
+                <div class="about-page-section-text">Викладач з України, місто Харків.</div>
             </div>
             <div class="about-page-section">
-                <div class="about-page-section-title" id="lessonsTitle">Як проходять заняття</div>
-                <div class="about-page-section-text" id="lessonsText">Заняття проходять онлайн через Zoom або Google Meet. Використовую сучасні інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.</div>
+                <div class="about-page-section-title">🎓 ХАІ</div>
+                <div class="about-page-section-text">3 роки навчання в Харківському авіаційному інституті на спеціальності «Прикладна лінгвістика».</div>
             </div>
             <div class="about-page-section">
-                <div class="about-page-section-title" id="methodsTitle">Методика</div>
-                <div class="about-page-section-text" id="methodsText">Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.</div>
+                <div class="about-page-section-title">🇮🇹 Італія</div>
+                <div class="about-page-section-text">Навчання в Тренто на спеціальності «Modern Languages».</div>
+            </div>
+            <div class="about-page-section">
+                <div class="about-page-section-title">📚 Методика</div>
+                <div class="about-page-section-text">Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.</div>
             </div>
         </div>
     </div>
@@ -415,10 +420,7 @@
                 finalTitle: 'Опитування завершено!', finalSubtitle: 'Напишіть викладачу для запису', finalBtnText: 'Telegram',
                 signupMessage: 'Добрий день! Хотів би записатись на навчання.', trialMessage: 'Добрий день! Хотів би записатись на пробний урок.',
                 nameLabel: 'Мене звати', ageLabel: 'Вік', levelLabel: 'Рівень англійської', goalLabel: 'Мета', timeLabel: 'Зручний час',
-                aboutFullTitle: 'Про мене', aboutFullText: 'Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.',
-                educationTitle: 'Освіта', educationText: 'Навчаюсь на 3 курсі факультету іноземних мов. Спеціалізуюсь на викладанні англійської як другої іноземної мови. Постійно вдосконалюю свої знання та методику викладання.',
-                lessonsTitle: 'Як проходять заняття', lessonsText: 'Заняття проходять онлайн через Zoom або Google Meet. Використовую сучасні інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.',
-                methodsTitle: 'Методика', methodsText: 'Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.',
+                aboutFullTitle: 'Про мене', aboutFullText: 'Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки.',
                 allReviewsTitle: 'Відгуки'
             },
             en: {
@@ -440,10 +442,7 @@
                 finalTitle: 'Survey Complete!', finalSubtitle: 'Message the teacher to sign up', finalBtnText: 'Telegram',
                 signupMessage: 'Hello! I would like to sign up for lessons.', trialMessage: 'Hello! I would like to sign up for a trial lesson.',
                 nameLabel: 'My name', ageLabel: 'Age', levelLabel: 'English level', goalLabel: 'Goal', timeLabel: 'Convenient time',
-                aboutFullTitle: 'About Me', aboutFullText: 'Hello! My name is Oleksii, I am 19 years old. I have been teaching English online for over 3 years. During this time I have helped more than 25 students achieve their goals in learning English.',
-                educationTitle: 'Education', educationText: 'I am a 3rd year student at the Faculty of Foreign Languages. I specialize in teaching English as a second foreign language. I constantly improve my knowledge and teaching methods.',
-                lessonsTitle: 'How lessons work', lessonsText: 'Lessons are held online via Zoom or Google Meet. I use modern interactive materials, video and audio. Each lesson is adapted to the level and goals of the student. Homework is checked personally with detailed explanation of mistakes.',
-                methodsTitle: 'Methodology', methodsText: 'I use a communicative approach - 70% of the lesson is speaking practice. Grammar is explained simply and clearly, with many examples. I regularly conduct testing to track progress.',
+                aboutFullTitle: 'About Me', aboutFullText: 'Hello! My name is Oleksii, I am 19 years old. I have been teaching English online for over 3 years.',
                 allReviewsTitle: 'Reviews'
             }
         };
@@ -487,12 +486,6 @@
             document.getElementById('aboutTitleRed').textContent = t.aboutRed;
             document.getElementById('aboutTitleWhite').textContent = t.aboutWhite;
             document.getElementById('aboutFullText').textContent = t.aboutFullText;
-            document.getElementById('educationTitle').textContent = t.educationTitle;
-            document.getElementById('educationText').textContent = t.educationText;
-            document.getElementById('lessonsTitle').textContent = t.lessonsTitle;
-            document.getElementById('lessonsText').textContent = t.lessonsText;
-            document.getElementById('methodsTitle').textContent = t.methodsTitle;
-            document.getElementById('methodsText').textContent = t.methodsText;
             if (document.getElementById('modalOverlay').classList.contains('active')) updateModal();
         }
 
