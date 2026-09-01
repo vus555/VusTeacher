@@ -189,11 +189,12 @@
         .about-page-content, .reviews-page-content { padding: 20px; max-width: 500px; margin: 0 auto; }
         .about-page-text { font-size: 14px; font-weight: 500; color: rgba(235, 235, 240, 0.8); line-height: 1.7; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 20px; animation: fadeInUp 0.6s ease 0.2s both; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .about-page-section { margin-bottom: 15px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 30px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeInUp 0.6s ease both; }
-        .about-page-section:nth-child(2) { animation-delay: 0.3s; }
-        .about-page-section:nth-child(3) { animation-delay: 0.4s; }
-        .about-page-section:nth-child(4) { animation-delay: 0.5s; }
-        .about-page-section-title { font-size: 16px; font-weight: 700; color: rgba(200, 15, 25, 0.8); font-family: 'Rubik', Arial, sans-serif; margin-bottom: 10px; }
+        .about-page-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 80%, transparent 100%); margin: 10px 0 15px; }
+        .about-page-section { margin-bottom: 15px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 28px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeInUp 0.6s ease both; }
+        .about-page-section:nth-child(3) { animation-delay: 0.3s; }
+        .about-page-section:nth-child(4) { animation-delay: 0.4s; }
+        .about-page-section:nth-child(5) { animation-delay: 0.5s; }
+        .about-page-section-title { font-size: 15px; font-weight: 700; color: rgba(255, 255, 255, 0.85); font-family: 'Rubik', Arial, sans-serif; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .about-page-section-text { font-size: 13px; font-weight: 500; color: rgba(235, 235, 240, 0.7); line-height: 1.6; font-family: 'Rubik', Arial, sans-serif; }
         .review-page-card { padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); margin-bottom: 10px; animation: fadeInUp 0.5s ease both; }
         .review-page-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
@@ -230,12 +231,12 @@
             .flag-icon { width: 20px; height: 15px; }
             .modal-frame { max-width: 300px; padding: 15px; }
             .info-btn { left: 52%; top: 6px; width: 28px; height: 28px; font-size: 16px; }
-            .all-reviews-btn { padding: 10px 12px; font-size: 9px; }
+            .all-reviews-btn { padding: 10px 12px; font-size: 11px; }
             .all-reviews-icon { width: 11px; height: 11px; }
             .reviews-vertical-line { left: 46%; }
             .review-single { left: 50%; }
             .review-page-card { border-radius: 20px; }
-            .about-page-section { border-radius: 25px; }
+            .about-page-section { border-radius: 22px; }
         }
     </style>
 </head>
@@ -298,7 +299,7 @@
             <div class="reviews-big-frame">
                 <button class="all-reviews-btn" onclick="openReviewsPage()">
                     <svg class="all-reviews-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    <span class="all-reviews-red">Від</span><span class="all-reviews-white">гуки</span>
+                    <span class="all-reviews-white">Відгуки</span>
                 </button>
                 <div class="reviews-vertical-line"></div>
                 <div class="review-single">
@@ -361,22 +362,28 @@
             <div style="width: 36px;"></div>
         </div>
         <div class="about-page-content">
-            <div class="about-page-text" id="aboutFullText">Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки. За цей час я допоміг більше ніж 25 учням досягти їхніх цілей у вивченні англійської мови.</div>
+            <div class="about-page-text" id="aboutFullText">Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки.</div>
+            <div class="about-page-divider"></div>
             <div class="about-page-section">
-                <div class="about-page-section-title">📍 Україна</div>
-                <div class="about-page-section-text">Викладач з України, місто Харків.</div>
+                <div class="about-page-section-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span>Освіта</span>
+                </div>
+                <div class="about-page-section-text">ХАІ — 3 роки, спеціальність «Прикладна лінгвістика». Також навчання в Італії, Тренто — спеціальність «Modern Languages». Викладач постійно вдосконалює свої знання та методику викладання, проходить міжнародні стажування.</div>
             </div>
             <div class="about-page-section">
-                <div class="about-page-section-title">🎓 ХАІ</div>
-                <div class="about-page-section-text">3 роки навчання в Харківському авіаційному інституті на спеціальності «Прикладна лінгвістика».</div>
+                <div class="about-page-section-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                    <span>Як проходять заняття</span>
+                </div>
+                <div class="about-page-section-text">Онлайн через Zoom або Google Meet. Інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.</div>
             </div>
             <div class="about-page-section">
-                <div class="about-page-section-title">🇮🇹 Італія</div>
-                <div class="about-page-section-text">Навчання в Тренто на спеціальності «Modern Languages».</div>
-            </div>
-            <div class="about-page-section">
-                <div class="about-page-section-title">📚 Методика</div>
-                <div class="about-page-section-text">Використовую комунікативний підхід - 70% уроку це розмовна практика. Граматика пояснюється просто та зрозуміло, з великою кількістю прикладів. Регулярно проводжу тестування для відстеження прогресу.</div>
+                <div class="about-page-section-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    <span>Методика</span>
+                </div>
+                <div class="about-page-section-text">Комунікативний підхід — 70% уроку це розмовна практика. Граматика пояснюється просто з великою кількістю прикладів. Регулярне тестування для відстеження прогресу. Індивідуальний план навчання для кожного учня.</div>
             </div>
         </div>
     </div>
@@ -386,7 +393,7 @@
         <div class="page-glow page-glow-2"></div>
         <div class="reviews-page-header">
             <button class="reviews-page-back" onclick="closeReviewsPage()">←</button>
-            <div class="reviews-page-title"><span class="reviews-page-title-red" id="allReviewsTitleRed">Від</span><span class="reviews-page-title-white" id="allReviewsTitleWhite">гуки</span></div>
+            <div class="reviews-page-title"><span class="reviews-page-title-white">Всі</span> <span class="reviews-page-title-red">відгуки</span></div>
             <div style="width: 36px;"></div>
         </div>
         <div class="reviews-page-content" id="reviewsPageContent"></div>
