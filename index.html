@@ -60,7 +60,7 @@
         .modal-question { font-size: 16px; font-weight: 700; letter-spacing: 0.3px; font-family: 'Rubik', Arial, sans-serif; margin-bottom: 8px; text-align: left; color: rgba(255, 255, 255, 0.85); }
         .modal-question-white { color: rgba(255, 255, 255, 0.85); }
         .modal-question-red { color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); }
-        .modal-question-small { font-size: 14px; }
+        .modal-question-small { font-size: 13px; }
         .modal-line { width: 100%; height: 1.5px; background: rgba(255, 255, 255, 0.1); margin-top: 5px; }
         .modal-input { width: 100%; height: 40px; background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 12px; color: rgba(255,255,255,0.85); font-family: 'Rubik', Arial, sans-serif; font-size: 16px; padding: 0 12px; outline: none; margin-top: 15px; transition: border 0.3s ease; -moz-appearance: textfield; -webkit-appearance: none; appearance: textfield; }
         .modal-input:focus { border-color: rgba(200, 15, 25, 0.5); }
@@ -105,16 +105,16 @@
         .reviews-stars { display: flex; gap: 1px; }
         .review-star-white { width: 9px; height: 9px; fill: rgba(255, 255, 255, 0.75); }
         .reviews-big-frame { position: absolute; left: 32%; top: 50%; transform: translateY(-50%); width: 63%; height: 85px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 25px; background: rgba(255,255,255,0.02); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); z-index: 9; display: flex; align-items: center; justify-content: flex-start; padding-left: 15px; overflow: hidden; position: relative; }
-        .reviews-vertical-line { position: absolute; left: 48%; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 255, 255, 0.12); z-index: 10; }
-        .review-single { position: absolute; left: 53%; right: 10px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px; z-index: 11; }
+        .reviews-vertical-line { position: absolute; left: 40%; top: 0; bottom: 0; width: 1.5px; background: rgba(255, 255, 255, 0.12); z-index: 10; }
+        .review-single { position: absolute; left: 45%; right: 10px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px; z-index: 11; }
         .review-single-header { display: flex; align-items: center; gap: 5px; }
         .review-single-avatar { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); flex-shrink: 0; }
         .review-single-avatar svg { width: 11px; height: 11px; filter: brightness(0) invert(1); opacity: 0.6; }
         .review-single-name { font-size: 11px; font-weight: 700; color: rgba(255, 255, 255, 0.85); font-family: 'Rubik', Arial, sans-serif; white-space: nowrap; }
         .review-single-rating { display: flex; align-items: center; gap: 3px; margin-left: 3px; flex-shrink: 0; }
-        .review-single-rating-num { font-size: 10px; font-weight: 800; color: rgba(255, 255, 255, 0.8); font-family: 'Rubik', Arial, sans-serif; }
-        .review-single-star { width: 8px; height: 8px; fill: rgba(255, 255, 255, 0.8); }
-        .review-single-text { font-size: 10px; font-weight: 500; color: rgba(235, 235, 240, 0.65); line-height: 1.4; font-family: 'Rubik', Arial, sans-serif; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+        .review-single-rating-num { font-size: 10px; font-weight: 800; color: rgba(200, 15, 25, 0.8); font-family: 'Rubik', Arial, sans-serif; }
+        .review-single-star { width: 8px; height: 8px; fill: rgba(200, 15, 25, 0.8); }
+        .review-single-text { font-size: 10px; font-weight: 500; color: rgba(235, 235, 240, 0.65); line-height: 1.4; font-family: 'Rubik', Arial, sans-serif; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; margin-left: 5px; }
         .line-right-mirror { display: none; }
         .reviews-carousel { display: none; }
         .review-slide { display: none; }
@@ -168,12 +168,11 @@
         .info-btn { position: absolute; left: 54%; top: 8px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.45); font-size: 20px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 12; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         .info-btn:active { transform: scale(0.8); }
         .info-btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(200, 15, 25, 0.3); color: rgba(255,255,255,0.7); transform: rotate(90deg) scale(1.1); }
-        .all-reviews-btn { padding: 8px 10px; border-radius: 16px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.7); font-size: 9px; font-weight: 700; cursor: pointer; z-index: 11; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; gap: 3px; white-space: nowrap; position: absolute; left: 5px; }
+        .all-reviews-btn { padding: 10px 14px; border-radius: 16px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.8); font-size: 10px; font-weight: 800; cursor: pointer; z-index: 11; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); font-family: 'Rubik', Arial, sans-serif; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 0 15px rgba(255,255,255,0.04), inset 0 0 15px rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; position: absolute; left: 8px; }
         .all-reviews-btn:active { transform: scale(0.9); }
         .all-reviews-btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); }
-        .all-reviews-white { color: rgba(255, 255, 255, 0.7); }
-        .all-reviews-red { color: rgba(200, 15, 25, 0.8); text-shadow: 0 0 5px rgba(200, 15, 25, 0.3); }
-        .all-reviews-icon { width: 9px; height: 9px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.7; }
+        .all-reviews-text { color: rgba(255, 255, 255, 0.8); }
+        .all-reviews-icon { width: 10px; height: 10px; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.7; }
         .about-page, .reviews-page { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(180deg, #0d0405 0%, #1a0709 20%, #22090c 40%, #160607 60%, #0b0304 80%, #090203 100%); z-index: 500; transform: translateX(100%); transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease; overflow-y: auto; -webkit-overflow-scrolling: touch; opacity: 0; }
         .about-page.active, .reviews-page.active { transform: translateX(0); opacity: 1; }
         .page-glow { position: fixed; border-radius: 50%; pointer-events: none; z-index: -1; }
@@ -195,6 +194,7 @@
         .about-page-section:nth-child(4) { animation-delay: 0.4s; }
         .about-page-section:nth-child(5) { animation-delay: 0.5s; }
         .about-page-section-title { font-size: 15px; font-weight: 700; color: rgba(180, 25, 35, 0.8); text-shadow: 0 0 8px rgba(180, 25, 35, 0.3); font-family: 'Rubik', Arial, sans-serif; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .about-page-section-title svg { color: rgba(255, 255, 255, 0.7); }
         .about-page-section-text { font-size: 13px; font-weight: 500; color: rgba(235, 235, 240, 0.7); line-height: 1.6; font-family: 'Rubik', Arial, sans-serif; }
         .review-page-card { padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; background: rgba(255,255,255,0.008); box-shadow: 0 0 10px rgba(255,255,255,0.02); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); margin-bottom: 10px; animation: fadeInUp 0.5s ease both; }
         .review-page-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
@@ -231,8 +231,8 @@
             .flag-icon { width: 20px; height: 15px; }
             .modal-frame { max-width: 300px; padding: 15px; }
             .info-btn { left: 52%; top: 6px; width: 28px; height: 28px; font-size: 16px; }
-            .all-reviews-btn { padding: 6px 8px; font-size: 8px; left: 3px; }
-            .all-reviews-icon { width: 8px; height: 8px; }
+            .all-reviews-btn { padding: 8px 10px; font-size: 9px; left: 5px; }
+            .all-reviews-icon { width: 9px; height: 9px; }
             .reviews-vertical-line { left: 40%; }
             .review-single { left: 45%; }
             .review-page-card { border-radius: 20px; }
@@ -299,16 +299,16 @@
             <div class="reviews-big-frame">
                 <button class="all-reviews-btn" onclick="openReviewsPage()">
                     <svg class="all-reviews-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    <span class="all-reviews-white">Від</span><span class="all-reviews-red">гуки</span>
+                    <span class="all-reviews-text" id="allReviewsBtnText">Відгуки</span>
                 </button>
                 <div class="reviews-vertical-line"></div>
                 <div class="review-single">
                     <div class="review-single-header">
                         <div class="review-single-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                        <span class="review-single-name">Артем</span>
+                        <span class="review-single-name" id="reviewName">Артем</span>
                         <div class="review-single-rating"><span class="review-single-rating-num">5.0</span><svg class="review-single-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                     </div>
-                    <span class="review-single-text">Найкращий викладач!</span>
+                    <span class="review-single-text" id="reviewText">Найкращий викладач!</span>
                 </div>
             </div>
         </div>
@@ -366,21 +366,21 @@
             <div class="about-page-divider"></div>
             <div class="about-page-section">
                 <div class="about-page-section-title">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(180, 25, 35, 0.8);"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                     <span id="educationTitle">Освіта</span>
                 </div>
                 <div class="about-page-section-text" id="educationText">ХАІ — 3 роки, спеціальність «Прикладна лінгвістика». Також навчання в Італії, Тренто — спеціальність «Modern Languages». Викладач постійно вдосконалює свої знання та методику викладання, проходить міжнародні стажування.</div>
             </div>
             <div class="about-page-section">
                 <div class="about-page-section-title">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(180, 25, 35, 0.8);"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
                     <span id="lessonsTitle">Як проходять заняття</span>
                 </div>
                 <div class="about-page-section-text" id="lessonsText">Онлайн через Zoom або Google Meet. Інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.</div>
             </div>
             <div class="about-page-section">
                 <div class="about-page-section-title">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(180, 25, 35, 0.8);"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                     <span id="methodTitle">Методика</span>
                 </div>
                 <div class="about-page-section-text" id="methodText">Комунікативний підхід — 70% уроку це розмовна практика. Граматика пояснюється просто з великою кількістю прикладів. Регулярне тестування для відстеження прогресу. Індивідуальний план навчання для кожного учня.</div>
@@ -416,6 +416,7 @@
                 priceStandard: 'Стандарт', priceStandardSub: '7 занять', priceMax: 'Максимум', priceMaxSub: '30 занять',
                 reviewsRed: 'Від', reviewsWhite: 'гуки', reviewsCount: '10+ відгуків',
                 allReviewsBtnText: 'Відгуки',
+                reviewName: 'Артем', reviewText: 'Найкращий викладач!',
                 modalSteps: [
                     { questionWhite: 'Як вас', questionRed: 'звати?', placeholder: 'Ваше ім\'я...', error: 'Введіть ім\'я від 2 до 20 символів' },
                     { questionWhite: 'Скільки вам', questionRed: 'років?', placeholder: 'Ваш вік...', error: 'Введіть вік від 11 до 100' },
@@ -430,7 +431,10 @@
                 nameLabel: 'Мене звати', ageLabel: 'Вік', levelLabel: 'Рівень англійської', goalLabel: 'Мета', timeLabel: 'Зручний час',
                 aboutFullTitle: 'Про мене', aboutFullText: 'Вітаю! Мене звати Олексій, мені 19 років. Я викладаю англійську мову онлайн вже понад 3 роки.',
                 allReviewsTitle: 'Відгуки',
-                educationTitle: 'Освіта', lessonsTitle: 'Як проходять заняття', methodTitle: 'Методика'
+                educationTitle: 'Освіта', lessonsTitle: 'Як проходять заняття', methodTitle: 'Методика',
+                educationText: 'ХАІ — 3 роки, спеціальність «Прикладна лінгвістика». Також навчання в Італії, Тренто — спеціальність «Modern Languages». Викладач постійно вдосконалює свої знання та методику викладання, проходить міжнародні стажування.',
+                lessonsText: 'Онлайн через Zoom або Google Meet. Інтерактивні матеріали, відео та аудіо. Кожен урок адаптований під рівень та цілі учня. Домашні завдання перевіряються особисто з детальним поясненням помилок.',
+                methodText: 'Комунікативний підхід — 70% уроку це розмовна практика. Граматика пояснюється просто з великою кількістю прикладів. Регулярне тестування для відстеження прогресу. Індивідуальний план навчання для кожного учня.'
             },
             en: {
                 mainTitleRed: 'English', mainTitleWhite: 'Teacher', btnSignup: 'Sign Up', btnTrial: 'Trial Lesson',
@@ -440,6 +444,7 @@
                 priceStandard: 'Standard', priceStandardSub: '7 lessons', priceMax: 'Maximum', priceMaxSub: '30 lessons',
                 reviewsRed: 'Rev', reviewsWhite: 'iews', reviewsCount: '10+ reviews',
                 allReviewsBtnText: 'Reviews',
+                reviewName: 'Artem', reviewText: 'Best teacher ever!',
                 modalSteps: [
                     { questionWhite: 'What is', questionRed: 'your name?', placeholder: 'Your name...', error: 'Enter name from 2 to 20 characters', englishInput: true },
                     { questionWhite: 'How old are', questionRed: 'you?', placeholder: 'Your age...', error: 'Enter age from 11 to 100' },
@@ -454,7 +459,10 @@
                 nameLabel: 'My name', ageLabel: 'Age', levelLabel: 'English level', goalLabel: 'Goal', timeLabel: 'Convenient time',
                 aboutFullTitle: 'About Me', aboutFullText: 'Hello! My name is Oleksii, I am 19 years old. I have been teaching English online for over 3 years.',
                 allReviewsTitle: 'Reviews',
-                educationTitle: 'Education', lessonsTitle: 'How lessons work', methodTitle: 'Methodology'
+                educationTitle: 'Education', lessonsTitle: 'How lessons work', methodTitle: 'Methodology',
+                educationText: 'KhAI — 3 years, Applied Linguistics. Also studying in Trento, Italy — Modern Languages. The teacher constantly improves his knowledge and teaching methods, participates in international internships.',
+                lessonsText: 'Online via Zoom or Google Meet. Interactive materials, video and audio. Each lesson is adapted to the student\'s level and goals. Homework is checked personally with detailed explanation of mistakes.',
+                methodText: 'Communicative approach — 70% of the lesson is speaking practice. Grammar is explained simply with many examples. Regular testing to track progress. Individual learning plan for each student.'
             }
         };
 
@@ -499,20 +507,19 @@
             document.getElementById('aboutFullText').textContent = t.aboutFullText;
             
             // Update review button text
-            const reviewBtnWhite = document.querySelector('.all-reviews-white');
-            const reviewBtnRed = document.querySelector('.all-reviews-red');
-            if (currentLang === 'en') {
-                reviewBtnWhite.textContent = 'Reviews';
-                reviewBtnRed.textContent = '';
-            } else {
-                reviewBtnWhite.textContent = 'Від';
-                reviewBtnRed.textContent = 'гуки';
-            }
+            document.getElementById('allReviewsBtnText').textContent = t.allReviewsBtnText;
             
-            // Update about page section titles
+            // Update review name and text
+            document.getElementById('reviewName').textContent = t.reviewName;
+            document.getElementById('reviewText').textContent = t.reviewText;
+            
+            // Update about page section titles and text
             document.getElementById('educationTitle').textContent = t.educationTitle;
             document.getElementById('lessonsTitle').textContent = t.lessonsTitle;
             document.getElementById('methodTitle').textContent = t.methodTitle;
+            document.getElementById('educationText').textContent = t.educationText;
+            document.getElementById('lessonsText').textContent = t.lessonsText;
+            document.getElementById('methodText').textContent = t.methodText;
             
             if (document.getElementById('modalOverlay').classList.contains('active')) updateModal();
         }
