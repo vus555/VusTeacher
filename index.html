@@ -393,7 +393,7 @@
         <div class="page-glow page-glow-2"></div>
         <div class="reviews-page-header">
             <button class="reviews-page-back" onclick="closeReviewsPage()">←</button>
-            <div class="reviews-page-title"><span class="reviews-page-title-white">Всі</span> <span class="reviews-page-title-red">відгуки</span></div>
+            <div class="reviews-page-title" id="reviewsPageTitle"><span class="reviews-page-title-white" id="reviewsPageTitleWhite">Всі</span> <span class="reviews-page-title-red" id="reviewsPageTitleRed">відгуки</span></div>
             <div style="width: 36px;"></div>
         </div>
         <div class="reviews-page-content" id="reviewsPageContent"></div>
@@ -417,6 +417,7 @@
                 reviewsRed: 'Від', reviewsWhite: 'гуки', reviewsCount: '10+ відгуків',
                 allReviewsBtnText: 'Відгуки',
                 reviewName: 'Артем', reviewText: 'Найкращий викладач!',
+                reviewsPageTitleWhite: 'Всі', reviewsPageTitleRed: 'відгуки',
                 modalSteps: [
                     { questionWhite: 'Як вас', questionRed: 'звати?', placeholder: 'Ваше ім\'я...', error: 'Введіть ім\'я від 2 до 20 символів' },
                     { questionWhite: 'Скільки вам', questionRed: 'років?', placeholder: 'Ваш вік...', error: 'Введіть вік від 11 до 100' },
@@ -445,6 +446,7 @@
                 reviewsRed: 'Rev', reviewsWhite: 'iews', reviewsCount: '10+ reviews',
                 allReviewsBtnText: 'Reviews',
                 reviewName: 'Artem', reviewText: 'Best teacher ever!',
+                reviewsPageTitleWhite: 'All', reviewsPageTitleRed: 'reviews',
                 modalSteps: [
                     { questionWhite: 'What is', questionRed: 'your name?', placeholder: 'Your name...', error: 'Enter name from 2 to 20 characters', englishInput: true },
                     { questionWhite: 'How old are', questionRed: 'you?', placeholder: 'Your age...', error: 'Enter age from 11 to 100' },
@@ -512,6 +514,10 @@
             // Update review name and text
             document.getElementById('reviewName').textContent = t.reviewName;
             document.getElementById('reviewText').textContent = t.reviewText;
+            
+            // Update reviews page title
+            document.getElementById('reviewsPageTitleWhite').textContent = t.reviewsPageTitleWhite;
+            document.getElementById('reviewsPageTitleRed').textContent = t.reviewsPageTitleRed;
             
             // Update about page section titles and text
             document.getElementById('educationTitle').textContent = t.educationTitle;
@@ -609,7 +615,12 @@
             applyTranslations();
         }
         function closeAboutPage() { document.getElementById('aboutPage').classList.remove('active'); document.body.classList.remove('no-scroll'); }
-        function openReviewsPage() { document.getElementById('reviewsPage').classList.add('active'); document.body.classList.add('no-scroll'); renderReviewsPage(); }
+        function openReviewsPage() { 
+            document.getElementById('reviewsPage').classList.add('active'); 
+            document.body.classList.add('no-scroll'); 
+            applyTranslations();
+            renderReviewsPage(); 
+        }
         function closeReviewsPage() { document.getElementById('reviewsPage').classList.remove('active'); document.body.classList.remove('no-scroll'); }
 
         function renderReviewsPage() {
